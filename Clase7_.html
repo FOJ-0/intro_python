@@ -1,0 +1,935 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 9: Funciones, diccionarios y condicionales &#8212; Introducción a python</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_fae.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introducción a python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Python para Ingeniería Comercial
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="About_python.html">
+   Clase 2: About Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clase3_4.html">
+   Clase 3-4: lo básico
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase5_6.html">
+   Clase 5-6: lo básico (continuación)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase5_6.html#actividad">
+   Actividad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase7_8.html">
+   Clase 7-8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase9_10.html">
+   Clase 9-10: Funciones, diccionarios y condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase9_10.html#actividad-1">
+   Actividad 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase11_12.html">
+   Clase 11-12: Introducción a los gráficos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase_13_14_a.html">
+   Clase 13: introducción a los datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase_13_14_b.html">
+   Clase 14: continuación con los datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase15.html">
+   Clase 15: gráficos
+   <em>
+    pro
+   </em>
+   con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Plotly
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase15.html#actividad">
+   Actividad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase17.html">
+   Clase 17: Introducción al análisis de texto (text mining)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase18.html">
+   Clase 18: Introducción al uso de clases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase19.html">
+   Clase 19: Scipy y computación numérica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase20.html">
+   Clase 20: Regresiones
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Clase7_.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FClase7_.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Clase7_.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#actividad">
+   Actividad
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrucciones">
+   <strong>
+    Instrucciones:
+   </strong>
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="clase-9-funciones-diccionarios-y-condicionales">
+<h1>Clase 9: Funciones, diccionarios y condicionales<a class="headerlink" href="#clase-9-funciones-diccionarios-y-condicionales" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Utilice las funciones de numpy <code class="docutils literal notranslate"><span class="pre">linspace()</span></code> y <code class="docutils literal notranslate"><span class="pre">arange()</span></code> para crear dos vectores entre 0-100. El primer vector tiene 1000 elementos entre el rango 0-100 y el segundo se encuentra separado por 1.5 (ejm: 0, 1.5, 3, …).</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Creaar un vector entre 0-100 con 1000 elementos</span>
+<span class="n">vector1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1">#Crear un vector entre 0-100 separado por 1.5</span>
+<span class="n">vector2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Utilizando los vectores de 1. crear un <code class="docutils literal notranslate"><span class="pre">loop</span> <span class="pre">anidado</span></code> para calcular la multiplicación entre cada elemento de los vectores. Guarde los resultados en una lista.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#lista vacía</span>
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#lista = list()</span>
+
+<span class="c1">#Loop</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vector1</span><span class="p">:</span> <span class="c1">#iteramos sobre los valors del vector 1</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">vector2</span><span class="p">:</span> <span class="c1">#iteramos sobre los valors del vector 2</span>
+        <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="p">)</span> <span class="c1">#Operación sobre i y j y los anexamos a una lista </span>
+<span class="c1">#         print(&quot;(i,j,valor:)&quot;, (i,j,i*j))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Mediante un print() muestre la suma, el promedio, la mediana y la desviación estándar de la lista guardada en 2.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Suma</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;suma:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">lista</span><span class="p">))</span>
+<span class="n">sum_list</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<span class="c1">#Promedio</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;promedio:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">lista</span><span class="p">))</span>
+<span class="c1">#Mediana</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mediana:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">lista</span><span class="p">))</span>
+<span class="c1">#Std</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;std:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">lista</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>suma: 165825000.00000206
+promedio: 2475.0
+mediana: 1839.3393393393394
+std: 2202.8088300489767
+</pre></div>
+</div>
+</div>
+</div>
+<ol>
+<li><p>Crear una rutina que permita las siguientes operaciones:</p>
+<ol class="simple">
+<li><p>Solicitar el número de mascotas (con input()), guardar en una variable.</p></li>
+<li><p>Si el número de mascotas es cero: imprimir “No tiene mascotas.”</p></li>
+<li><p>Si el número es entre 1-3: imprimir “Tiene entre 1-3 mascotas.”</p></li>
+<li><p>Si el número es entre 4-6: imprimir “Tiene entre 4-6 mascotas.”</p></li>
+<li><p>Si el número es mayor que 6: imprimir “Tiene más de 6 mascotas”.</p></li>
+<li><p>Si el número es negativo: imprimir “No corresponde”.</p></li>
+</ol>
+<p>*Probar que su rutina cumple bien todas las condiciones. *</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#solicitar el número de mascotas</span>
+<span class="n">mascotas</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;¿Cuántas mascotas tiene?&quot;</span><span class="p">))</span> <span class="c1">#int-&gt;enteros, float</span>
+<span class="k">if</span> <span class="n">mascotas</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No tiene mascotas&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">mascotas</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">mascotas</span><span class="o">&lt;=</span><span class="mi">3</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tiene entre 1-3 mascotas&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">mascotas</span><span class="o">&gt;</span><span class="mi">3</span> <span class="ow">and</span> <span class="n">mascotas</span><span class="o">&lt;=</span><span class="mi">6</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tiene entre 4-6 mascotas&quot;</span><span class="p">)</span>    
+<span class="k">elif</span> <span class="n">mascotas</span><span class="o">&gt;</span><span class="mi">6</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tiene más de 6 mascotas&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">mascotas</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No corresponde&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;otro caso&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">b1d11ac99eb1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#solicitar el número de mascotas</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">mascotas</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;¿Cuántas mascotas tiene?&quot;</span><span class="p">))</span> <span class="c1">#int-&gt;enteros, float</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span> <span class="n">mascotas</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No tiene mascotas&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">elif</span> <span class="n">mascotas</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">mascotas</span><span class="o">&lt;=</span><span class="mi">3</span><span class="p">:</span>
+
+<span class="nn">~/miniconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">843</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">844</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">--&gt; </span><span class="mi">845</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">    </span><span class="mi">846</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<ol>
+<li><p>Crear dos listas, una con estilo musical (blues, rock, rap, trap, pop) y otra con grupos (Nina Simone, Led Zeppelin, Makiza, Pablo Chill-e, Dua Lipa). Luego crear una función que tenga como input “estilo” y output “recomendacion”. La función debe permitir:</p>
+<ol class="simple">
+<li><p>Leer el input estilo y compararlo con la lista de estilo musical.</p></li>
+<li><p>Utilizar if/elif/else para crear condiciones que recomiende música. Por ejemplo, si estilo es igual a Blues, recomendar Nina Simone.</p></li>
+<li><p>Si el estilo no está en la lista de estilo musical, debe mostrar “No tenemos recomendación para su estilo musical”.</p></li>
+<li><p>El output debe ser la recomendación.</p></li>
+</ol>
+<p><em>Evaluar si la función se ejecuta correctamente para cada estilo musical</em></p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Opción 1: input -&gt; print de algo. Función no tiene un retorno</span>
+<span class="k">def</span> <span class="nf">recomendacion</span><span class="p">(</span><span class="n">estilo</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">estilo</span> <span class="o">==</span> <span class="s2">&quot;blues&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nina Simone&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">estilo</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Led Zeppelin&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">estilo</span> <span class="o">==</span> <span class="s2">&quot;rap&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Makiza&quot;</span><span class="p">)</span>        
+    <span class="k">elif</span> <span class="n">estilo</span> <span class="o">==</span> <span class="s2">&quot;trap&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pablo Chill-e&quot;</span><span class="p">)</span>  
+    <span class="k">elif</span> <span class="n">estilo</span> <span class="o">==</span> <span class="s2">&quot;pop&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dua Lipa&quot;</span><span class="p">)</span>    
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No tenemos recomendación para su estilo musical&quot;</span><span class="p">)</span>
+        
+<span class="c1">#Llamar la función (como no está indentado, no está dentro de la funcióin anterior)        </span>
+<span class="n">grupo_rec</span> <span class="o">=</span> <span class="n">recomendacion</span><span class="p">(</span><span class="s2">&quot;pop&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dua Lipa
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Opción 2: input -&gt; output</span>
+<span class="k">def</span> <span class="nf">recomendacion</span><span class="p">(</span><span class="n">estilo</span><span class="p">):</span>
+    
+    <span class="n">recomend</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">estilo</span> <span class="o">==</span> <span class="s2">&quot;blues&quot;</span><span class="p">:</span> 
+        <span class="c1">#La variable recomend se crea cuando se cumple esta condición</span>
+        <span class="n">recomend</span> <span class="o">=</span> <span class="s2">&quot;Nina Simone&quot;</span>
+    <span class="k">elif</span> <span class="n">estilo</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span><span class="p">:</span>
+        <span class="n">recomend</span> <span class="o">=</span> <span class="s2">&quot;Led Zeppelin&quot;</span>        
+    <span class="k">elif</span> <span class="n">estilo</span> <span class="o">==</span> <span class="s2">&quot;rap&quot;</span><span class="p">:</span>
+        <span class="n">recomend</span> <span class="o">=</span> <span class="s2">&quot;Makiza&quot;</span>                 
+    <span class="k">elif</span> <span class="n">estilo</span> <span class="o">==</span> <span class="s2">&quot;trap&quot;</span><span class="p">:</span>
+        <span class="n">recomend</span> <span class="o">=</span> <span class="s2">&quot;Pablo Chill-e&quot;</span>           
+    <span class="k">elif</span> <span class="n">estilo</span> <span class="o">==</span> <span class="s2">&quot;pop&quot;</span><span class="p">:</span>
+        <span class="n">recomend</span> <span class="o">=</span> <span class="s2">&quot;Dua Lipa&quot;</span>                  
+    <span class="k">else</span><span class="p">:</span> 
+<span class="c1">#         recomend = &quot;No tenemos recomendación para su estilo musical&quot;        </span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No tenemos recomendación para su estilo musical&quot;</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">recomend</span>
+        
+<span class="n">recomend</span> <span class="o">=</span> <span class="n">recomendacion</span><span class="p">(</span><span class="s2">&quot;asdasd&quot;</span><span class="p">)</span>
+<span class="n">recomend</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No tenemos recomendación para su estilo musical
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Opción 3</span>
+<span class="c1">#Definir las variables como listas</span>
+<span class="n">estilos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;blues&quot;</span><span class="p">,</span> <span class="s2">&quot;rock&quot;</span><span class="p">,</span> <span class="s2">&quot;rap&quot;</span><span class="p">,</span> <span class="s2">&quot;trap&quot;</span><span class="p">,</span> <span class="s2">&quot;pop&quot;</span><span class="p">]</span>
+<span class="n">grupos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Nina Simone&quot;</span><span class="p">,</span> <span class="s2">&quot;Led Zeppelin&quot;</span><span class="p">,</span> <span class="s2">&quot;Makiza&quot;</span><span class="p">,</span> <span class="s2">&quot;Pablo Chill-e&quot;</span><span class="p">,</span> <span class="s2">&quot;Dua Lipa&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">recomendacion</span><span class="p">(</span><span class="n">estilo_input</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">estilos</span><span class="p">)):</span> <span class="c1">#iteramos sobre las posiciones</span>
+        <span class="c1">#Si el estilo_input es igual al elemento i de la lista de estilos</span>
+        <span class="k">if</span> <span class="n">estilo_input</span> <span class="o">==</span> <span class="n">estilos</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">recomend</span> <span class="o">=</span> <span class="n">grupos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">break</span> <span class="c1">#condición de salida</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="n">recomend</span> <span class="o">=</span> <span class="s2">&quot;No tenemos recomendación&quot;</span>
+    <span class="k">return</span> <span class="n">recomend</span>
+
+<span class="n">varios_estilos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rock, pop&quot;</span><span class="p">]</span>
+<span class="n">recomendacion</span><span class="p">(</span><span class="n">varios_estilos</span><span class="p">)</span>          
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;No tenemos recomendación&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Crear una función que permita evaluar hasta tres estilos musicales y entregue una lista con las recomendaciones. Por ejemplo, si le entrego una lista con [rock, rap, pop] me debe retornar [Led Zeppelin, Makiza, Dua Lipa]. Adicionalmente:</p>
+<ul class="simple">
+<li><p>Si le entrego una lista con 1 o 2 estilos musicales debe entregar 1 o 2 recomendaciones respectivamente.</p></li>
+<li><p>Si le entrego una lista del tipo [trap, musica clasica] debe retornar la recomendación para trap [Pablo Chill-e].</p></li>
+<li><p>Si le entrego una lista del tipo [musica clasica] debe retornar un mensaje “no tenemos recomendación para su estilo musical”.</p></li>
+</ul>
+</li>
+</ol>
+<ol class="simple">
+<li><p>“blues”: igual a la pregunta anterior -&gt; lo mismo para cualquier otro estilo que entra sólo como un texto</p></li>
+<li><p>[“blues”]:</p>
+<ul class="simple">
+<li><p>si el largo del input == 1 : porque los input pueden ser de largo 1, 2 o 3</p></li>
+<li><p>iteramos sobre el total de estilos</p></li>
+<li><p>si esl input (estilo) es la posición cero (primer elemento) es igual al valor de los estilos</p></li>
+<li><p>output: guardar el grupo en la posición “i”. -&gt; el largo del output es =1</p></li>
+<li><p>cierre</p></li>
+</ul>
+</li>
+<li><p>[“blues”, “rock”]:</p>
+<ul class="simple">
+<li><p>si el largo del input ==2:</p></li>
+<li><p>crear una lista vacía para guardar las recomendaciones (pueden ser de largo 2, 1)</p></li>
+<li><p>iteramos sobre el total de elementos de estilos</p></li>
+<li><p>Comparamos el primer input con los estilos: “blues” - &gt; “Nina Simone”</p></li>
+<li><p>Si son iguales, guardar la recomendación. En caso contrario no hace nada</p></li>
+<li><p>Repetir el proceso para el segundo elemento</p></li>
+<li><p>Cierre</p></li>
+</ul>
+</li>
+<li><p>[“blues”, “rock”, “pop”]:
+-La lógica es la misma que en el punto anterior.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Definir las variables como listas</span>
+<span class="n">estilos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;blues&quot;</span><span class="p">,</span> <span class="s2">&quot;rock&quot;</span><span class="p">,</span> <span class="s2">&quot;rap&quot;</span><span class="p">,</span> <span class="s2">&quot;trap&quot;</span><span class="p">,</span> <span class="s2">&quot;pop&quot;</span><span class="p">]</span>
+<span class="n">grupos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Nina Simone&quot;</span><span class="p">,</span> <span class="s2">&quot;Led Zeppelin&quot;</span><span class="p">,</span> <span class="s2">&quot;Makiza&quot;</span><span class="p">,</span> <span class="s2">&quot;Pablo Chill-e&quot;</span><span class="p">,</span> <span class="s2">&quot;Dua Lipa&quot;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">fun_recomend</span><span class="p">(</span><span class="n">estilo_in</span><span class="p">):</span>
+    <span class="c1">#Caso 1: entrada es como texto: &quot;blues&quot;</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">estilo_in</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">estilos</span><span class="p">)):</span><span class="c1">#iteramos sobre la posición en el vector de estilos</span>
+            <span class="k">if</span> <span class="n">estilo_in</span> <span class="o">==</span> <span class="n">estilos</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span> 
+                <span class="n">recomend</span> <span class="o">=</span> <span class="n">grupos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span> 
+                <span class="n">recomend</span> <span class="o">=</span> <span class="s2">&quot;No tenemos recomendación&quot;</span>
+                
+    <span class="c1">#Caso 2: Para todo lo demás, trabajamos como lista</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="c1">#Caso 2.1: 1 estilo musical</span>
+        <span class="n">recomend</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">estilo_in</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> 
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">estilos</span><span class="p">)):</span><span class="c1">#iteramos sobre la posición en el vector de estilos      </span>
+                <span class="k">if</span> <span class="n">estilo_in</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">estilos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">:</span> <span class="c1">#Comparamos el primer valor (sólo hay uno) con todos los elementos del vector de estilos hasta que se cumpla</span>
+                    <span class="n">recomend</span> <span class="o">=</span> <span class="n">grupos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1">#Guardamos el grupo</span>
+                    <span class="k">break</span>
+                <span class="k">else</span><span class="p">:</span> 
+                    <span class="n">recomend</span> <span class="o">=</span> <span class="s2">&quot;No tenemos recomendación&quot;</span>
+                    
+        <span class="c1">#Caso 2.2: 2 estilos musicales            </span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">estilo_in</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> 
+            <span class="n">recomend</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">estilos</span><span class="p">)):</span> <span class="c1">#iteramos sobre la posición en el vector de estilos  </span>
+                <span class="k">if</span> <span class="n">estilo_in</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">estilos</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span> <span class="c1">#Evaluamos el primer elemento del input</span>
+                    <span class="n">recomend</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">grupos</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">#Si se cumple, agrega a la recomendación a la lista</span>
+
+                <span class="k">elif</span> <span class="n">estilo_in</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">estilos</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span><span class="c1">#Evaluamos el segundo elemento del input</span>
+                    <span class="n">recomend</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">grupos</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">#Si se cumple, agrega a la recomendación a la lista</span>
+                    
+                <span class="k">else</span><span class="p">:</span> 
+                    <span class="n">recomend</span> <span class="o">=</span> <span class="s2">&quot;No tenemos recomendación&quot;</span>
+                    
+                    
+                
+    <span class="k">return</span> <span class="n">recomend</span>
+                
+<span class="n">fun_recomend</span><span class="p">([</span><span class="s2">&quot;algo&quot;</span><span class="p">,</span> <span class="s2">&quot;alog&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;No tenemos recomendación&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Crear una diccionario a partir de las dos listas donde la llave sea el estilo musical y el valor sea el grupo, ej: {‘rap’:’makiza’…}.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#diccionario: {llave1:valor1, llave2:valor2}...</span>
+<span class="n">musica_dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;blues&#39;</span><span class="p">:[</span><span class="s1">&#39;Nina Simone&#39;</span><span class="p">,</span> <span class="s1">&#39;Miles Davis&#39;</span><span class="p">],</span> <span class="s1">&#39;rock&#39;</span><span class="p">:</span><span class="s1">&#39;Led Zeppelin&#39;</span><span class="p">,</span> <span class="s1">&#39;rap&#39;</span><span class="p">:</span><span class="s1">&#39;Makiza&#39;</span><span class="p">,</span> <span class="s1">&#39;trap&#39;</span><span class="p">:</span><span class="s1">&#39;Pablo Chill-e&#39;</span><span class="p">,</span> <span class="s1">&#39;pop&#39;</span><span class="p">:</span><span class="s1">&#39;Dua Lipa&#39;</span>  <span class="p">}</span>
+<span class="n">musica_dic</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;blues&#39;, [&#39;Nina Simone&#39;, &#39;Miles Davis&#39;]), (&#39;rock&#39;, &#39;Led Zeppelin&#39;), (&#39;rap&#39;, &#39;Makiza&#39;), (&#39;trap&#39;, &#39;Pablo Chill-e&#39;), (&#39;pop&#39;, &#39;Dua Lipa&#39;)])
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Crear una función que entregue una edad como un valor aleatorio entre 15-65 años y educación como otro valor aleatorio entre 0-22, pero tiene que ser menor que la edad.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="c1">#Tiene un set de funciones sobre números aleatorios</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Caso1: una sola persona</span>
+<span class="k">def</span> <span class="nf">fun_edad_educ</span><span class="p">(</span><span class="n">eda_in</span><span class="p">,</span> <span class="n">eda_end</span><span class="p">,</span> <span class="n">edu_in</span><span class="p">,</span> <span class="n">edu_end</span><span class="p">):</span> 
+    <span class="n">edad</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">eda_in</span><span class="p">,</span> <span class="n">eda_end</span><span class="p">)</span>
+    <span class="n">educ</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">edu_in</span><span class="p">,</span> <span class="n">edu_end</span><span class="p">)</span>    
+    
+    <span class="k">if</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="n">educ</span><span class="p">:</span> <span class="c1">#Si la edad es&lt; a la educación, calculamos nuevamente la educación</span>
+        <span class="n">educ</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">edu_in</span><span class="p">,</span> <span class="n">edu_end</span><span class="p">)</span>    
+    
+    <span class="k">return</span> <span class="n">edad</span><span class="p">,</span> <span class="n">educ</span> <span class="c1">#Devuelve las variables locales</span>
+
+<span class="n">edad</span><span class="p">,</span> <span class="n">educ</span> <span class="o">=</span> <span class="n">fun_edad_educ</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1">#Creamos las variables globales</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;edad:&quot;</span><span class="p">,</span> <span class="n">edad</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;educ:&quot;</span><span class="p">,</span> <span class="n">educ</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>edad: 34
+educ: 46
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Caso2: una sola persona</span>
+<span class="k">def</span> <span class="nf">fun_edad_educ</span><span class="p">(</span><span class="n">eda_in</span><span class="p">,</span> <span class="n">eda_end</span><span class="p">,</span> <span class="n">edu_in</span><span class="p">,</span> <span class="n">edu_end</span><span class="p">):</span> 
+    <span class="n">edad</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">eda_in</span><span class="p">,</span> <span class="n">eda_end</span><span class="p">)</span>
+    <span class="n">educ</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">edu_in</span><span class="p">,</span> <span class="n">edu_end</span><span class="p">)</span>    
+    
+    <span class="k">while</span> <span class="n">edad</span><span class="o">&lt;</span><span class="n">educ</span><span class="p">:</span> 
+        <span class="n">edad</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">eda_in</span><span class="p">,</span> <span class="n">eda_end</span><span class="p">)</span>
+        <span class="n">educ</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">edu_in</span><span class="p">,</span> <span class="n">edu_end</span><span class="p">)</span>      
+        
+    <span class="k">return</span> <span class="n">edad</span><span class="p">,</span> <span class="n">educ</span>
+
+<span class="n">edad</span><span class="p">,</span> <span class="n">educ</span> <span class="o">=</span> <span class="n">fun_edad_educ</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1">#Creamos las variables globales</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;edad:&quot;</span><span class="p">,</span> <span class="n">edad</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;educ:&quot;</span><span class="p">,</span> <span class="n">educ</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>edad: 48
+educ: 24
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Caso 3: n personas</span>
+<span class="k">def</span> <span class="nf">fun_edad_educ</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">eda_in</span><span class="p">,</span> <span class="n">eda_end</span><span class="p">,</span> <span class="n">edu_in</span><span class="p">,</span> <span class="n">edu_end</span><span class="p">):</span> 
+    
+    <span class="n">edad_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">educ_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span>  <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="c1">#ACA X </span>
+        <span class="n">edad</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">eda_in</span><span class="p">,</span> <span class="n">eda_end</span><span class="p">)</span>
+        <span class="n">educ</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">edu_in</span><span class="p">,</span> <span class="n">edu_end</span><span class="p">)</span>    
+        <span class="c1">#ACA X</span>
+        <span class="k">if</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="n">educ</span><span class="p">:</span> <span class="c1">#Si la edad es&lt; a la educación, calculamos nuevamente la educación</span>
+            <span class="n">educ</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">edu_in</span><span class="p">,</span> <span class="n">edu_end</span><span class="p">)</span>    
+            <span class="c1">#ACA podría ser</span>
+        <span class="c1">#ACA vamos a anexar a nuestras listas</span>
+        <span class="n">edad_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span>
+        <span class="n">educ_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">educ</span><span class="p">)</span>
+        
+    
+    <span class="k">return</span> <span class="n">edad_list</span><span class="p">,</span> <span class="n">educ_list</span> <span class="c1">#Devuelve las variables locales</span>
+
+<span class="n">edad</span><span class="p">,</span> <span class="n">educ</span> <span class="o">=</span> <span class="n">fun_edad_educ</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1">#Creamos las variables globales</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;edad:&quot;</span><span class="p">,</span> <span class="n">edad</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;educ:&quot;</span><span class="p">,</span> <span class="n">educ</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>edad: [31, 28, 55, 46, 54, 48, 52, 34, 56, 36]
+educ: [11, 35, 24, 10, 30, 28, 48, 13, 35, 13]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Caso4: varias personas</span>
+<span class="k">def</span> <span class="nf">fun_edad_educ</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">eda_in</span><span class="p">,</span> <span class="n">eda_end</span><span class="p">,</span> <span class="n">edu_in</span><span class="p">,</span> <span class="n">edu_end</span><span class="p">):</span> 
+    
+    <span class="n">edad_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">educ_list</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1">#Iterar</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">edad</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">eda_in</span><span class="p">,</span> <span class="n">eda_end</span><span class="p">)</span>
+        <span class="n">educ</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">edu_in</span><span class="p">,</span> <span class="n">edu_end</span><span class="p">)</span>    
+
+        <span class="k">while</span> <span class="n">edad</span><span class="o">&lt;</span><span class="n">educ</span><span class="p">:</span> 
+            <span class="n">edad</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">eda_in</span><span class="p">,</span> <span class="n">eda_end</span><span class="p">)</span>
+            <span class="n">educ</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">edu_in</span><span class="p">,</span> <span class="n">edu_end</span><span class="p">)</span> 
+            
+        <span class="c1">#ACA vamos a anexar a nuestras listas (RECORDAR QUE ESTAMOS DENTRO DEL FOR)</span>
+        <span class="n">edad_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span>
+        <span class="n">educ_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">educ</span><span class="p">)</span>        
+        
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">edad_list</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">educ_list</span><span class="p">)</span>
+
+<span class="n">edad</span><span class="p">,</span> <span class="n">educ</span> <span class="o">=</span> <span class="n">fun_edad_educ</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span> <span class="c1">#Creamos las variables globales</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;edad:&quot;</span><span class="p">,</span> <span class="n">edad</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;educ:&quot;</span><span class="p">,</span> <span class="n">educ</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>edad: [60 17 42 30 50 45 42 31 30 47]
+educ: [12 10 19  7  8 14  0  5 15  6]
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Crear una función que calcule la experiencia como edad-educación</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fun_exp</span><span class="p">(</span><span class="n">edad</span><span class="p">,</span> <span class="n">educ</span><span class="p">):</span> 
+    <span class="k">return</span> <span class="n">edad</span><span class="o">-</span><span class="n">educ</span>
+
+<span class="n">exp</span> <span class="o">=</span> <span class="n">fun_exp</span><span class="p">(</span><span class="n">edad</span><span class="p">,</span> <span class="n">educ</span><span class="p">)</span>
+<span class="n">exp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([48,  7, 23, 23, 42, 31, 42, 26, 15, 41])
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Crear una función que calcule la estimación del ingreso según la ecuación de <code class="docutils literal notranslate"><span class="pre">Mincer</span></code>: <span class="math notranslate nohighlight">\(Ln(Y) = \beta_0 + \beta_1 S + \beta_2 Exp + \beta_3 Exp^2\)</span>
+Donde:</p></li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(S\)</span>: años de educación</p></li>
+<li><p><span class="math notranslate nohighlight">\(Exp\)</span>: experiencia</p></li>
+<li><p><span class="math notranslate nohighlight">\(Exp^2\)</span>: experiencia al cuadrado</p></li>
+</ul>
+<p>Utilice: <span class="math notranslate nohighlight">\(\beta_0=9.7\)</span>, <span class="math notranslate nohighlight">\(\beta_1=0.14\)</span>, <span class="math notranslate nohighlight">\(\beta_2=0.07\)</span>, <span class="math notranslate nohighlight">\(\beta_3=-0.001\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mincer</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">Exp</span><span class="p">):</span> 
+    <span class="n">β0</span><span class="p">,</span> <span class="n">β1</span><span class="p">,</span> <span class="n">β2</span><span class="p">,</span> <span class="n">β3</span> <span class="o">=</span> <span class="mf">9.7</span><span class="p">,</span> <span class="mf">0.14</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.001</span>
+    <span class="n">y_ln</span> <span class="o">=</span> <span class="n">β0</span> <span class="o">+</span> <span class="n">β1</span><span class="o">*</span><span class="n">S</span> <span class="o">+</span> <span class="n">β2</span><span class="o">*</span><span class="n">Exp</span> <span class="o">+</span> <span class="n">β3</span><span class="o">*</span><span class="n">Exp</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">y_ln</span>
+
+<span class="n">ln_y</span> <span class="o">=</span> <span class="n">mincer</span><span class="p">(</span><span class="n">educ</span><span class="p">,</span> <span class="n">exp</span><span class="p">)</span>
+<span class="n">ln_y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([12.436, 11.541, 13.441, 11.761, 11.996, 12.869, 10.876, 11.544,
+       12.625, 11.729])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9636e62d90&gt;]
+</pre></div>
+</div>
+<img alt="_images/Clase7__29_1.png" src="_images/Clase7__29_1.png" />
+</div>
+</div>
+<div class="section" id="actividad">
+<h2>Actividad<a class="headerlink" href="#actividad" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="instrucciones">
+<h2><strong>Instrucciones:</strong><a class="headerlink" href="#instrucciones" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Cada pregunta la debe responder en una celda diferente (en total 4 celdas de código).</p></li>
+<li><p>Antes de cada celda de código debe ir un <code class="docutils literal notranslate"><span class="pre">markdown</span></code> que muestre la pregunta que está respondiendo.</p></li>
+<li><p>En la celda de código debe agregar un breve comentario de qué está haciendo.</p></li>
+<li><p>Mandar el archivo <strong>PDF</strong> al correo <a class="reference external" href="mailto:felix&#46;ordonez&#37;&#52;&#48;usach&#46;cl">felix<span>&#46;</span>ordonez<span>&#64;</span>usach<span>&#46;</span>cl</a> con el asunto “Actividad 1”.</p></li>
+<li><p>Fecha de entrega: antes de la clase del 09/11.</p></li>
+<li><p><em>En caso que no respete las instrucciones se le descontará puntaje de la nota</em></p></li>
+</ul>
+<p><strong>Nombre:</strong></p>
+<ol class="simple">
+<li><p>Crear una función que entregue una edad como un valor aleatorio entre 15-65 años, educación como otro valor aleatorio entre 0-22 (tiene que ser menor que la edad) y sexo igual a una variable dicotómica (0 o 1) aleatoria.</p></li>
+<li><p>Crear una función que calcule la experiencia como edad-educación</p></li>
+<li><p>Crear una función que calcule la estimación del ingreso según la ecuación de Mincer: <span class="math notranslate nohighlight">\(Ln(y)=\beta_0+\beta_1S+\beta_2Exp+\beta_3Exp^2 + \beta_4 Sexo + \beta_5(Sexo*S)\)</span></p></li>
+</ol>
+<p>Donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(S\)</span>: años de educación</p></li>
+<li><p><span class="math notranslate nohighlight">\(Exp\)</span>: experiencia</p></li>
+<li><p><span class="math notranslate nohighlight">\(Exp^2\)</span>: experiencia al cuadrado</p></li>
+</ul>
+<p>Utilice: <span class="math notranslate nohighlight">\(\beta_0=9.7\)</span>, <span class="math notranslate nohighlight">\(\beta_1=0.15\)</span>, <span class="math notranslate nohighlight">\(\beta_2=0.08\)</span>, <span class="math notranslate nohighlight">\(\beta_3=-0.0011\)</span>, <span class="math notranslate nohighlight">\(\beta_4=-0.15\)</span>, <span class="math notranslate nohighlight">\(\beta_5=-0.0136\)</span></p>
+<ol class="simple">
+<li><p>Relice el proceso en una iteración para N = 100 personas, guarde los resultados mediante un diccionario que la llave sea la persona (<span class="math notranslate nohighlight">\(n=1,\cdots,N\)</span>) y el valor sea una lista del tipo: [S, Exp, Exp2, Sexo, Sexo*S, Ln(y)].
+<em>Muestre los resultados de su diccionario</em>.</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Félix Ordóñez<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

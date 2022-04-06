@@ -1,0 +1,77 @@
+Traceback (most recent call last):
+  File "/home/felix/miniconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/felix/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/felix/miniconda3/lib/python3.9/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/felix/miniconda3/lib/python3.9/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/felix/miniconda3/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/home/felix/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/home/felix/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/home/felix/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# llamar funciones dentro de la clase
+class Empresa:
+
+    def __init__(self, ingresos, costos, salarios, personas):
+        self.ingresos = float(ingresos) 
+        self.costos = float(costos)
+        self.salarios = float(salarios)
+        self.personas = float(personas)
+
+    def myfunc(self):
+        ingresos = str(self.ingresos)
+        costos = str(self.costos)
+        print("La Empresa tiene ingresos y costos por " + ingresos + " y " + costos +  " respectivamente.")
+
+    def utilidades(self): 
+        ingresos = self.ingresos
+        costos = self.costos
+        return ingresos-costos
+    
+    def salario_pp(self): 
+        salarios = self.salarios
+        personas = self.personas
+        return salarios/personas
+    
+    def utilidades_pp(self):
+        utilidades = self.utilidades()
+        personas = self.personas
+        return utilidades/personas
+
+        
+ingresos = input('¿Cuál es el ingreso de la empresa?')        
+costos = input('¿Cuáles son los costos de la empresa?')          
+salarios = input('¿Cuál es el total de salarios?')
+personas = input('¿Cuántas personas trabajan en la empresa?')
+
+        
+emp1 = Empresa(ingresos, costos, salarios, personas) #Probar quitando un argumento
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+[0;32m<ipython-input-5-52e05aea364c>[0m in [0;36m<module>[0;34m[0m
+[1;32m     29[0m [0;34m[0m[0m
+[1;32m     30[0m [0;34m[0m[0m
+[0;32m---> 31[0;31m [0mingresos[0m [0;34m=[0m [0minput[0m[0;34m([0m[0;34m'¿Cuál es el ingreso de la empresa?'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     32[0m [0mcostos[0m [0;34m=[0m [0minput[0m[0;34m([0m[0;34m'¿Cuáles son los costos de la empresa?'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     33[0m [0msalarios[0m [0;34m=[0m [0minput[0m[0;34m([0m[0;34m'¿Cuál es el total de salarios?'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py[0m in [0;36mraw_input[0;34m(self, prompt)[0m
+[1;32m    843[0m         """
+[1;32m    844[0m         [0;32mif[0m [0;32mnot[0m [0mself[0m[0;34m.[0m[0m_allow_stdin[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 845[0;31m             raise StdinNotImplementedError(
+[0m[1;32m    846[0m                 [0;34m"raw_input was called, but this frontend does not support input requests."[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    847[0m             )
+
+[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
+

@@ -1,0 +1,2192 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 13: introducción a los datos &#8212; Introducción a python</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Clase 14: continuación con los datos" href="Clase_13_14_b.html" />
+    <link rel="prev" title="Clase 11-12: Introducción a los gráficos" href="Clase11_12.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_fae.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introducción a python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Python para Ingeniería Comercial
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="About_python.html">
+   Clase 2: About Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clase3_4.html">
+   Clase 3-4: lo básico
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase5_6.html">
+   Clase 5-6: lo básico (continuación)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase5_6.html#actividad">
+   Actividad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase7_8.html">
+   Clase 7-8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase9_10.html">
+   Clase 9-10: Funciones, diccionarios y condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase9_10.html#actividad-1">
+   Actividad 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase11_12.html">
+   Clase 11-12: Introducción a los gráficos
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Clase 13: introducción a los datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase_13_14_b.html">
+   Clase 14: continuación con los datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase15.html">
+   Clase 15: gráficos
+   <em>
+    pro
+   </em>
+   con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Plotly
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase15.html#actividad">
+   Actividad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase17.html">
+   Clase 17: Introducción al análisis de texto (text mining)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase18.html">
+   Clase 18: Introducción al uso de clases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase19.html">
+   Clase 19: Scipy y computación numérica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase20.html">
+   Clase 20: Regresiones
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Clase_13_14_a.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FClase_13_14_a.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Clase_13_14_a.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion">
+   1. Introducción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accediendo-a-un-dataframe">
+   2. Accediendo a un DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manipulando-el-dataframe">
+   3. Manipulando el DataFrame
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="clase-13-introduccion-a-los-datos">
+<h1>Clase 13: introducción a los datos<a class="headerlink" href="#clase-13-introduccion-a-los-datos" title="Permalink to this headline">¶</a></h1>
+<p>En esta clase revisaremos como importar datos, diferentes formatos que podemos utilizar y algunos problemas típicos a la hora del manejo de información.</p>
+<p>La librería que vamos a ocupar para el manejo de datos es <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+<ul class="simple">
+<li><p>La documentación de <code class="docutils literal notranslate"><span class="pre">pandas</span></code> la pueden encontrar en el link 1: <a class="reference external" href="https://pandas.pydata.org/docs/">https://pandas.pydata.org/docs/</a></p></li>
+<li><p>La documentación de read_csv la encuentran en el link 2: <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html</a></p></li>
+</ul>
+<p>Conceptos clave:</p>
+<ul class="simple">
+<li><p>Pandas</p></li>
+<li><p>DataFrame</p></li>
+<li><p>Delimitador de miles y decimales</p></li>
+<li><p>Tipo de variable</p></li>
+<li><p>Index</p></li>
+</ul>
+<div class="section" id="introduccion">
+<h2>1. Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para importar una base de datos en formato <code class="docutils literal notranslate"><span class="pre">csv</span></code>vamos a utilizar <code class="docutils literal notranslate"><span class="pre">pd.read_csv(ruta/archivo)</span></code></p>
+<p>En el caso de Windows llamamos la ruta con doble “<span class="math notranslate nohighlight">\(\backslash \backslash\)</span>”, por ejemplo: “C:<span class="math notranslate nohighlight">\(\backslash \backslash\)</span>Users<span class="math notranslate nohighlight">\(\backslash \backslash\)</span>…”</p>
+<p>Vamos a utilizar una base csv del banco central con información de empleo. Lo primero que llama la atención es que la base importa mal debido al delimitador, la base viene con “;” y por default viene “,”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/home/felix/Dropbox/Computational_Economics/Intro_python/2021_S2/Clases/clase13_base1.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Periodo;1.Total;2.Empleadores;3.Cuenta Propia;4.Asalariados;5.Personal de servicio;6.Familiar no remunerado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mar.2010;7.156</th>
+      <th>21;318</th>
+      <th>32;1.289</th>
+      <th>68;5.141</th>
+      <th>76;325</th>
+      <th>38;81</th>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>abr.2010;7.198</th>
+      <th>78;324</th>
+      <th>94;1.332</th>
+      <th>33;5.114</th>
+      <th>80;331</th>
+      <th>31;95</th>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>may.2010;7.181</th>
+      <th>90;326</th>
+      <th>95;1.346</th>
+      <th>54;5.080</th>
+      <th>65;328</th>
+      <th>56;99</th>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>jun.2010;7.221</th>
+      <th>58;328</th>
+      <th>03;1.384</th>
+      <th>28;5.074</th>
+      <th>00;327</th>
+      <th>60;107</th>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>jul.2010;7.256</th>
+      <th>52;333</th>
+      <th>82;1.390</th>
+      <th>03;5.081</th>
+      <th>93;339</th>
+      <th>44;111</th>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>nov.2020;7.916</th>
+      <th>72;248</th>
+      <th>89;1.568</th>
+      <th>05;5.833</th>
+      <th>68;188</th>
+      <th>43;77</th>
+      <td>66</td>
+    </tr>
+    <tr>
+      <th>dic.2020;8.026</th>
+      <th>22;234</th>
+      <th>57;1.588</th>
+      <th>14;5.927</th>
+      <th>28;194</th>
+      <th>91;81</th>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>ene.2021;8.121</th>
+      <th>42;237</th>
+      <th>25;1.610</th>
+      <th>63;6.000</th>
+      <th>74;197</th>
+      <th>43;75</th>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>feb.2021;8.167</th>
+      <th>62;245</th>
+      <th>25;1.634</th>
+      <th>08;6.018</th>
+      <th>35;198</th>
+      <th>73;71</th>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>mar.2021;8.148</th>
+      <th>21;246</th>
+      <th>92;1.646</th>
+      <th>38;5.978</th>
+      <th>29;204</th>
+      <th>48;72</th>
+      <td>14</td>
+    </tr>
+  </tbody>
+</table>
+<p>133 rows × 1 columns</p>
+</div></div></div>
+</div>
+<p>Para cambiar el delimitador vamos a usar <code class="docutils literal notranslate"><span class="pre">delimiter</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/home/felix/Dropbox/Computational_Economics/Intro_python/2021_S2/Clases/clase13_base1.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Periodo</th>
+      <th>1.Total</th>
+      <th>2.Empleadores</th>
+      <th>3.Cuenta Propia</th>
+      <th>4.Asalariados</th>
+      <th>5.Personal de servicio</th>
+      <th>6.Familiar no remunerado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>mar.2010</td>
+      <td>7.156,21</td>
+      <td>318,32</td>
+      <td>1.289,68</td>
+      <td>5.141,76</td>
+      <td>325,38</td>
+      <td>81,08</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>abr.2010</td>
+      <td>7.198,78</td>
+      <td>324,94</td>
+      <td>1.332,33</td>
+      <td>5.114,80</td>
+      <td>331,31</td>
+      <td>95,39</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>may.2010</td>
+      <td>7.181,90</td>
+      <td>326,95</td>
+      <td>1.346,54</td>
+      <td>5.080,65</td>
+      <td>328,56</td>
+      <td>99,21</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>jun.2010</td>
+      <td>7.221,58</td>
+      <td>328,03</td>
+      <td>1.384,28</td>
+      <td>5.074,00</td>
+      <td>327,60</td>
+      <td>107,68</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>jul.2010</td>
+      <td>7.256,52</td>
+      <td>333,82</td>
+      <td>1.390,03</td>
+      <td>5.081,93</td>
+      <td>339,44</td>
+      <td>111,29</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>nov.2020</td>
+      <td>7.916,72</td>
+      <td>248,89</td>
+      <td>1.568,05</td>
+      <td>5.833,68</td>
+      <td>188,43</td>
+      <td>77,66</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>dic.2020</td>
+      <td>8.026,22</td>
+      <td>234,57</td>
+      <td>1.588,14</td>
+      <td>5.927,28</td>
+      <td>194,91</td>
+      <td>81,32</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>ene.2021</td>
+      <td>8.121,42</td>
+      <td>237,25</td>
+      <td>1.610,63</td>
+      <td>6.000,74</td>
+      <td>197,43</td>
+      <td>75,36</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>feb.2021</td>
+      <td>8.167,62</td>
+      <td>245,25</td>
+      <td>1.634,08</td>
+      <td>6.018,35</td>
+      <td>198,73</td>
+      <td>71,20</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>mar.2021</td>
+      <td>8.148,21</td>
+      <td>246,92</td>
+      <td>1.646,38</td>
+      <td>5.978,29</td>
+      <td>204,48</td>
+      <td>72,14</td>
+    </tr>
+  </tbody>
+</table>
+<p>133 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>Si el archivo se encuentra en la misma carpeta que el Jupyter se puede llamar sólo con el nombre del csv.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;clase13_base1.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Periodo</th>
+      <th>1.Total</th>
+      <th>2.Empleadores</th>
+      <th>3.Cuenta Propia</th>
+      <th>4.Asalariados</th>
+      <th>5.Personal de servicio</th>
+      <th>6.Familiar no remunerado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>mar.2010</td>
+      <td>7.156,21</td>
+      <td>318,32</td>
+      <td>1.289,68</td>
+      <td>5.141,76</td>
+      <td>325,38</td>
+      <td>81,08</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>abr.2010</td>
+      <td>7.198,78</td>
+      <td>324,94</td>
+      <td>1.332,33</td>
+      <td>5.114,80</td>
+      <td>331,31</td>
+      <td>95,39</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>may.2010</td>
+      <td>7.181,90</td>
+      <td>326,95</td>
+      <td>1.346,54</td>
+      <td>5.080,65</td>
+      <td>328,56</td>
+      <td>99,21</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>jun.2010</td>
+      <td>7.221,58</td>
+      <td>328,03</td>
+      <td>1.384,28</td>
+      <td>5.074,00</td>
+      <td>327,60</td>
+      <td>107,68</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>jul.2010</td>
+      <td>7.256,52</td>
+      <td>333,82</td>
+      <td>1.390,03</td>
+      <td>5.081,93</td>
+      <td>339,44</td>
+      <td>111,29</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>nov.2020</td>
+      <td>7.916,72</td>
+      <td>248,89</td>
+      <td>1.568,05</td>
+      <td>5.833,68</td>
+      <td>188,43</td>
+      <td>77,66</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>dic.2020</td>
+      <td>8.026,22</td>
+      <td>234,57</td>
+      <td>1.588,14</td>
+      <td>5.927,28</td>
+      <td>194,91</td>
+      <td>81,32</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>ene.2021</td>
+      <td>8.121,42</td>
+      <td>237,25</td>
+      <td>1.610,63</td>
+      <td>6.000,74</td>
+      <td>197,43</td>
+      <td>75,36</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>feb.2021</td>
+      <td>8.167,62</td>
+      <td>245,25</td>
+      <td>1.634,08</td>
+      <td>6.018,35</td>
+      <td>198,73</td>
+      <td>71,20</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>mar.2021</td>
+      <td>8.148,21</td>
+      <td>246,92</td>
+      <td>1.646,38</td>
+      <td>5.978,29</td>
+      <td>204,48</td>
+      <td>72,14</td>
+    </tr>
+  </tbody>
+</table>
+<p>133 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>El resultado es una estructura del tipo <code class="docutils literal notranslate"><span class="pre">fila-columna</span></code> que podemos guardar en una variable que llamaremos <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<p>Un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> corresponde a una estructura de datos del tipo fila-columna (similar a una hoja de excel) en el que podemos guardar información de diferentes <code class="docutils literal notranslate"><span class="pre">types</span></code>. Los DataFrame tienen un índice en la primera columna que parte en 0.</p>
+<p>Nuestro DataFrame tiene 133 filas y 7 columnas, donde el índice va de 0 a 132.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;clase13_base1.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="accediendo-a-un-dataframe">
+<h2>2. Accediendo a un DataFrame<a class="headerlink" href="#accediendo-a-un-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>La primera mirada a nustros datos se la vamos a dar con la función <code class="docutils literal notranslate"><span class="pre">head()</span></code>, esta nos muestra un resumen de la tabla. Para esto ponemos “nombre del DataFrame”+ “.” + “head()”.</p>
+<p>Esto nos va a mostrar las columnas de la base y las primeras 5 filas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Periodo</th>
+      <th>1.Total</th>
+      <th>2.Empleadores</th>
+      <th>3.Cuenta Propia</th>
+      <th>4.Asalariados</th>
+      <th>5.Personal de servicio</th>
+      <th>6.Familiar no remunerado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>mar.2010</td>
+      <td>7.156,21</td>
+      <td>318,32</td>
+      <td>1.289,68</td>
+      <td>5.141,76</td>
+      <td>325,38</td>
+      <td>81,08</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>abr.2010</td>
+      <td>7.198,78</td>
+      <td>324,94</td>
+      <td>1.332,33</td>
+      <td>5.114,80</td>
+      <td>331,31</td>
+      <td>95,39</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>may.2010</td>
+      <td>7.181,90</td>
+      <td>326,95</td>
+      <td>1.346,54</td>
+      <td>5.080,65</td>
+      <td>328,56</td>
+      <td>99,21</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>jun.2010</td>
+      <td>7.221,58</td>
+      <td>328,03</td>
+      <td>1.384,28</td>
+      <td>5.074,00</td>
+      <td>327,60</td>
+      <td>107,68</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>jul.2010</td>
+      <td>7.256,52</td>
+      <td>333,82</td>
+      <td>1.390,03</td>
+      <td>5.081,93</td>
+      <td>339,44</td>
+      <td>111,29</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Podemos decir específicamente cuántas filas queremos ver colocando el número dentro del paréntesis de head(10).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Periodo</th>
+      <th>1.Total</th>
+      <th>2.Empleadores</th>
+      <th>3.Cuenta Propia</th>
+      <th>4.Asalariados</th>
+      <th>5.Personal de servicio</th>
+      <th>6.Familiar no remunerado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>mar.2010</td>
+      <td>7.156,21</td>
+      <td>318,32</td>
+      <td>1.289,68</td>
+      <td>5.141,76</td>
+      <td>325,38</td>
+      <td>81,08</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>abr.2010</td>
+      <td>7.198,78</td>
+      <td>324,94</td>
+      <td>1.332,33</td>
+      <td>5.114,80</td>
+      <td>331,31</td>
+      <td>95,39</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>may.2010</td>
+      <td>7.181,90</td>
+      <td>326,95</td>
+      <td>1.346,54</td>
+      <td>5.080,65</td>
+      <td>328,56</td>
+      <td>99,21</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>jun.2010</td>
+      <td>7.221,58</td>
+      <td>328,03</td>
+      <td>1.384,28</td>
+      <td>5.074,00</td>
+      <td>327,60</td>
+      <td>107,68</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>jul.2010</td>
+      <td>7.256,52</td>
+      <td>333,82</td>
+      <td>1.390,03</td>
+      <td>5.081,93</td>
+      <td>339,44</td>
+      <td>111,29</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>ago.2010</td>
+      <td>7.289,22</td>
+      <td>333,77</td>
+      <td>1.430,97</td>
+      <td>5.080,20</td>
+      <td>339,49</td>
+      <td>104,79</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>sep.2010</td>
+      <td>7.389,47</td>
+      <td>339,06</td>
+      <td>1.477,55</td>
+      <td>5.130,21</td>
+      <td>338,02</td>
+      <td>104,63</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>oct.2010</td>
+      <td>7.414,43</td>
+      <td>343,68</td>
+      <td>1.485,61</td>
+      <td>5.150,80</td>
+      <td>331,05</td>
+      <td>103,29</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>nov.2010</td>
+      <td>7.503,09</td>
+      <td>347,12</td>
+      <td>1.486,07</td>
+      <td>5.216,86</td>
+      <td>341,96</td>
+      <td>111,08</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>dic.2010</td>
+      <td>7.572,32</td>
+      <td>340,32</td>
+      <td>1.486,32</td>
+      <td>5.294,66</td>
+      <td>342,20</td>
+      <td>108,82</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">dtypes</span></code> nos va a describir la información dentro de la base de datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Periodo                     object
+1.Total                     object
+2.Empleadores               object
+3.Cuenta Propia             object
+4.Asalariados               object
+5.Personal de servicio      object
+6.Familiar no remunerado    object
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>El type <code class="docutils literal notranslate"><span class="pre">object</span></code> corresponde a un dato del tipo texto, como una palabra. En este caso es poco intuitivo frente al tipo de datos que estamos usando. Deberíamos esperar que la base fuese en su mayoría del tipo numérico (Float, Int).</p>
+<p>Para esto podemos especificar dos cosas:</p>
+<ul class="simple">
+<li><p>Decimal: usamos el argumento <code class="docutils literal notranslate"><span class="pre">decimal=&quot;separador&quot;</span></code>.</p></li>
+<li><p>Separador de miles: usamos el argumento <code class="docutils literal notranslate"><span class="pre">thousands=&quot;separador&quot;</span></code></p></li>
+</ul>
+<p>Esto es relevante porque según la configuración del computador e idioma las bases pueden venir con separadores “.” o “,”. En nuestro caso la base viene con separador de decimal “,” y con separador de miles “.”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1. Guarda el DataFrame, muestra las columnas y la cantidad de filas y columnas</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#IMportar datos</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;clase13_base1.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">thousands</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="c1">#Muestra los tipos</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+<span class="c1">#Muestra columnas</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="c1">#Mostrar N fila- M columna</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Periodo                      object
+1.Total                     float64
+2.Empleadores               float64
+3.Cuenta Propia             float64
+4.Asalariados               float64
+5.Personal de servicio      float64
+6.Familiar no remunerado    float64
+dtype: object
+Index([&#39;Periodo&#39;, &#39;1.Total&#39;, &#39;2.Empleadores&#39;, &#39;3.Cuenta Propia&#39;,
+       &#39;4.Asalariados&#39;, &#39;5.Personal de servicio&#39;, &#39;6.Familiar no remunerado&#39;],
+      dtype=&#39;object&#39;)
+(133, 7)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para ver las columnas del DataFrame usamos <code class="docutils literal notranslate"><span class="pre">columns</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Periodo&#39;, &#39;1.Total&#39;, &#39;2.Empleadores&#39;, &#39;3.Cuenta Propia&#39;,
+       &#39;4.Asalariados&#39;, &#39;5.Personal de servicio&#39;, &#39;6.Familiar no remunerado&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Las dimensiones fila-columna las podemos ver mediante <code class="docutils literal notranslate"><span class="pre">shape</span></code>. Esta viene en formato tupla (fila,columna)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(133, 7)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para ver el final de la tabla podemos usar <code class="docutils literal notranslate"><span class="pre">tail()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Periodo</th>
+      <th>1.Total</th>
+      <th>2.Empleadores</th>
+      <th>3.Cuenta Propia</th>
+      <th>4.Asalariados</th>
+      <th>5.Personal de servicio</th>
+      <th>6.Familiar no remunerado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>128</th>
+      <td>nov.2020</td>
+      <td>7916.72</td>
+      <td>248.89</td>
+      <td>1568.05</td>
+      <td>5833.68</td>
+      <td>188.43</td>
+      <td>77.66</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>dic.2020</td>
+      <td>8026.22</td>
+      <td>234.57</td>
+      <td>1588.14</td>
+      <td>5927.28</td>
+      <td>194.91</td>
+      <td>81.32</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>ene.2021</td>
+      <td>8121.42</td>
+      <td>237.25</td>
+      <td>1610.63</td>
+      <td>6000.74</td>
+      <td>197.43</td>
+      <td>75.36</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>feb.2021</td>
+      <td>8167.62</td>
+      <td>245.25</td>
+      <td>1634.08</td>
+      <td>6018.35</td>
+      <td>198.73</td>
+      <td>71.20</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>mar.2021</td>
+      <td>8148.21</td>
+      <td>246.92</td>
+      <td>1646.38</td>
+      <td>5978.29</td>
+      <td>204.48</td>
+      <td>72.14</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Para revisar una columna en específico podemos usar diferentes mecanismos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Caso 1</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Periodo&#39;</span><span class="p">]</span>
+<span class="c1">#Caso 2</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Periodo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      mar.2010
+1      abr.2010
+2      may.2010
+3      jun.2010
+4      jul.2010
+         ...   
+128    nov.2020
+129    dic.2020
+130    ene.2021
+131    feb.2021
+132    mar.2021
+Name: Periodo, Length: 133, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>¿Qué pasa cuando el nombre de nuestra columna viene con espacios? ¿Podemos usar el caso 2?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Funciona</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;3.Cuenta Propia&#39;</span><span class="p">]</span>
+<span class="c1">#No Funciona</span>
+<span class="n">df</span><span class="o">.</span><span class="s1">&#39;3.Cuenta Propia&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-15-3e2cc8594c50&gt;&quot;</span><span class="gt">, line </span><span class="mi">4</span>
+    <span class="n">df</span><span class="o">.</span><span class="s1">&#39;3.Cuenta Propia&#39;</span>
+       <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>Por esta razón es fundamental que los nombres sean simples, en caso que tengan más de una palabra separar con “_”.</p>
+</div>
+<div class="section" id="manipulando-el-dataframe">
+<h2>3. Manipulando el DataFrame<a class="headerlink" href="#manipulando-el-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>Lo primero que haremos es modificar el nombre de las variables. Para esto podemos usar el la función <code class="docutils literal notranslate"><span class="pre">rename()</span></code> y un <code class="docutils literal notranslate"><span class="pre">diccionario</span></code> con {‘nombre_antiguo’:’nombre_nuevo’}.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;1.Total&#39;</span><span class="p">:</span> <span class="s1">&#39;TOT&#39;</span><span class="p">,</span> <span class="s1">&#39;2.Empleadores&#39;</span><span class="p">:</span><span class="s1">&#39;EMP&#39;</span><span class="p">,</span> <span class="s1">&#39;3.Cuenta Propia&#39;</span><span class="p">:</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span> <span class="s1">&#39;4.Asalariados&#39;</span><span class="p">:</span><span class="s1">&#39;ASA&#39;</span><span class="p">,</span> <span class="s1">&#39;5.Personal de servicio&#39;</span><span class="p">:</span><span class="s1">&#39;PdS&#39;</span><span class="p">,</span> <span class="s1">&#39;6.Familiar no remunerado&#39;</span><span class="p">:</span><span class="s1">&#39;FnR&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Periodo</th>
+      <th>TOT</th>
+      <th>EMP</th>
+      <th>CP</th>
+      <th>ASA</th>
+      <th>PdS</th>
+      <th>FnR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>mar.2010</td>
+      <td>7156.21</td>
+      <td>318.32</td>
+      <td>1289.68</td>
+      <td>5141.76</td>
+      <td>325.38</td>
+      <td>81.08</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>abr.2010</td>
+      <td>7198.78</td>
+      <td>324.94</td>
+      <td>1332.33</td>
+      <td>5114.80</td>
+      <td>331.31</td>
+      <td>95.39</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>may.2010</td>
+      <td>7181.90</td>
+      <td>326.95</td>
+      <td>1346.54</td>
+      <td>5080.65</td>
+      <td>328.56</td>
+      <td>99.21</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>jun.2010</td>
+      <td>7221.58</td>
+      <td>328.03</td>
+      <td>1384.28</td>
+      <td>5074.00</td>
+      <td>327.60</td>
+      <td>107.68</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>jul.2010</td>
+      <td>7256.52</td>
+      <td>333.82</td>
+      <td>1390.03</td>
+      <td>5081.93</td>
+      <td>339.44</td>
+      <td>111.29</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>nov.2020</td>
+      <td>7916.72</td>
+      <td>248.89</td>
+      <td>1568.05</td>
+      <td>5833.68</td>
+      <td>188.43</td>
+      <td>77.66</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>dic.2020</td>
+      <td>8026.22</td>
+      <td>234.57</td>
+      <td>1588.14</td>
+      <td>5927.28</td>
+      <td>194.91</td>
+      <td>81.32</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>ene.2021</td>
+      <td>8121.42</td>
+      <td>237.25</td>
+      <td>1610.63</td>
+      <td>6000.74</td>
+      <td>197.43</td>
+      <td>75.36</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>feb.2021</td>
+      <td>8167.62</td>
+      <td>245.25</td>
+      <td>1634.08</td>
+      <td>6018.35</td>
+      <td>198.73</td>
+      <td>71.20</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>mar.2021</td>
+      <td>8148.21</td>
+      <td>246.92</td>
+      <td>1646.38</td>
+      <td>5978.29</td>
+      <td>204.48</td>
+      <td>72.14</td>
+    </tr>
+  </tbody>
+</table>
+<p>133 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>Si hacemos sólo <code class="docutils literal notranslate"><span class="pre">df.rename()</span></code> no se modifica el DataFrame, entonces tenemos dos opciones: 1) creamos uno nuevo o 2) modificamos el que ya existe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1. Creamos lun DF nuevo </span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;1.Total&#39;</span><span class="p">:</span> <span class="s1">&#39;TOT&#39;</span><span class="p">,</span> <span class="s1">&#39;2.Empleadores&#39;</span><span class="p">:</span><span class="s1">&#39;EMP&#39;</span><span class="p">,</span> <span class="s1">&#39;3.Cuenta Propia&#39;</span><span class="p">:</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span> <span class="s1">&#39;4.Asalariados&#39;</span><span class="p">:</span><span class="s1">&#39;ASA&#39;</span><span class="p">,</span> <span class="s1">&#39;5.Personal de servicio&#39;</span><span class="p">:</span><span class="s1">&#39;PdS&#39;</span><span class="p">,</span> <span class="s1">&#39;6.Familiar no remunerado&#39;</span><span class="p">:</span><span class="s1">&#39;FnR&#39;</span><span class="p">})</span>
+
+<span class="c1">#2. Modificamos el que existe</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;1.Total&#39;</span><span class="p">:</span> <span class="s1">&#39;TOT&#39;</span><span class="p">,</span> <span class="s1">&#39;2.Empleadores&#39;</span><span class="p">:</span><span class="s1">&#39;EMP&#39;</span><span class="p">,</span> <span class="s1">&#39;3.Cuenta Propia&#39;</span><span class="p">:</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span> <span class="s1">&#39;4.Asalariados&#39;</span><span class="p">:</span><span class="s1">&#39;ASA&#39;</span><span class="p">,</span> <span class="s1">&#39;5.Personal de servicio&#39;</span><span class="p">:</span><span class="s1">&#39;PdS&#39;</span><span class="p">,</span> <span class="s1">&#39;6.Familiar no remunerado&#39;</span><span class="p">:</span><span class="s1">&#39;FnR&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Periodo</th>
+      <th>TOT</th>
+      <th>EMP</th>
+      <th>CP</th>
+      <th>ASA</th>
+      <th>PdS</th>
+      <th>FnR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>mar.2010</td>
+      <td>7156.21</td>
+      <td>318.32</td>
+      <td>1289.68</td>
+      <td>5141.76</td>
+      <td>325.38</td>
+      <td>81.08</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>abr.2010</td>
+      <td>7198.78</td>
+      <td>324.94</td>
+      <td>1332.33</td>
+      <td>5114.80</td>
+      <td>331.31</td>
+      <td>95.39</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>may.2010</td>
+      <td>7181.90</td>
+      <td>326.95</td>
+      <td>1346.54</td>
+      <td>5080.65</td>
+      <td>328.56</td>
+      <td>99.21</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>jun.2010</td>
+      <td>7221.58</td>
+      <td>328.03</td>
+      <td>1384.28</td>
+      <td>5074.00</td>
+      <td>327.60</td>
+      <td>107.68</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>jul.2010</td>
+      <td>7256.52</td>
+      <td>333.82</td>
+      <td>1390.03</td>
+      <td>5081.93</td>
+      <td>339.44</td>
+      <td>111.29</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Una mirada inicial a una variable podemos darla con la función <code class="docutils literal notranslate"><span class="pre">describe()</span></code>. Esta función nos entrega una resumen estadístico de la variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1. Llamamos una variable df.variable</span>
+<span class="n">df</span><span class="o">.</span><span class="n">TOT</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+
+<span class="c1">#2. Llamamos df[&#39;variable&#39;]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;TOT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count     133.000000
+mean     8187.411504
+std       504.204366
+min      7073.190000
+25%      7844.780000
+50%      8202.890000
+75%      8535.210000
+max      9118.180000
+Name: TOT, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos sacar una estadística en particular</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;min:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">TOT</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;max:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">TOT</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mean:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">TOT</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;std:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">TOT</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;count:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">TOT</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>min: 7073.19
+max: 9118.18
+mean: 8187.411503759398
+std: 504.20436565714255
+count: 133
+</pre></div>
+</div>
+</div>
+</div>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">Periodo</span></code> sigue siendo del tipo Objeto (texto), podemos crear una variable del tipo fecha. Para esto vamos a hacer dos cosas: 1) crear una variable en formato fecha y 2) agregar esta variable al DataFrame.</p>
+<ul class="simple">
+<li><p>Para crear una variable del tipo fecha podemos usar la función <code class="docutils literal notranslate"><span class="pre">date_range(fecha_inicio,</span> <span class="pre">periodos,</span> <span class="pre">frecuencia)</span></code>. En el siguiente link (link 3) encuentran detalle de como variables del tipo fecha en un DataFrame: <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html</a>.</p></li>
+<li><p>Para anexar una variable al DataFrame colocamos <code class="docutils literal notranslate"><span class="pre">df['nombre_variable']</span> <span class="pre">=</span> <span class="pre">variable</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Creamos una variable del tipo fecha con la función</span>
+<span class="n">Date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;2010-03-01&quot;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">133</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;M&quot;</span><span class="p">)</span>
+
+<span class="c1">#Anexamos la variable nueva</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Date</span>
+
+<span class="c1">#Vemos el resultado</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Periodo            object
+TOT               float64
+EMP               float64
+CP                float64
+ASA               float64
+PdS               float64
+FnR               float64
+Date       datetime64[ns]
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos a guardar los meses y años por separados en el DataFrame. Para esto utilizamos <code class="docutils literal notranslate"><span class="pre">DatetimeIndex</span></code> (abreviamos dt) que nos permite extraer el segundos/dia/mes/año de una variable del tipo <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, por ejemplo usando <code class="docutils literal notranslate"><span class="pre">month</span></code> y <code class="docutils literal notranslate"><span class="pre">year</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Guardamos el mes en una variable </span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;mes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
+
+<span class="c1">#Guardamos el año en una variable</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+
+<span class="c1">#Vemos el resultado</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Periodo            object
+TOT               float64
+EMP               float64
+CP                float64
+ASA               float64
+PdS               float64
+FnR               float64
+Date       datetime64[ns]
+mes                 int64
+year                int64
+dtype: object
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Periodo</th>
+      <th>TOT</th>
+      <th>EMP</th>
+      <th>CP</th>
+      <th>ASA</th>
+      <th>PdS</th>
+      <th>FnR</th>
+      <th>Date</th>
+      <th>mes</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>mar.2010</td>
+      <td>7156.21</td>
+      <td>318.32</td>
+      <td>1289.68</td>
+      <td>5141.76</td>
+      <td>325.38</td>
+      <td>81.08</td>
+      <td>2010-03-31</td>
+      <td>3</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>abr.2010</td>
+      <td>7198.78</td>
+      <td>324.94</td>
+      <td>1332.33</td>
+      <td>5114.80</td>
+      <td>331.31</td>
+      <td>95.39</td>
+      <td>2010-04-30</td>
+      <td>4</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>may.2010</td>
+      <td>7181.90</td>
+      <td>326.95</td>
+      <td>1346.54</td>
+      <td>5080.65</td>
+      <td>328.56</td>
+      <td>99.21</td>
+      <td>2010-05-31</td>
+      <td>5</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>jun.2010</td>
+      <td>7221.58</td>
+      <td>328.03</td>
+      <td>1384.28</td>
+      <td>5074.00</td>
+      <td>327.60</td>
+      <td>107.68</td>
+      <td>2010-06-30</td>
+      <td>6</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>jul.2010</td>
+      <td>7256.52</td>
+      <td>333.82</td>
+      <td>1390.03</td>
+      <td>5081.93</td>
+      <td>339.44</td>
+      <td>111.29</td>
+      <td>2010-07-31</td>
+      <td>7</td>
+      <td>2010</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Podemos agrupar una variable mediante <code class="docutils literal notranslate"><span class="pre">groupby</span></code>. Luego podemos aplicar funciones básicas como <code class="docutils literal notranslate"><span class="pre">mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">std()</span></code>, <code class="docutils literal notranslate"><span class="pre">sum()</span></code>, etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_agrupado</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+<span class="n">df_agrupado</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TOT</th>
+      <th>EMP</th>
+      <th>CP</th>
+      <th>ASA</th>
+      <th>PdS</th>
+      <th>FnR</th>
+      <th>mes</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2010</th>
+      <td>7318.352000</td>
+      <td>333.601000</td>
+      <td>1410.938000</td>
+      <td>5136.587000</td>
+      <td>334.501000</td>
+      <td>102.726000</td>
+      <td>7.5</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>7676.545833</td>
+      <td>349.602500</td>
+      <td>1488.466667</td>
+      <td>5382.360833</td>
+      <td>359.097500</td>
+      <td>97.016667</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>7858.610833</td>
+      <td>323.438333</td>
+      <td>1460.165833</td>
+      <td>5626.480000</td>
+      <td>353.575000</td>
+      <td>94.954167</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>8023.047500</td>
+      <td>334.418333</td>
+      <td>1484.029167</td>
+      <td>5766.081667</td>
+      <td>336.561667</td>
+      <td>101.956667</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>8150.107500</td>
+      <td>338.969167</td>
+      <td>1569.675000</td>
+      <td>5800.595833</td>
+      <td>336.685000</td>
+      <td>104.185000</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>8273.739167</td>
+      <td>344.422500</td>
+      <td>1593.640833</td>
+      <td>5919.330833</td>
+      <td>319.370833</td>
+      <td>96.973333</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>8391.921667</td>
+      <td>334.027500</td>
+      <td>1686.861667</td>
+      <td>5945.020000</td>
+      <td>330.251667</td>
+      <td>95.760000</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>8574.332500</td>
+      <td>371.210833</td>
+      <td>1777.026667</td>
+      <td>6008.260833</td>
+      <td>323.455000</td>
+      <td>94.375833</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>8773.940000</td>
+      <td>363.481667</td>
+      <td>1800.942500</td>
+      <td>6185.576667</td>
+      <td>323.193333</td>
+      <td>100.750000</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>8953.679167</td>
+      <td>368.760000</td>
+      <td>1855.963333</td>
+      <td>6320.787500</td>
+      <td>319.305833</td>
+      <td>88.863333</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>7932.822500</td>
+      <td>274.867500</td>
+      <td>1495.655000</td>
+      <td>5878.350000</td>
+      <td>214.355000</td>
+      <td>69.597500</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>8145.750000</td>
+      <td>243.140000</td>
+      <td>1630.363333</td>
+      <td>5999.126667</td>
+      <td>200.213333</td>
+      <td>72.900000</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Lo anterior podemos hacerlo sobre una o un grupo de variables específicas. Para esto hacemos lo siguiente:</p>
+<ul class="simple">
+<li><p>Seleccionamos las variablers sobre las que vamos a trabajar mediante una lista: df[[‘TOT’, ‘year’]]. Tiene que estar la variable sobre la que quiero tener el análisis (TOT) y la que voy a agrupar (year).</p></li>
+<li><p>Aplicamos la función para agrupar y la variable: groupby(‘year’).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_agrupado</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;TOT&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+<span class="n">df_agrupado</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TOT</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2010</th>
+      <td>7318.352000</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>7676.545833</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>7858.610833</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>8023.047500</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>8150.107500</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>8273.739167</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>8391.921667</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>8574.332500</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>8773.940000</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>8953.679167</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>7932.822500</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>8145.750000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Si analizamos el resultado de df_agrupado.mean() tiene dos elementos:</p>
+<ul class="simple">
+<li><p>index: variable sobre la que se agrupó, esta la llamamos con <code class="docutils literal notranslate"><span class="pre">.index</span></code></p></li>
+<li><p>Variables relevantes: sobre las que hicimos el análisis, en este caso TOT. La llamamos con [‘TOT’]</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[f(x) = 10\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Index</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;index:&quot;</span><span class="p">,</span> <span class="n">df_agrupado</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="c1">#TOT</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TOT:&quot;</span><span class="p">,</span> <span class="n">df_agrupado</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s1">&#39;TOT&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>index: Int64Index([2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020,
+            2021],
+           dtype=&#39;int64&#39;, name=&#39;year&#39;)
+TOT: year
+2010    7318.352000
+2011    7676.545833
+2012    7858.610833
+2013    8023.047500
+2014    8150.107500
+2015    8273.739167
+2016    8391.921667
+2017    8574.332500
+2018    8773.940000
+2019    8953.679167
+2020    7932.822500
+2021    8145.750000
+Name: TOT, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df_agrupado</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">index</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df_agrupado</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s1">&#39;TOT&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase_13_14_a_52_0.png" src="_images/Clase_13_14_a_52_0.png" />
+</div>
+</div>
+<p><strong>Con esto podemos empezar a utilizar una base de datos y mostrar algunos resultados!</strong></p>
+<ul class="simple">
+<li><p>Para leer datos de excel podemos usar <code class="docutils literal notranslate"><span class="pre">pd.read_excel</span></code>.</p></li>
+<li><p>Para leer datos de stata podemos usar <code class="docutils literal notranslate"><span class="pre">pd.read_stata</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_agrupado</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;TOT&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+<span class="n">df_agrupado</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TOT</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2010</th>
+      <td>7318.352000</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>7676.545833</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>7858.610833</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>8023.047500</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>8150.107500</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>8273.739167</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>8391.921667</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>8574.332500</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>8773.940000</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>8953.679167</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>7932.822500</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>8145.750000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_agrupado</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;TOT&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+<span class="c1"># df_agrupado.head()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Clase11_12.html" title="previous page">Clase 11-12: Introducción a los gráficos</a>
+    <a class='right-next' id="next-link" href="Clase_13_14_b.html" title="next page">Clase 14: continuación con los datos</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Félix Ordóñez<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

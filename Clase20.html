@@ -1,0 +1,1531 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 20: Regresiones &#8212; Introducción a python</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Clase 19: Scipy y computación numérica" href="Clase19.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_fae.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introducción a python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Python para Ingeniería Comercial
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="About_python.html">
+   Clase 2: About Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clase3_4.html">
+   Clase 3-4: lo básico
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase5_6.html">
+   Clase 5-6: lo básico (continuación)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase5_6.html#actividad">
+   Actividad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase7_8.html">
+   Clase 7-8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase9_10.html">
+   Clase 9-10: Funciones, diccionarios y condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase9_10.html#actividad-1">
+   Actividad 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase11_12.html">
+   Clase 11-12: Introducción a los gráficos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase_13_14_a.html">
+   Clase 13: introducción a los datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase_13_14_b.html">
+   Clase 14: continuación con los datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase15.html">
+   Clase 15: gráficos
+   <em>
+    pro
+   </em>
+   con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Plotly
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase15.html#actividad">
+   Actividad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase17.html">
+   Clase 17: Introducción al análisis de texto (text mining)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase18.html">
+   Clase 18: Introducción al uso de clases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase19.html">
+   Clase 19: Scipy y computación numérica
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Clase 20: Regresiones
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Clase20.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FClase20.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Clase20.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#minimos-cuadrados-ordinarios-ordinary-least-squares">
+   Mínimos Cuadrados Ordinarios (Ordinary Least Squares)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelo-autorregresivo-ar">
+   Modelo Autorregresivo (AR)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#actividad">
+   Actividad
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="clase-20-regresiones">
+<h1>Clase 20: Regresiones<a class="headerlink" href="#clase-20-regresiones" title="Permalink to this headline">¶</a></h1>
+<p>En esta clase revisaremos los conceptos econométricos de Mínimos Cuadrados Ordinarios (OLS por sus siglas en inglés) y Modelo Autorregresivo (AR por sus siglas en inglés).</p>
+<p>Para esto vamos a utilizar la librería <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>: <a class="reference external" href="https://www.statsmodels.org/stable/install.html">https://www.statsmodels.org/stable/install.html</a></p>
+<div class="section" id="minimos-cuadrados-ordinarios-ordinary-least-squares">
+<h2>Mínimos Cuadrados Ordinarios (Ordinary Least Squares)<a class="headerlink" href="#minimos-cuadrados-ordinarios-ordinary-least-squares" title="Permalink to this headline">¶</a></h2>
+<p>Buscamos estimar la Función de Regresión Poblacional (FRP), sin embargo esta no es observable directamente. Para esto vamos a utilizar una estimación que llamaremos la Función de Regresión Muestral (FRM):</p>
+<ul class="simple">
+<li><p>FRP: <span class="math notranslate nohighlight">\(Y_i = \beta_1 + \beta_2 X_i + \mu_i\)</span></p></li>
+<li><p>FRM: <span class="math notranslate nohighlight">\(Y_i = \hat{\beta}_1 + \hat{\beta}_2 X_i + \hat{\mu}_i = \hat{Y}_i - \hat{\mu}_i\)</span>, donde <span class="math notranslate nohighlight">\(\hat{Y}_i\)</span> es el valor estimado (media condicional) de <span class="math notranslate nohighlight">\(Y_i\)</span>.</p></li>
+</ul>
+<p>Entonces, en OLS vamos a minimizar el error <span class="math notranslate nohighlight">\(\hat{\mu}_i = Y_i - \hat{Y_i}\)</span>
+$<span class="math notranslate nohighlight">\(\begin{align}
+\sum u_i^2 &amp;= \sum (Y_i-\hat{Y}_i)^2 \\
+ &amp;= \sum (Y_i - \hat{\beta}_1 - \hat{\beta}_2 X_i)^2
+\end{align}\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="s2">&quot;OLS1.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase20_2_0.png" src="_images/Clase20_2_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_stata</span><span class="p">(</span><span class="s2">&quot;/home/felix/Dropbox/Computational_Economics/Intro_python/Data_OLS_AR/Casen2020.dta&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/felix/miniconda3/lib/python3.9/site-packages/pandas/io/stata.py:1417: UnicodeWarning: 
+One or more strings in the dta file could not be decoded using utf-8, and
+so the fallback encoding of latin-1 is being used.  This can happen when a file
+has been incorrectly encoded by Stata or some other software. You should verify
+the string values returned are correct.
+  warnings.warn(msg, UnicodeWarning)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">detalle_ingreso</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">ytrabajocor</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<span class="n">detalle_ingreso</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    7.350900e+04
+mean     5.783447e+05
+std      1.264676e+06
+min      4.000000e+00
+25%      2.000000e+05
+50%      3.681670e+05
+75%      6.500000e+05
+max      2.250000e+08
+Name: ytrabajocor, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">ytrabajocor</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">ytrabajocor</span><span class="o">&lt;</span><span class="mi">10_000_000</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">ytrabajocor</span><span class="o">.</span><span class="n">notna</span><span class="p">())]</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">ytrabajocor</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    7.345000e+04
+mean     5.617230e+05
+std      6.973099e+05
+min      4.000000e+00
+25%      2.000000e+05
+50%      3.674275e+05
+75%      6.500000e+05
+max      9.850000e+06
+Name: ytrabajocor, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">ytrabajocor</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Observación&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Ingreso del trabajo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">b7adf0787577</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">ytrabajocor</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Observación&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Ingreso del trabajo&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">ytrabajocor</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5_000_000</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ingreso del trabajo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Densidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase20_7_0.png" src="_images/Clase20_7_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_educ_bas</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[[</span><span class="s2">&quot;ytrabajocor&quot;</span><span class="p">,</span> <span class="s2">&quot;educ&quot;</span><span class="p">]][</span><span class="n">df2</span><span class="o">.</span><span class="n">educ</span><span class="o">==</span><span class="s2">&quot;Básica incompleta&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">ytrabajocor</span>
+<span class="n">y_educ_uni</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[[</span><span class="s2">&quot;ytrabajocor&quot;</span><span class="p">,</span> <span class="s2">&quot;educ&quot;</span><span class="p">]][</span><span class="n">df2</span><span class="o">.</span><span class="n">educ</span><span class="o">==</span><span class="s2">&quot;Profesional completo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">ytrabajocor</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">y_educ_bas</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">y_educ_uni</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5_000_000</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ingreso del trabajo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Densidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase20_9_0.png" src="_images/Clase20_9_0.png" />
+</div>
+</div>
+<p>Datos para la regresión</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">ytrabajocor</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">esc</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>const</th>
+      <th>esc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.0</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.0</td>
+      <td>15.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Hay que limpiar los NaN en variable exógena</span>
+<span class="n">df3</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">ytrabajocor</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">ytrabajocor</span><span class="o">&lt;</span><span class="mi">10_000_000</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">ytrabajocor</span><span class="o">.</span><span class="n">notna</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">esc</span><span class="o">.</span><span class="n">notna</span><span class="p">())]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">ytrabajocor</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">esc</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>const</th>
+      <th>esc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.0</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.0</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1.0</td>
+      <td>14.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">ytrabajocor</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">esc</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            ytrabajocor   R-squared:                       0.183
+Model:                            OLS   Adj. R-squared:                  0.183
+Method:                 Least Squares   F-statistic:                 1.601e+04
+Date:                Mon, 26 Jul 2021   Prob (F-statistic):               0.00
+Time:                        22:21:34   Log-Likelihood:            -1.0554e+06
+No. Observations:               71466   AIC:                         2.111e+06
+Df Residuals:                   71464   BIC:                         2.111e+06
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const      -3.694e+05   7751.498    -47.662      0.000   -3.85e+05   -3.54e+05
+esc         7.572e+04    598.451    126.532      0.000    7.45e+04    7.69e+04
+==============================================================================
+Omnibus:                    64620.243   Durbin-Watson:                   1.630
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          3238679.663
+Skew:                           4.257   Prob(JB):                         0.00
+Kurtosis:                      34.861   Cond. No.                         43.0
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>No. Observations: número de observaciones ocupadas en la regresión.</p></li>
+<li><p>R-squared: El <span class="math notranslate nohighlight">\(R^2\)</span> es la proporción de la varianza en la variable dependiente que puede ser predicha por las variables independientes. En este caso un 18% de la varianza es explicada por las variables independientes.</p></li>
+<li><p>Adj R-squared (<span class="math notranslate nohighlight">\(R^2\)</span> ajustado): el <span class="math notranslate nohighlight">\(R^2\)</span> se ajusta para penalizar que se agreguen regresores extraños.</p></li>
+<li><p>F-statistic (F(Z,)): Es la razón entre el error cuadrático medio del modelo y el error cuadrático medio de los residuos. Nos sirve para determinar la importancia general del modelo.</p></li>
+<li><p>Criterios de información (AIC y BIC): nos sirven para ver el trade-off entre complejidad del modelo y bondad de ajuste de este.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;OLS3.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase20_20_0.png" src="_images/Clase20_20_0.png" />
+</div>
+</div>
+<p>En las filas están las variables con las que regresionamos: constante y educación. En las columnas tenemos:</p>
+<ul class="simple">
+<li><p>El coeficiente de las variables independientes y la constante. Acá estamos estimando los <span class="math notranslate nohighlight">\(\beta_i\)</span>:  <span class="math notranslate nohighlight">\(Y_i = \hat{\beta}_1 + \hat{\beta}_2 X_i + \hat{\mu}_i\)</span></p></li>
+<li><p>std err: error estándar asociado a los coeficientes.</p></li>
+<li><p>t: estadístico t usado para testear la significancia de los coeficientes.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P&gt;|t|\)</span>: p-value de dos colas usado para testear hipótesis nula de que el coeficiente es cero (<span class="math notranslate nohighlight">\(\alpha=0.05\)</span>).</p></li>
+<li><p>[0.025 - 0.975]: intervalo de confianza de coeficiente con <span class="math notranslate nohighlight">\(\alpha=0.05\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df.loc[df[&#39;column name&#39;] condition, &#39;new column name&#39;] = &#39;value if condition is met&#39;</span>
+
+<span class="n">df3</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df3</span><span class="o">.</span><span class="n">sexo</span><span class="o">==</span><span class="s2">&quot;Hombre&quot;</span><span class="p">,</span> <span class="s2">&quot;sexo2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">df3</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df3</span><span class="o">.</span><span class="n">sexo</span><span class="o">==</span><span class="s2">&quot;Mujer&quot;</span><span class="p">,</span> <span class="s2">&quot;sexo2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/felix/miniconda3/lib/python3.9/site-packages/pandas/core/indexing.py:1599: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  self.obj[key] = infer_fill_value(value)
+/home/felix/miniconda3/lib/python3.9/site-packages/pandas/core/indexing.py:1720: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  self._setitem_single_column(loc, value, pi)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">ytrabajocor</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df3</span><span class="p">[[</span><span class="s2">&quot;esc&quot;</span><span class="p">,</span> <span class="s2">&quot;edad&quot;</span><span class="p">,</span> <span class="s2">&quot;sexo2&quot;</span><span class="p">]]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>const</th>
+      <th>esc</th>
+      <th>edad</th>
+      <th>sexo2</th>
+      <th>esc2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>12.0</td>
+      <td>34</td>
+      <td>1.0</td>
+      <td>144.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>45</td>
+      <td>0.0</td>
+      <td>225.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.0</td>
+      <td>16.0</td>
+      <td>57</td>
+      <td>0.0</td>
+      <td>256.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>56</td>
+      <td>1.0</td>
+      <td>225.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1.0</td>
+      <td>14.0</td>
+      <td>54</td>
+      <td>1.0</td>
+      <td>196.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;exp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">edad</span><span class="o">-</span><span class="n">df3</span><span class="o">.</span><span class="n">esc</span>
+<span class="n">df3</span><span class="p">[</span><span class="s1">&#39;exp2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">exp</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">df3</span><span class="p">[</span><span class="s1">&#39;exp_sexo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">exp</span><span class="o">*</span><span class="n">df3</span><span class="o">.</span><span class="n">sexo2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">df3</span><span class="o">.</span><span class="n">ytrabajocor</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df3</span><span class="p">[[</span><span class="s2">&quot;esc&quot;</span><span class="p">,</span> <span class="s2">&quot;exp&quot;</span><span class="p">,</span> <span class="s2">&quot;exp2&quot;</span><span class="p">,</span> <span class="s2">&quot;sexo2&quot;</span><span class="p">,</span> <span class="s2">&quot;exp_sexo&quot;</span><span class="p">]]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-18-79fecfcd28f3&gt;:1: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df3[&#39;exp&#39;] = df3.edad-df3.esc
+&lt;ipython-input-18-79fecfcd28f3&gt;:2: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df3[&#39;exp2&#39;] = df3.exp**2
+&lt;ipython-input-18-79fecfcd28f3&gt;:3: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df3[&#39;exp_sexo&#39;] = df3.exp*df3.sexo2
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>const</th>
+      <th>esc</th>
+      <th>exp</th>
+      <th>exp2</th>
+      <th>sexo2</th>
+      <th>exp_sexo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>12.0</td>
+      <td>22.0</td>
+      <td>484.0</td>
+      <td>1.0</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>30.0</td>
+      <td>900.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.0</td>
+      <td>16.0</td>
+      <td>41.0</td>
+      <td>1681.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>41.0</td>
+      <td>1681.0</td>
+      <td>1.0</td>
+      <td>41.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1.0</td>
+      <td>14.0</td>
+      <td>40.0</td>
+      <td>1600.0</td>
+      <td>1.0</td>
+      <td>40.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            ytrabajocor   R-squared:                       0.265
+Model:                            OLS   Adj. R-squared:                  0.265
+Method:                 Least Squares   F-statistic:                     5151.
+Date:                Tue, 26 Oct 2021   Prob (F-statistic):               0.00
+Time:                        11:08:12   Log-Likelihood:            -1.1887e+05
+No. Observations:               71466   AIC:                         2.378e+05
+Df Residuals:                   71460   BIC:                         2.378e+05
+Df Model:                           5                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          9.7314      0.030    326.486      0.000       9.673       9.790
+esc            0.1522      0.002    100.943      0.000       0.149       0.155
+exp            0.0820      0.001     71.234      0.000       0.080       0.084
+exp2          -0.0011   1.56e-05    -68.238      0.000      -0.001      -0.001
+sexo2         -0.1503      0.021     -7.152      0.000      -0.191      -0.109
+exp_sexo      -0.0136      0.001    -23.036      0.000      -0.015      -0.012
+==============================================================================
+Omnibus:                    31679.342   Durbin-Watson:                   1.650
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           197590.127
+Skew:                          -2.052   Prob(JB):                         0.00
+Kurtosis:                      10.037   Cond. No.                     1.12e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.12e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">df3</span><span class="o">.</span><span class="n">ytrabajocor</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df3</span><span class="p">[[</span><span class="s2">&quot;esc&quot;</span><span class="p">,</span> <span class="s2">&quot;edad&quot;</span><span class="p">,</span> <span class="s2">&quot;sexo2&quot;</span><span class="p">]]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>const</th>
+      <th>esc</th>
+      <th>edad</th>
+      <th>sexo2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>12.0</td>
+      <td>34</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>45</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.0</td>
+      <td>16.0</td>
+      <td>57</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>56</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1.0</td>
+      <td>14.0</td>
+      <td>54</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            ytrabajocor   R-squared:                       0.212
+Model:                            OLS   Adj. R-squared:                  0.212
+Method:                 Least Squares   F-statistic:                     6423.
+Date:                Mon, 26 Jul 2021   Prob (F-statistic):               0.00
+Time:                        23:38:58   Log-Likelihood:            -1.2134e+05
+No. Observations:               71466   AIC:                         2.427e+05
+Df Residuals:                   71462   BIC:                         2.427e+05
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         10.5982      0.028    380.688      0.000      10.544      10.653
+esc            0.1696      0.001    124.958      0.000       0.167       0.172
+edad           0.0039      0.000     10.597      0.000       0.003       0.005
+sexo2         -0.5787      0.010    -58.179      0.000      -0.598      -0.559
+==============================================================================
+Omnibus:                    32963.117   Durbin-Watson:                   1.642
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           198868.520
+Skew:                          -2.170   Prob(JB):                         0.00
+Kurtosis:                       9.925   Cond. No.                         269.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parámetros: &#39;</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error estandar: &#39;</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">bse</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Valores predichos: &#39;</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">predict</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parámetros:  const    10.598153
+esc       0.169602
+edad      0.003898
+sexo2    -0.578690
+dtype: float64
+Error estandar:  const    0.027839
+esc      0.001357
+edad     0.000368
+sexo2    0.009947
+dtype: float64
+Valores predichos:  [12.18721169 13.31758263 13.5339568  ... 12.31583427 10.77744552
+ 11.22416493]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Comparar resultados predichos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.sandbox.regression.predstd</span> <span class="kn">import</span> <span class="n">wls_prediction_std</span>
+
+<span class="n">prstd</span><span class="p">,</span> <span class="n">iv_l</span><span class="p">,</span> <span class="n">iv_u</span> <span class="o">=</span> <span class="n">wls_prediction_std</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">esc</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4486a0d9d0&gt;]
+</pre></div>
+</div>
+<img alt="_images/Clase20_30_1.png" src="_images/Clase20_30_1.png" />
+</div>
+</div>
+<p>Para ver ejemplos de gráficos en modelos de regresión pueden utilizar <a class="reference external" href="https://www.statsmodels.org/stable/examples/notebooks/generated/regression_plots.html">https://www.statsmodels.org/stable/examples/notebooks/generated/regression_plots.html</a></p>
+<p>Por ejemplo, una visualización de las regresiones parciales se puede obtener mediante <code class="docutils literal notranslate"><span class="pre">plot_partregress_grid</span></code>. Esto muestra la relación entre la respuesta y la variable explicativa después de eliminar el efecto de todas las otras variables exógenas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Para ver gráficos de las regresiones parciales (regresionar la variable dependiente c/r a una variable condicional en el resto de las variables exógenas)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">plot_partregress_grid</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase20_32_0.png" src="_images/Clase20_32_0.png" />
+</div>
+</div>
+<p>Para ver información de la regresión con respecto a una variable en específico podemos ocupar <code class="docutils literal notranslate"><span class="pre">plot_regress_exog</span></code>. Acá tenemos</p>
+<ul class="simple">
+<li><p>Fitted plot</p></li>
+<li><p>Residuo</p></li>
+<li><p>Regresión parcial</p></li>
+<li><p>Component-Component plus Residual (CCPR) plot: nos sirve para ver la relación entre uan variable independiente particular y la variable de respuesta, dado que otras variables indpendientes también están presentes en el modelo: <span class="math notranslate nohighlight">\(Res+\hat{\beta}_iX_i\)</span> versus <span class="math notranslate nohighlight">\(X_i\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">plot_regress_exog</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;esc&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase20_34_0.png" src="_images/Clase20_34_0.png" />
+</div>
+</div>
+<p>Ejemplo caso con menos ruido: ejemplo de juguete</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f44946253d0&gt;]
+</pre></div>
+</div>
+<img alt="_images/Clase20_36_1.png" src="_images/Clase20_36_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.974
+Model:                            OLS   Adj. R-squared:                  0.973
+Method:                 Least Squares   F-statistic:                     1807.
+Date:                Mon, 26 Jul 2021   Prob (F-statistic):           1.73e-77
+Time:                        23:31:42   Log-Likelihood:                -66.869
+No. Observations:                 100   AIC:                             139.7
+Df Residuals:                      97   BIC:                             147.6
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -0.0904      0.141     -0.641      0.523      -0.370       0.189
+x1             1.0865      0.065     16.670      0.000       0.957       1.216
+x2            -0.0098      0.006     -1.557      0.123      -0.022       0.003
+==============================================================================
+Omnibus:                        0.781   Durbin-Watson:                   2.028
+Prob(Omnibus):                  0.677   Jarque-Bera (JB):                0.817
+Skew:                          -0.006   Prob(JB):                        0.665
+Kurtosis:                       2.557   Cond. No.                         144.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># y_hat = res.params[0] + results.params[1] * x + results.params[1] * x**2</span>
+<span class="n">res</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.009817635455210468
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prstd</span><span class="p">,</span> <span class="n">iv_l</span><span class="p">,</span> <span class="n">iv_u</span> <span class="o">=</span> <span class="n">wls_prediction_std</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="c1">#Retorno: </span>
+<span class="c1">#-standard error of prediction same length as rows of exog</span>
+<span class="c1">#-lower und upper confidence bounds</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="s1">&#39;r--.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;OLS&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">iv_u</span><span class="p">,</span> <span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">iv_l</span><span class="p">,</span> <span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase20_40_0.png" src="_images/Clase20_40_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">y_hat</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">res</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">res</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="s1">&#39;r--.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;OLS&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_hat</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;OLS&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4494171280&gt;]
+</pre></div>
+</div>
+<img alt="_images/Clase20_41_1.png" src="_images/Clase20_41_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="modelo-autorregresivo-ar">
+<h2>Modelo Autorregresivo (AR)<a class="headerlink" href="#modelo-autorregresivo-ar" title="Permalink to this headline">¶</a></h2>
+<p>Podemos estimar un modelo del tipo <span class="math notranslate nohighlight">\(Y_t = \beta_0 + \beta_1 Y_{t-1} + \mu_t\)</span></p>
+<p>En python podemos utilizar <code class="docutils literal notranslate"><span class="pre">AutoReg</span></code>: <a class="reference external" href="https://www.statsmodels.org/stable/examples/notebooks/generated/autoregressions.html">https://www.statsmodels.org/stable/examples/notebooks/generated/autoregressions.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;/home/felix/Dropbox/Computational_Economics/Intro_python/Data_OLS_AR/pib.xlsx&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Periodo</th>
+      <th>PIB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1986-01-01</td>
+      <td>7899.666547</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1986-04-01</td>
+      <td>8220.056395</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1986-07-01</td>
+      <td>8355.276664</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1986-10-01</td>
+      <td>8555.927503</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1987-01-01</td>
+      <td>8626.993492</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Periodo</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">PIB</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase20_44_0.png" src="_images/Clase20_44_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas.plotting</span> <span class="kn">import</span> <span class="n">lag_plot</span>
+<span class="n">lag_plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">PIB</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;y(t)&#39;, ylabel=&#39;y(t + 1)&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/Clase20_45_1.png" src="_images/Clase20_45_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.tsa.ar_model</span> <span class="kn">import</span> <span class="n">AutoReg</span><span class="p">,</span> <span class="n">ar_select_order</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.api</span> <span class="kn">import</span> <span class="n">acf</span><span class="p">,</span> <span class="n">pacf</span><span class="p">,</span> <span class="n">graphics</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mod</span> <span class="o">=</span> <span class="n">AutoReg</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">PIB</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">old_names</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            AutoReg Model Results                             
+==============================================================================
+Dep. Variable:                    PIB   No. Observations:                  141
+Model:                     AutoReg(1)   Log Likelihood               -1085.062
+Method:               Conditional MLE   S.D. of innovations            562.000
+Date:                Tue, 27 Jul 2021   AIC                             12.706
+Time:                        08:19:50   BIC                             12.769
+Sample:                             1   HQIC                            12.731
+                                  141                                         
+==============================================================================
+                 coef    std err          z      P&gt;|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        257.5324    123.602      2.084      0.037      15.278     499.787
+PIB.L1         0.9985      0.005    203.603      0.000       0.989       1.008
+                                    Roots                                    
+=============================================================================
+                  Real          Imaginary           Modulus         Frequency
+-----------------------------------------------------------------------------
+AR.1            1.0015           +0.0000j            1.0015            0.0000
+-----------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos actualizar el modelo a <span class="math notranslate nohighlight">\(Y_t = \beta_0 + \beta_1 Y_{t-1} + \beta_2 Y_{t-2} + \beta_3 Y_{t-3} + \beta_4 Y_{t-4} + \beta_5 Y_{t-5} + \mu_t\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mod</span> <span class="o">=</span> <span class="n">AutoReg</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">PIB</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">old_names</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            AutoReg Model Results                             
+==============================================================================
+Dep. Variable:                    PIB   No. Observations:                  141
+Model:                     AutoReg(5)   Log Likelihood               -1047.475
+Method:               Conditional MLE   S.D. of innovations            535.438
+Date:                Tue, 27 Jul 2021   AIC                             12.669
+Time:                        08:21:12   BIC                             12.819
+Sample:                             5   HQIC                            12.730
+                                  141                                         
+==============================================================================
+                 coef    std err          z      P&gt;|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        423.0718    133.111      3.178      0.001     162.179     683.965
+PIB.L1         0.8942      0.083     10.802      0.000       0.732       1.056
+PIB.L2         0.2591      0.123      2.105      0.035       0.018       0.500
+PIB.L3        -0.3180      0.120     -2.658      0.008      -0.553      -0.083
+PIB.L4        -0.5179      0.223     -2.323      0.020      -0.955      -0.081
+PIB.L5         0.6816      0.195      3.488      0.000       0.299       1.065
+                                    Roots                                    
+=============================================================================
+                  Real          Imaginary           Modulus         Frequency
+-----------------------------------------------------------------------------
+AR.1           -0.8762           -0.6971j            1.1197           -0.3930
+AR.2           -0.8762           +0.6971j            1.1197            0.3930
+AR.3            0.7558           -0.7735j            1.0814           -0.1268
+AR.4            0.7558           +0.7735j            1.0814            0.1268
+AR.5            1.0006           -0.0000j            1.0006           -0.0000
+-----------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para un resumen de la visualización de los residuos estandarizados podemos ocupar <code class="docutils literal notranslate"><span class="pre">plot_diagnostics</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">plot_diagnostics</span><span class="p">(</span><span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="c1">#Standarized residual: </span>
+    <span class="c1">#-residuo: Valor observado - valor predicho</span>
+    <span class="c1">#-standarized residual: residuo normalizado por el error estandar del modelo (RSE)</span>
+<span class="c1">#Histogram plus: estima la distribución de los residuos estandarizados. Nos muestra la distribución normal (línea verde) como punto de comparación. </span>
+<span class="c1">#Normal Q-Q : muestra si el residuo está distribuido normalmente. Lo que se espera es que los puntos se encuentren sobre la línea roja o cercanos a ella. </span>
+<span class="c1">#Correlograma: nos muestra un gráfico de autocorrelaciones</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase20_51_0.png" src="_images/Clase20_51_0.png" />
+</div>
+</div>
+<p>Autocorrelaciones: <a class="reference external" href="https://www.statsmodels.org/stable/generated/statsmodels.graphics.tsaplots.plot_acf.html">https://www.statsmodels.org/stable/generated/statsmodels.graphics.tsaplots.plot_acf.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">tsa</span><span class="o">.</span><span class="n">plot_acf</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">PIB</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase20_53_0.png" src="_images/Clase20_53_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="actividad">
+<h2>Actividad<a class="headerlink" href="#actividad" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Estime la ecuación de mincer: <span class="math notranslate nohighlight">\(Ingreso_i = \beta_0 + \beta_1 esc_i + \beta_2 exp_i + \beta_3 exp_i^2 + \beta_4 sexo_i + \mu_i\)</span> donde :</p>
+<ul class="simple">
+<li><p>ingreso: log(ingreso del trabajo)</p></li>
+<li><p>esc: escolaridad</p></li>
+<li><p>exp: experiencia = edad - escolaridad</p></li>
+<li><p>exp2: expediencia al cuadrado</p></li>
+<li><p>sexo: variable dicotómica si es hombre (0) o mujer (1).</p></li>
+</ul>
+</li>
+<li><p>Estime un modelo AR del tipo <span class="math notranslate nohighlight">\(\Delta y_t = \Delta y_{t-1}\)</span> donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y_t\)</span> es el PIB trimestral en el periodo t.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta y_t\)</span> es la variación del PIB trimestral en el periodo t.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta y_{t-1}\)</span> es la variación del PIB trimestral en el periodo t-1.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Clase19.html" title="previous page">Clase 19: Scipy y computación numérica</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Félix Ordóñez<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

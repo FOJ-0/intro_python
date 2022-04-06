@@ -1,0 +1,1004 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 15: Introducción al análisis de texto (text mining) &#8212; Introducción a python</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_fae.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introducción a python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Python para Ingeniería Comercial
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="About_python.html">
+   Clase 2: About Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clase3.html">
+   Clase 3: lo básico
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase4.html">
+   Clase 4: Actividad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clase5.html">
+   Clase 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase6.html">
+   Clase 7: Pauta actividad clase 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase8.html">
+   Clase 8: Introducción a los gráficos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase9.html">
+   Clase 9: introducción a los datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase10.html">
+   Clase 10: Tarea 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase11.html">
+   Clase 11-12: continuación con los datos
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Clase 15.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FClase 15.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Clase 15.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion">
+   1. Introducción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examinar-texto">
+   Examinar texto
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#depurar">
+   2. Depurar
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remover-simbolos">
+     Remover Símbolos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remover-numeros">
+   Remover números
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convertir-a-minuscula">
+   Convertir a minúscula
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eliminar-espacios-en-blanco-innecesarios">
+   Eliminar espacios en blanco innecesarios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eliminar-tildes-y-lineas-en-blanco">
+   Eliminar tildes y líneas en blanco
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tokenizar">
+   Tokenizar
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#frecuencia-de-palabras">
+   Frecuencia de palabras
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stopwords">
+   Stopwords
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wordclouds">
+   Wordclouds
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stemming">
+   Stemming
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#n-gramas">
+   N-gramas
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="clase-15-introduccion-al-analisis-de-texto-text-mining">
+<h1>Clase 15: Introducción al análisis de texto (text mining)<a class="headerlink" href="#clase-15-introduccion-al-analisis-de-texto-text-mining" title="Permalink to this headline">¶</a></h1>
+<p>En esta clase veremos una introducción al procesamiento de texto. Para esto utilizaremos un discurso presidencial y veremos como depurar este texto, de manera que podamos extraer información relevante.</p>
+<p>Vamos a</p>
+<ul class="simple">
+<li><p>Examinar el texto</p></li>
+<li><p>Depurar:</p>
+<ul>
+<li><p>Remover símbolos</p></li>
+<li><p>Remover números</p></li>
+<li><p>Mayúscula-minúscula</p></li>
+<li><p>Espacios en blanco</p></li>
+<li><p>Tíldes</p></li>
+</ul>
+</li>
+<li><p>Tokenizar</p></li>
+<li><p>Frecuencias de palabras</p></li>
+<li><p>Stopwords</p></li>
+<li><p>Wordclouds</p></li>
+<li><p>Stemming</p></li>
+<li><p>N-gramas</p></li>
+</ul>
+<div class="section" id="introduccion">
+<h2>1. Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline">¶</a></h2>
+<p>En el mundo moderno tenemos muchas fuentes de información, la tarea es cómo la recopilamos, procesamos y analizamos.
+Por ejemplo, las frases, textos, libros, comentarios en redes sociales, son una amplia gama de fuentes de información. El <code class="docutils literal notranslate"><span class="pre">text</span> <span class="pre">mining</span></code> es “obtener información interesante y no trivial de textos o información no estructurada”.</p>
+<p>Ejemplos de información que podemos recopilar y procesar:</p>
+<ul class="simple">
+<li><p>Noticias de diarios electrónicos</p></li>
+<li><p>Libros</p></li>
+<li><p>Twitter</p></li>
+<li><p>etc.</p></li>
+</ul>
+<p>Para efectos de esta clase, veremos la librería <code class="docutils literal notranslate"><span class="pre">nltk</span></code> (Natural Language Toolkit), que proporciona una potente herramienta de manejo de texto.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tratamiento de datos</span>
+<span class="c1"># ==============================================================================</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="c1"># import nltk.corpus</span>
+<span class="c1"># from nltk.tokenize import word_tokenize</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos a importar un archivo .txt</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Discurso 1</span>
+<span class="c1"># discurso1 = open(&#39;C:\\Users\\ordon\\Dropbox\\Computational_Economics\\Intro_python\\Data_text_proc\\discurso1.txt&#39;, &#39;r&#39;) </span>
+<span class="n">discurso1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/home/felix/Dropbox/Computational_Economics/Intro_python/Data_text_proc/discurso1.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin-1&quot;</span><span class="p">)</span> 
+
+
+
+
+<span class="n">discurso1</span> <span class="o">=</span> <span class="n">discurso1</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">discurso1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;S.E. la Presidenta de la República, Michelle Bachelet, asiste al lanzamiento de la campaña \x93Chile necesita más médicos y especialistas. Incorpórate al Sistema Público de Salud\x94\nAmigas y amigos:\n\nQué duda cabe, la verdad, como señala esta campaña del Ministerio de Salud, que \x93Chile necesita más Médicos y Especialistas\x94 en el sector público. Y es una necesidad de nuestra sociedad, y estamos dando pasos concretos para poder satisfacer esta necesidad.\n\nY uno de los grandes objetivos que tenemos como Gobierno es, justamente, mejorar la atención de salud que recibe nuestra población.\n\nY una de nuestras preocupaciones centrales es justamente fortalecer y asegurar la capacidad del Estado para responder de manera más rápida y más integral a las necesidades de millones de nuestros compatriotas que utilizan la red pública de consultorios, hospitales, centros de salud familiar y los servicios de urgencia. \n\nLa calidad de vida en nuestro país depende fuertemente de la capacidad que tengamos para, obviamente, prevenir y para asegurar, yo diría, la dignidad y el tratamiento oportuno de las enfermedades que siempre son un duro golpe para las personas y para las familias. \n\nY en este proceso, el rol de los y las profesionales de la salud es fundamental. Para enfrentar las carencias que vive nuestro sistema de salud en este ámbito, como Gobierno pusimos en marcha, desde su inicio, el Plan de Ingreso, Formación y Retención de Médicos Especialistas.\nEste Plan nos permitirá sumar, durante estos cuatro años, mil 100 médicos a la Atención Primaria de Salud y formar 4 mil especialistas, médicos y odontólogos. \n\nY ya hemos obtenido algunos avances importantes en este sentido. Este año, gracias a la ampliación en 370 cupos adicionales cada año para la Etapa de Destinación y Formación, tanto rural como urbana, pudimos contar con 538 nuevos médicos en la Atención Primaria. \n\nY para mí fue bien interesante, doctor Concha, que cuando fui a Puyehue, de los tres médicos que estaban en el CESFAM, dos eran justamente de estos médicos que habían salido con cupos adicionales para la atención primaria. \n\nEs decir, los que corresponden a la ampliación generada por este Gobierno, más los cupos que tenía anteriormente este programa que -los que ya tenemos algunos añitos- conocemos como médicos generales de zona, y que en julio de este año se celebró el aniversario número 60.\n\nLa verdad, yo creo que se trata de una experiencia, desde mi punto de vista, inigualable en la formación de un o una joven profesional de la medicina. \n\nLa tarea de los antiguos médicos generales de zona (o en Etapa de Destinación y Formación) en esas comunidades, como las veíamos en el video, donde hay que llegar en lancha, donde en general las vías de comunicación son escasas -bueno, no muy lejos de aquí, yo me acuerdo, conversando con algún médico general de zona, siendo la epidemióloga del Servicio de Salud Occidente, tenía que ir en Curacaví, pero tenía que subir a caballo a veces a ver un paciente que vivía en algún lado. O sea, que trae un poquito de aventura, trae un poquito de aventura, pero también trae un trabajo intenso, arduo, pero que también es, yo diría, algo que genera una experiencia extraordinaria-, y en general son lugares donde las vías de comunicación muchas veces son escasas, y creo que es un valor que trasciende mucho más allá del tiempo que dura su destinación. \n\nCuando recorro el país, veo el trabajo de los médicos en las localidades del sur, del norte, el cariño que le tienen los vecinos y vecinas; escucho también los recuerdos y recibo los saludos para antiguos médicos generales de zona que con el tiempo han tomado otros rumbos. Estuvimos inaugurando en Paine, me parece que fue, el CESFAM Miguel Ángel Solar, y yo pensé que era el que yo conocía, el que había sido presidente de la FEUC, pero no, era su papá, que había partido ahí, se había especializado, había estado en Estados Unidos y después volvió ahí, hasta que falleció, y trabajó en esa misma localidad. La gente lo recordaba con mucho cariño y era muy emocionante ver los videos de los pacientes que había tenido. \n\nY con la ampliación de cupos en la Etapa de Destinación y Formación, al año 2017 se habrán agregado mil 100 nuevos médicos en la Atención Primaria y en abril de 2018 esta cifra va a llegar a mil 480.\n\nEntonces, vamos a pasar de una situación en la que existía un médico cada 4 mil 300 habitantes -cuando llegamos al gobierno, era la situación que nos encontramos; un médico cada 4 mil 300, a comienzos del 2014- a otra donde habrá un médico por cada 2 mil 800 habitantes, es decir, casi el doble. Todavía nos va a faltar un poquito para lo que son los estándares de la OECD, que son alrededor de 2 mil 100 o 2 mil 200 médicos por ese número de habitantes. Entonces. Esto, obviamente, el llegar a bajar de 4 mil 300 a 2 mil 800 habitantes por médico, creo que nos acerca a los estándares de los países desarrollados. \n\nAdemás, y aquí también aprovecho de agradecer el trabajo que ha hecho el Ministerio con las universidades, con la Asociación de Facultades de Medicina de Chile, con la Asociación Chilena de Enseñanza de Odontología, con el Colegio Médico y con el Colegio de Cirujanos Dentistas, se logró ampliar en un 40% los cupos disponibles para la formación de especialistas.\n\n¡40%! Incluso algunas universidades llegaron a un 100% en la ampliación de sus cupos, y creo que es una tremenda noticia para el avance de la salud en nuestro país.\n\nY éste es un ámbito en el que vamos a continuar poniendo los máximos esfuerzos, ya que existe un importante déficit de especialistas en nuestro país (se estima que son alrededor de 3 mil 800), que afecta directamente, por cierto, la calidad de la atención que reciben los pacientes del sistema público de salud.\n\nLos y las jóvenes egresados de la carrera de medicina tienen mucho interés de participar en estos programas y aproximadamente un 60% de ellos postula a las becas de especialización.\n\nPero queremos que sean todavía más y esperamos que en los próximos años esta cifra llegue al 80%. \n\nAsí, tanto a través de la Ampliación de la Etapa de Destinación y Formación como mediante el aumento de cupos de especialización, iremos disminuyendo las carencias que afectan a la atención pública de salud.\n\nPero, al mismo tiempo, nos permitirá entregar a más profesionales la posibilidad de vivir esta experiencia única, de valor incomparable, que es ejercer el objetivo social de la medicina, llegar a lugares apartados de nuestra patria, conocer realidades diversas, también.\n\nE integrarse a la red más compleja y amplia de atención médica como es el sistema público de salud, donde van a poder formarse de manera continúa a lo largo de su carrera profesional y de aprender de los y las mejores profesionales.\n\nPorque, tal como dice la campaña, \x93Chile necesita más médicos y especialistas\x94, los médicos y especialistas necesitan conocer y valorar las oportunidades que ofrece el Sistema Público de Salud.\n\nPor eso que esta campaña de difusión llegará a todas las facultades de medicina de nuestro país, donde, estoy segura, hay una enorme cantidad de vocaciones de servicio público que esperan aportar al desarrollo de nuestra patria y a la calidad de vida de nuestros compatriotas.\n\nUstedes que están acá en un hospital público, están ejerciendo esto que es tan importante. Queremos motivar a muchos jóvenes más para que la salud pública que ellos consideren seriamente. Y estoy segura que van a sentir todas las situaciones que vivimos los médicos, pero también toda aquella experiencia, de verdad, extraordinaria que significa estar trabajando para la gente. \n\nMuchas gracias.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="examinar-texto">
+<h2>Examinar texto<a class="headerlink" href="#examinar-texto" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">discurso1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1000</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;S.E. la Presidenta de la República, Michelle Bachelet, asiste al lanzamiento de la campaña \x93Chile necesita más médicos y especialistas. Incorpórate al Sistema Público de Salud\x94\nAmigas y amigos:\n\nQué duda cabe, la verdad, como señala esta campaña del Ministerio de Salud, que \x93Chile necesita más Médicos y Especialistas\x94 en el sector público. Y es una necesidad de nuestra sociedad, y estamos dando pasos concretos para poder satisfacer esta necesidad.\n\nY uno de los grandes objetivos que tenemos como Gobierno es, justamente, mejorar la atención de salud que recibe nuestra población.\n\nY una de nuestras preocupaciones centrales es justamente fortalecer y asegurar la capacidad del Estado para responder de manera más rápida y más integral a las necesidades de millones de nuestros compatriotas que utilizan la red pública de consultorios, hospitales, centros de salud familiar y los servicios de urgencia. \n\nLa calidad de vida en nuestro país depende fuertemente de la capacidad que tengamos para, o&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="depurar">
+<h2>2. Depurar<a class="headerlink" href="#depurar" title="Permalink to this headline">¶</a></h2>
+<p>El proceso de depurar implica remover o cambiar elementos que no son palabras y que para efectos del análisis del texto puedan ser irrelevantes.</p>
+<p>Vamos a:</p>
+<ul class="simple">
+<li><p>Remover símbolos: Los textos pueden venir con variados símbolos como “,+,,&lt;,&#64;, entre otros.</p></li>
+<li><p>Remover números: hay que evaluar si los números van a ser relevantes a la hora del texto que queremos analizar. En caso que no lo sean, los vamos a quitar.</p></li>
+<li><p>Llevar a minúscula: Hola y hola, para efectos del análisis de texto son equivalentes. Por eso llevamos todo a minúsculas.</p></li>
+<li><p>Eliminar espacios en blanco innecesarios: vamos a borrar  cuando hay más de un espacio.</p></li>
+<li><p>Eliminar tildes: para el análisis de texto podemos eliminar las tildes, para que palabras como analisis y análisis sean equivalentes.</p></li>
+<li><p>Borrar saltos de línea.</p></li>
+</ul>
+<div class="section" id="remover-simbolos">
+<h3>Remover Símbolos<a class="headerlink" href="#remover-simbolos" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">regex</span> <span class="o">=</span> <span class="s1">&#39;[</span><span class="se">\\</span><span class="s1">!</span><span class="se">\\</span><span class="s1">“</span><span class="se">\\</span><span class="s1">”</span><span class="se">\\</span><span class="s1">&quot;</span><span class="se">\\</span><span class="s1">#</span><span class="se">\\</span><span class="s1">$</span><span class="se">\\</span><span class="s1">%</span><span class="se">\\</span><span class="s1">&amp;</span><span class="se">\\\&#39;\\</span><span class="s1">(</span><span class="se">\\</span><span class="s1">)</span><span class="se">\\</span><span class="s1">*</span><span class="se">\\</span><span class="s1">+</span><span class="se">\\</span><span class="s1">,</span><span class="se">\\</span><span class="s1">-</span><span class="se">\\</span><span class="s1">.</span><span class="se">\\</span><span class="s1">/</span><span class="se">\\</span><span class="s1">:</span><span class="se">\\</span><span class="s1">;</span><span class="se">\\</span><span class="s1">&lt;</span><span class="se">\\</span><span class="s1">=</span><span class="se">\\</span><span class="s1">&gt;</span><span class="se">\\</span><span class="s1">?</span><span class="se">\\</span><span class="s1">@</span><span class="se">\\</span><span class="s1">[</span><span class="se">\\\\\\</span><span class="s1">]</span><span class="se">\\</span><span class="s1">^_</span><span class="se">\\</span><span class="s1">`</span><span class="se">\\</span><span class="s1">{</span><span class="se">\\</span><span class="s1">|</span><span class="se">\\</span><span class="s1">}</span><span class="se">\\</span><span class="s1">~]&#39;</span>
+<span class="n">nuevo_discurso</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">discurso1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nuevo_discurso</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2000</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S E  la Presidenta de la República  Michelle Bachelet  asiste al lanzamiento de la campaña Chile necesita más médicos y especialistas  Incorpórate al Sistema Público de Salud
+Amigas y amigos 
+
+Qué duda cabe  la verdad  como señala esta campaña del Ministerio de Salud  que Chile necesita más Médicos y Especialistas en el sector público  Y es una necesidad de nuestra sociedad  y estamos dando pasos concretos para poder satisfacer esta necesidad 
+
+Y uno de los grandes objetivos que tenemos como Gobierno es  justamente  mejorar la atención de salud que recibe nuestra población 
+
+Y una de nuestras preocupaciones centrales es justamente fortalecer y asegurar la capacidad del Estado para responder de manera más rápida y más integral a las necesidades de millones de nuestros compatriotas que utilizan la red pública de consultorios  hospitales  centros de salud familiar y los servicios de urgencia  
+
+La calidad de vida en nuestro país depende fuertemente de la capacidad que tengamos para  obviamente  prevenir y para asegurar  yo diría  la dignidad y el tratamiento oportuno de las enfermedades que siempre son un duro golpe para las personas y para las familias  
+
+Y en este proceso  el rol de los y las profesionales de la salud es fundamental  Para enfrentar las carencias que vive nuestro sistema de salud en este ámbito  como Gobierno pusimos en marcha  desde su inicio  el Plan de Ingreso  Formación y Retención de Médicos Especialistas 
+Este Plan nos permitirá sumar  durante estos cuatro años  mil 100 médicos a la Atención Primaria de Salud y formar 4 mil especialistas  médicos y odontólogos  
+
+Y ya hemos obtenido algunos avances importantes en este sentido  Este año  gracias a la ampliación en 370 cupos adicionales cada año para la Etapa de Destinación y Formación  tanto rural como urbana  pudimos contar con 538 nuevos médicos en la Atención Primaria  
+
+Y para mí fue bien interesante  doctor Concha  que cuando fui a Puyehue  de los tres médicos que estaban en el CESFAM  d
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="remover-numeros">
+<h2>Remover números<a class="headerlink" href="#remover-numeros" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nuevo_discurso</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">nuevo_discurso</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nuevo_discurso</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2000</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S E  la Presidenta de la República  Michelle Bachelet  asiste al lanzamiento de la campaña Chile necesita más médicos y especialistas  Incorpórate al Sistema Público de Salud
+Amigas y amigos 
+
+Qué duda cabe  la verdad  como señala esta campaña del Ministerio de Salud  que Chile necesita más Médicos y Especialistas en el sector público  Y es una necesidad de nuestra sociedad  y estamos dando pasos concretos para poder satisfacer esta necesidad 
+
+Y uno de los grandes objetivos que tenemos como Gobierno es  justamente  mejorar la atención de salud que recibe nuestra población 
+
+Y una de nuestras preocupaciones centrales es justamente fortalecer y asegurar la capacidad del Estado para responder de manera más rápida y más integral a las necesidades de millones de nuestros compatriotas que utilizan la red pública de consultorios  hospitales  centros de salud familiar y los servicios de urgencia  
+
+La calidad de vida en nuestro país depende fuertemente de la capacidad que tengamos para  obviamente  prevenir y para asegurar  yo diría  la dignidad y el tratamiento oportuno de las enfermedades que siempre son un duro golpe para las personas y para las familias  
+
+Y en este proceso  el rol de los y las profesionales de la salud es fundamental  Para enfrentar las carencias que vive nuestro sistema de salud en este ámbito  como Gobierno pusimos en marcha  desde su inicio  el Plan de Ingreso  Formación y Retención de Médicos Especialistas 
+Este Plan nos permitirá sumar  durante estos cuatro años  mil   médicos a la Atención Primaria de Salud y formar   mil especialistas  médicos y odontólogos  
+
+Y ya hemos obtenido algunos avances importantes en este sentido  Este año  gracias a la ampliación en   cupos adicionales cada año para la Etapa de Destinación y Formación  tanto rural como urbana  pudimos contar con   nuevos médicos en la Atención Primaria  
+
+Y para mí fue bien interesante  doctor Concha  que cuando fui a Puyehue  de los tres médicos que estaban en el CESFAM  dos era
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="convertir-a-minuscula">
+<h2>Convertir a minúscula<a class="headerlink" href="#convertir-a-minuscula" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nuevo_discurso</span> <span class="o">=</span> <span class="n">nuevo_discurso</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nuevo_discurso</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">100</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>s e  la presidenta de la república  michelle bachelet  asiste al lanzamiento de la campaña chile ne
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="eliminar-espacios-en-blanco-innecesarios">
+<h2>Eliminar espacios en blanco innecesarios<a class="headerlink" href="#eliminar-espacios-en-blanco-innecesarios" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nuevo_discurso</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">s+&quot;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">nuevo_discurso</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nuevo_discurso</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">100</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>s e la presidenta de la república michelle bachelet asiste al lanzamiento de la campaña chile neces
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="eliminar-tildes-y-lineas-en-blanco">
+<h2>Eliminar tildes y líneas en blanco<a class="headerlink" href="#eliminar-tildes-y-lineas-en-blanco" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unicodedata</span> <span class="kn">import</span> <span class="n">normalize</span>
+
+
+<span class="c1"># -&gt; NFD y eliminar diacríticos</span>
+<span class="n">nuevo_discurso</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+        <span class="sa">r</span><span class="s2">&quot;([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1&quot;</span><span class="p">,</span> 
+        <span class="n">normalize</span><span class="p">(</span> <span class="s2">&quot;NFD&quot;</span><span class="p">,</span> <span class="n">nuevo_discurso</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span>
+    <span class="p">)</span>
+
+<span class="c1"># -&gt; NFC</span>
+<span class="n">nuevo_discurso</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span> <span class="s1">&#39;NFC&#39;</span><span class="p">,</span> <span class="n">nuevo_discurso</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nuevo_discurso</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">200</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>s e la presidenta de la republica michelle bachelet asiste al lanzamiento de la campaña chile necesita mas medicos y especialistas incorporate al sistema publico de salud amigas y amigos que duda ca
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tokenizar">
+<h2>Tokenizar<a class="headerlink" href="#tokenizar" title="Permalink to this headline">¶</a></h2>
+<p>Tokenizar significa dividir el texto en una unidad más pequeña, donde cada una de estas unidades va a ser un <code class="docutils literal notranslate"><span class="pre">token</span></code>.
+Por ejemplo, podemos <code class="docutils literal notranslate"><span class="pre">tokenizar</span></code> texto anterior en oraciones o en palabras:</p>
+<ul class="simple">
+<li><p>Oraciones:</p>
+<ul>
+<li><p>token 1 = Tokenizar significa dividir el texto en una unidad más pequeña</p></li>
+<li><p>token 2 = donde cada una de estas unidades va a ser un <code class="docutils literal notranslate"><span class="pre">token</span></code></p></li>
+</ul>
+</li>
+<li><p>Palabras:</p>
+<ul>
+<li><p>token 1 = Tokenizar</p></li>
+<li><p>token 2 = significa</p></li>
+<li><p>token 3 = dividir</p></li>
+<li><p>…</p></li>
+</ul>
+</li>
+</ul>
+<p>En nuestro ejemplo vamos a <code class="docutils literal notranslate"><span class="pre">tokenizar</span></code> en base a palabras.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">nuevo_discurso</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">LookupError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">bf01c11fba7f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">token</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">nuevo_discurso</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+
+<span class="nn">~/miniconda3/lib/python3.9/site-packages/nltk/tokenize/__init__.py</span> in <span class="ni">word_tokenize</span><span class="nt">(text, language, preserve_line)</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="p">:</span><span class="nb">type</span> <span class="n">preserve_line</span><span class="p">:</span> <span class="nb">bool</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">130</span><span class="sd">     sentences = [text] if preserve_line else sent_tokenize(text, language)</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span><span class="sd">     return [</span>
+<span class="nn">    132         token for sent in sentences for token</span> in <span class="ni">_treebank_word_tokenizer.tokenize</span><span class="nt">(sent)</span>
+
+<span class="nn">~/miniconda3/lib/python3.9/site-packages/nltk/tokenize/__init__.py</span> in <span class="ni">sent_tokenize</span><span class="nt">(text, language)</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span><span class="sd">     :param language: the model name in the Punkt corpus</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">107</span>     <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s2">&quot;tokenizers/punkt/</span><span class="si">{0}</span><span class="s2">.pickle&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">language</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="k">return</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span> 
+
+<span class="nn">~/miniconda3/lib/python3.9/site-packages/nltk/data.py</span> in <span class="ni">load</span><span class="nt">(resource_url, format, cache, verbose, logic_parser, fstruct_reader, encoding)</span>
+<span class="g g-Whitespace">    </span><span class="mi">748</span> 
+<span class="g g-Whitespace">    </span><span class="mi">749</span>     <span class="c1"># Load the resource.</span>
+<span class="ne">--&gt; </span><span class="mi">750</span>     <span class="n">opened_resource</span> <span class="o">=</span> <span class="n">_open</span><span class="p">(</span><span class="n">resource_url</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">751</span> 
+<span class="g g-Whitespace">    </span><span class="mi">752</span>     <span class="k">if</span> <span class="nb">format</span> <span class="o">==</span> <span class="s2">&quot;raw&quot;</span><span class="p">:</span>
+
+<span class="nn">~/miniconda3/lib/python3.9/site-packages/nltk/data.py</span> in <span class="ni">_open</span><span class="nt">(resource_url)</span>
+<span class="g g-Whitespace">    </span><span class="mi">873</span> 
+<span class="g g-Whitespace">    </span><span class="mi">874</span>     <span class="k">if</span> <span class="n">protocol</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">protocol</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;nltk&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">875</span>         <span class="k">return</span> <span class="n">find</span><span class="p">(</span><span class="n">path_</span><span class="p">,</span> <span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>     <span class="k">elif</span> <span class="n">protocol</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;file&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>         <span class="c1"># urllib might not use mode=&#39;rb&#39;, so handle this one ourselves:</span>
+
+<span class="nn">~/miniconda3/lib/python3.9/site-packages/nltk/data.py</span> in <span class="ni">find</span><span class="nt">(resource_name, paths)</span>
+<span class="g g-Whitespace">    </span><span class="mi">581</span>     <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">70</span>
+<span class="g g-Whitespace">    </span><span class="mi">582</span>     <span class="n">resource_not_found</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">sep</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">sep</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">583</span>     <span class="k">raise</span> <span class="ne">LookupError</span><span class="p">(</span><span class="n">resource_not_found</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">584</span> 
+<span class="g g-Whitespace">    </span><span class="mi">585</span> 
+
+<span class="ne">LookupError</span>: 
+<span class="o">**********************************************************************</span>
+  <span class="n">Resource</span> <span class="n">punkt</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span>
+  <span class="n">Please</span> <span class="n">use</span> <span class="n">the</span> <span class="n">NLTK</span> <span class="n">Downloader</span> <span class="n">to</span> <span class="n">obtain</span> <span class="n">the</span> <span class="n">resource</span><span class="p">:</span>
+
+  <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">nltk</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
+  
+  <span class="n">For</span> <span class="n">more</span> <span class="n">information</span> <span class="n">see</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">nltk</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">data</span><span class="o">.</span><span class="n">html</span>
+
+  <span class="n">Attempted</span> <span class="n">to</span> <span class="n">load</span> <span class="n">tokenizers</span><span class="o">/</span><span class="n">punkt</span><span class="o">/</span><span class="n">PY3</span><span class="o">/</span><span class="n">english</span><span class="o">.</span><span class="n">pickle</span>
+
+  <span class="n">Searched</span> <span class="ow">in</span><span class="p">:</span>
+    <span class="o">-</span> <span class="s1">&#39;/home/felix/nltk_data&#39;</span>
+    <span class="o">-</span> <span class="s1">&#39;/home/felix/miniconda3/nltk_data&#39;</span>
+    <span class="o">-</span> <span class="s1">&#39;/home/felix/miniconda3/share/nltk_data&#39;</span>
+    <span class="o">-</span> <span class="s1">&#39;/home/felix/miniconda3/lib/nltk_data&#39;</span>
+    <span class="o">-</span> <span class="s1">&#39;/usr/share/nltk_data&#39;</span>
+    <span class="o">-</span> <span class="s1">&#39;/usr/local/share/nltk_data&#39;</span>
+    <span class="o">-</span> <span class="s1">&#39;/usr/lib/nltk_data&#39;</span>
+    <span class="o">-</span> <span class="s1">&#39;/usr/local/lib/nltk_data&#39;</span>
+    <span class="o">-</span> <span class="s1">&#39;&#39;</span>
+<span class="o">**********************************************************************</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="frecuencia-de-palabras">
+<h2>Frecuencia de palabras<a class="headerlink" href="#frecuencia-de-palabras" title="Permalink to this headline">¶</a></h2>
+<p>Uno de los primeros análisis que se puede realizar a partir de un texto, es la frecuencia por palabra, es decir cuántas veces se encuentra cada palabra dentro del texto.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.probability</span> <span class="kn">import</span> <span class="n">FreqDist</span>
+<span class="n">fdist</span> <span class="o">=</span> <span class="n">FreqDist</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+<span class="n">fdist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FreqDist({&#39;de&#39;: 100, &#39;que&#39;: 62, &#39;y&#39;: 50, &#39;la&#39;: 48, &#39;en&#39;: 35, &#39;a&#39;: 31, &#39;el&#39;: 26, &#39;los&#39;: 25, &#39;las&#39;: 18, &#39;medicos&#39;: 17, ...})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To find the frequency of top 10 words</span>
+<span class="n">fdist1</span> <span class="o">=</span> <span class="n">fdist</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">fdist1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;de&#39;, 100),
+ (&#39;que&#39;, 62),
+ (&#39;y&#39;, 50),
+ (&#39;la&#39;, 48),
+ (&#39;en&#39;, 35),
+ (&#39;a&#39;, 31),
+ (&#39;el&#39;, 26),
+ (&#39;los&#39;, 25),
+ (&#39;las&#39;, 18),
+ (&#39;medicos&#39;, 17)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="stopwords">
+<h2>Stopwords<a class="headerlink" href="#stopwords" title="Permalink to this headline">¶</a></h2>
+<p>En el ejemplo anterior vemos que las palabras más frecuentes son “de”, “que”, “y”, etc. Palabras que no aportan al análisis del texto, sino que son conectores, prepocisiones. Estas palabras son llamadas <code class="docutils literal notranslate"><span class="pre">stopwords</span></code>.</p>
+<p>Para cada idioma existe un listado de <code class="docutils literal notranslate"><span class="pre">stopwords</span></code> y, dependiendo del contexto, se pueden ir modificando.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nltk.download(&#39;stopwords&#39;)</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;spanish&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stop_words</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;de&#39;, &#39;la&#39;, &#39;que&#39;, &#39;el&#39;, &#39;en&#39;, &#39;y&#39;, &#39;a&#39;, &#39;los&#39;, &#39;del&#39;, &#39;se&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">token_sw</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">token</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">token_sw</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;s&#39;, &#39;presidenta&#39;, &#39;republica&#39;, &#39;michelle&#39;, &#39;bachelet&#39;, &#39;asiste&#39;, &#39;lanzamiento&#39;, &#39;campaña&#39;, &#39;chile&#39;, &#39;necesita&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fdist</span> <span class="o">=</span> <span class="n">FreqDist</span><span class="p">(</span><span class="n">token_sw</span><span class="p">)</span>
+<span class="n">fdist1</span> <span class="o">=</span> <span class="n">fdist</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">fdist1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;medicos&#39;, 17),
+ (&#39;salud&#39;, 14),
+ (&#39;mil&#39;, 12),
+ (&#39;mas&#39;, 11),
+ (&#39;especialistas&#39;, 8),
+ (&#39;atencion&#39;, 8),
+ (&#39;publico&#39;, 7),
+ (&#39;formacion&#39;, 7),
+ (&#39;cupos&#39;, 7),
+ (&#39;medico&#39;, 6)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="wordclouds">
+<h2>Wordclouds<a class="headerlink" href="#wordclouds" title="Permalink to this headline">¶</a></h2>
+<p>Una de las visualizaciones clásicas del análisis de texto, es una representación visual de la frecuencia de palabas mediante una nube de palabras (wordclouds).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">wordcloud</span> <span class="kn">import</span> <span class="n">WordCloud</span><span class="p">,</span> <span class="n">STOPWORDS</span><span class="p">,</span> <span class="n">ImageColorGenerator</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">comment_words</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">token_sw</span><span class="p">)):</span>
+    <span class="n">comment_words</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">token_sw</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span>
+    
+<span class="n">wordcloud</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">()</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">comment_words</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">facecolor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wordcloud</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase 15_28_0.png" src="_images/Clase 15_28_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wordcloud</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span><span class="n">max_font_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">max_words</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">background_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">comment_words</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">facecolor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wordcloud</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;bilinear&quot;</span><span class="p">)</span>
+<span class="c1"># plt.imshow(wordcloud)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase 15_29_0.png" src="_images/Clase 15_29_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="stemming">
+<h2>Stemming<a class="headerlink" href="#stemming" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Stemming</span></code> (derivado de) corresponde a una normalización de palabras llevandolas a la raíz. Por ejemplo las palabras médicos, medicas, médico, médica se pueden agrupar dentro de <code class="docutils literal notranslate"><span class="pre">medic</span></code>. Luego, en un procesamiento de información nos va ayudar a tener información más depurada.</p>
+<p>Sin embargo, tenemos que tener precaución con estas reducciones de significado. Por ejemplo, un paquete podría reducir médico a medic y medicina a medicin, mientras que otro más agresivo podría llevar ambos conceptos a medic. Naturalmente, para efectos del análisis de la información los resultados pueden ser muy variados.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">SnowballStemmer</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">SnowballStemmer</span><span class="p">(</span><span class="s1">&#39;spanish&#39;</span><span class="p">)</span>
+
+<span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="s1">&#39;medico&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;medic&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">token_st</span> <span class="o">=</span><span class="p">[</span><span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">token_sw</span><span class="p">]</span>
+<span class="n">token_st</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;s&#39;,
+ &#39;president&#39;,
+ &#39;republ&#39;,
+ &#39;michell&#39;,
+ &#39;bachelet&#39;,
+ &#39;asist&#39;,
+ &#39;lanzamient&#39;,
+ &#39;campañ&#39;,
+ &#39;chil&#39;,
+ &#39;necesit&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comment_words</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">token_st</span><span class="p">)):</span>
+    <span class="n">comment_words</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">token_st</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span>
+    
+<span class="n">wordcloud</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span><span class="n">max_font_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">max_words</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">background_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">comment_words</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">facecolor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wordcloud</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;bilinear&quot;</span><span class="p">)</span>
+<span class="c1"># plt.imshow(wordcloud)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase 15_33_0.png" src="_images/Clase 15_33_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="n-gramas">
+<h2>N-gramas<a class="headerlink" href="#n-gramas" title="Permalink to this headline">¶</a></h2>
+<p>Podemos escribir “el computador está apagado”, pero sería incorrecto decir “apagado el está computador”. En este contexto, los N-gramas con estructuras de palabras que se suceden.</p>
+<p>Por ejemplo:</p>
+<ul class="simple">
+<li><p>Bi-grama: (el, computador), (computador, está)</p></li>
+<li><p>Tri-grama: (el, computador, está), (computador, está, apagado)</p></li>
+</ul>
+<p>Capturamos cierto significado de un conjunto de palabras.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">ngrams</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="s1">&#39;this is a foo bar sentences and i want to ngramize it&#39;</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n2grams</span> <span class="o">=</span> <span class="n">ngrams</span><span class="p">(</span><span class="n">nuevo_discurso</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.probability</span> <span class="kn">import</span> <span class="n">FreqDist</span>
+<span class="n">fdist</span> <span class="o">=</span> <span class="n">FreqDist</span><span class="p">(</span><span class="n">n2grams</span><span class="p">)</span>
+<span class="n">fdist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FreqDist({(&#39;medicos&#39;, &#39;y&#39;, &#39;especialistas&#39;): 4, (&#39;sistema&#39;, &#39;publico&#39;, &#39;de&#39;): 4, (&#39;publico&#39;, &#39;de&#39;, &#39;salud&#39;): 4, (&#39;la&#39;, &#39;atencion&#39;, &#39;primaria&#39;): 4, (&#39;etapa&#39;, &#39;de&#39;, &#39;destinacion&#39;): 4, (&#39;de&#39;, &#39;destinacion&#39;, &#39;y&#39;): 4, (&#39;destinacion&#39;, &#39;y&#39;, &#39;formacion&#39;): 4, (&#39;chile&#39;, &#39;necesita&#39;, &#39;mas&#39;): 3, (&#39;necesita&#39;, &#39;mas&#39;, &#39;medicos&#39;): 3, (&#39;mas&#39;, &#39;medicos&#39;, &#39;y&#39;): 3, ...})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fdist1</span> <span class="o">=</span> <span class="n">fdist</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">x</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">y</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fdist1</span><span class="p">:</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;medicos&#39;, &#39;y&#39;, &#39;especialistas&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+            <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="69968246-c413-426a-a10e-0a039fb474b9" class="plotly-graph-div" style="height:500px; width:700px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("69968246-c413-426a-a10e-0a039fb474b9")) {                    Plotly.newPlot(                        "69968246-c413-426a-a10e-0a039fb474b9",                        [{"orientation": "h", "type": "bar", "x": [4, 4, 4, 4, 4, 4, 4, 3, 3, 3], "y": ["('medicos', 'y', 'especialistas')", "('sistema', 'publico', 'de')", "('publico', 'de', 'salud')", "('la', 'atencion', 'primaria')", "('etapa', 'de', 'destinacion')", "('de', 'destinacion', 'y')", "('destinacion', 'y', 'formacion')", "('chile', 'necesita', 'mas')", "('necesita', 'mas', 'medicos')", "('mas', 'medicos', 'y')"]}],                        {"height": 500, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "width": 700},                        {"responsive": true}                    ).then(function(){
+
+var gd = document.getElementById('69968246-c413-426a-a10e-0a039fb474b9');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Félix Ordóñez<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

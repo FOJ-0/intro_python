@@ -1,0 +1,1205 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 17: Introducción al uso de clases &#8212; Introducción a python</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_fae.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introducción a python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Python para Ingeniería Comercial
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="About_python.html">
+   Clase 2: About Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clase3.html">
+   Clase 3: lo básico
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase4.html">
+   Clase 4: Actividad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clase5.html">
+   Clase 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase6.html">
+   Clase 7: Pauta actividad clase 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase8.html">
+   Clase 8: Introducción a los gráficos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase9.html">
+   Clase 9: introducción a los datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase10.html">
+   Clase 10: Tarea 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase11.html">
+   Clase 11-12: continuación con los datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase13.html">
+   Clase 13
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase15.html">
+   Clase 15: Introducción al análisis de texto (text mining)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase16.html">
+   Tarea 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase19.html">
+   Clase 19: Loops, funciones y SQL
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Clase 17.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FClase 17.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Clase 17.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Clase 17: Introducción al uso de clases
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repaso">
+   1. Repaso
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion">
+   2. Introducción
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definir-una-clase">
+   3. Definir una clase
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#llamar-funciones-dentro-de-una-clase">
+   4. Llamar funciones dentro de una clase
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#actualizar-parametros">
+   5. Actualizar parámetros
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-1">
+   6. Ejercicio 1
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-2">
+   Ejercicio 2
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="clase-17-introduccion-al-uso-de-clases">
+<h1>Clase 17: Introducción al uso de clases<a class="headerlink" href="#clase-17-introduccion-al-uso-de-clases" title="Permalink to this headline">¶</a></h1>
+<p>En esta sesión veremos el uso de <code class="docutils literal notranslate"><span class="pre">clases</span></code> y programación orientada a <code class="docutils literal notranslate"><span class="pre">objetos</span></code>.</p>
+<ol class="simple">
+<li><p>Repaso</p></li>
+<li><p>Introducción a las clases</p></li>
+<li><p>Definir una clase</p></li>
+<li><p>Llamar funciones dentro de una clase</p></li>
+<li><p>Actualizar parámetros</p></li>
+<li><p>Ejercicio</p></li>
+</ol>
+</div>
+<div class="section" id="repaso">
+<h1>1. Repaso<a class="headerlink" href="#repaso" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Revisamos qué es <code class="docutils literal notranslate"><span class="pre">Python</span></code>, por qué es tan popular y cómo instalamos <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> y <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>.</p></li>
+<li><p>Aprendimos qué es una <code class="docutils literal notranslate"><span class="pre">librería</span></code>, cómo se instala y cómo utilizar diferentes módulos.</p></li>
+<li><p>Revisamos como crear <code class="docutils literal notranslate"><span class="pre">variables</span></code> y los diferentes <code class="docutils literal notranslate"><span class="pre">types</span></code> (tipos) que podemos usar.</p></li>
+<li><p>Vimos la diferentecia entre <code class="docutils literal notranslate"><span class="pre">arrays</span></code> y <code class="docutils literal notranslate"><span class="pre">listas</span></code>.</p></li>
+<li><p>Creamos <code class="docutils literal notranslate"><span class="pre">loops</span></code> para obtener iteraciones, cómo acceder a los elementos de una lista/array utilizando loops.</p></li>
+<li><p>Aprendimos el uso de condicionales: <code class="docutils literal notranslate"><span class="pre">if/else</span></code>.</p></li>
+<li><p>Creamos <code class="docutils literal notranslate"><span class="pre">funciones</span></code> (def), la flexibilidad de éstas y vimos qué es el input y output.</p></li>
+<li><p>Aprendimos qué es un <code class="docutils literal notranslate"><span class="pre">diccionario</span></code>, qué es una llave (key) y valor (value). Cómo nos sirve para ordenar nuestra información y cómo podemos vincularlo con loops y condicionales.</p></li>
+<li><p>Revisamos librerías de gŕaficos: <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> y <code class="docutils literal notranslate"><span class="pre">Plotly</span></code>.</p></li>
+<li><p>Trabajamos con datos estructurados mediante la librería <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>:</p>
+<ul class="simple">
+<li><p>Importar datos</p></li>
+<li><p>Limpiar información</p></li>
+<li><p>Datos de texto, numéricos y fechas</p></li>
+<li><p>Crear un DataFrame</p></li>
+<li><p>Manipular el DataFrame</p></li>
+</ul>
+</li>
+<li><p>Usando pandas aprendimos a manejar bases de <code class="docutils literal notranslate"><span class="pre">datos</span> <span class="pre">relacionales</span></code>: tipo SQL.</p></li>
+<li><p>Nos introdujimos al mundo del <code class="docutils literal notranslate"><span class="pre">análisis</span> <span class="pre">de</span> <span class="pre">texto</span></code> (text mining).</p></li>
+</ol>
+<p>Librerías que hemos ocupados:</p>
+<ul class="simple">
+<li><p>Numpy</p></li>
+<li><p>Pandas</p></li>
+<li><p>Matplotlib</p></li>
+<li><p>Plotly</p></li>
+<li><p>nltk</p></li>
+<li><p>re</p></li>
+</ul>
+</div>
+<div class="section" id="introduccion">
+<h1>2. Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline">¶</a></h1>
+<p>La <code class="docutils literal notranslate"><span class="pre">programación</span> <span class="pre">orientada</span> <span class="pre">a</span> <span class="pre">objectos</span></code> es un enfoque de desarrollo de sistemas centrado en <code class="docutils literal notranslate"><span class="pre">objetos</span></code> y como interactúan. Por ejemplo, pensemos en los elementos de alrededor, un computador, celular, escritorio, cama, etc. ¿Cómo interactúan? Me conecto al computador, utilizo el celular, subo una foto a instagram, etc.</p>
+<p>En la programación vamos a tener objetos y vamos a establecer mecanismos para que estos interactúen. Los códigos se van a enfocar en establecer <code class="docutils literal notranslate"><span class="pre">objetos</span></code> y <code class="docutils literal notranslate"><span class="pre">clases</span></code>.</p>
+<p>En este contexto, un <code class="docutils literal notranslate"><span class="pre">objeto</span></code> va a ser una forma específica de organizar un código y que va a estar definida, de tal forma, que va a englobar los datos y el comportamiento. Esto significa que los datos y los procesos (funciones) van a pertenecer a uno o más objetos.</p>
+<p>Otra forma de ver los procedemientos es el paradigma procedural (procedural paradigm), que en simple es dividir el problema en en pequeñas partes (funciones) y vamos combinando los procedimientos, donde se comparte data entre procesos o mediante variables globales. Por otro lado, la programación orientada a objetos divide el problema en pequeñas partes (objetos) y el código está construido alrededor de los objetos. “Los objetos buscan representar cosas que existen en el mundo real en un sistema de cómputo”. Los objetos no comparten datos.</p>
+<p>Las <code class="docutils literal notranslate"><span class="pre">clases</span></code> (class) nos permiten ordenar datos y funciones. De forma incompleta e introductoria, podemos pensar las clases como una gran función de funciones, que nos va a permitir ordenar códigos que pueden ser grandes y con gran cantidad de sub-funciones.</p>
+<p>Cuando creamos una nueva <code class="docutils literal notranslate"><span class="pre">clase</span></code> (class) vamos a crear un nuevo <code class="docutils literal notranslate"><span class="pre">tipo</span></code> (type) de <code class="docutils literal notranslate"><span class="pre">objeto</span></code>. Cada <code class="docutils literal notranslate"><span class="pre">clase</span></code> va a tener atributos particulares a ésta y métodos para modificarla.</p>
+<p>Existen lenguajes que funcionan exclusivamente orientados a objetos, como Java, y otros como Python que son lenguajes multipropósito que permiten trabajar con mecanismos del tipo <code class="docutils literal notranslate"><span class="pre">procedural</span></code> u <code class="docutils literal notranslate"><span class="pre">objetos</span></code>.</p>
+<p>Veamos un ejemplo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.io</span> <span class="k">as</span> <span class="nn">sio</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Clases.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase 17_4_0.png" src="_images/Clase 17_4_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Clases2.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase 17_5_0.png" src="_images/Clase 17_5_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="definir-una-clase">
+<h1>3. Definir una clase<a class="headerlink" href="#definir-una-clase" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Empresa</span><span class="p">:</span>
+    <span class="c1">#Dos cosas fundamentales: __init__() y &quot;self&quot;</span>
+     <span class="c1">#init(): cada clase tiene la función __init__(). Se ejecuta cada vez se llama la clase. </span>
+             <span class="c1"># su función es asignar valores a los objetos. </span>
+     <span class="c1">#self: el parámetro self permite hacer referencia dentro de una instancia de la clase, </span>
+             <span class="c1">#sean parámetros o métodos. No necesariamente se tiene que llamar self. </span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ingresos</span><span class="p">,</span> <span class="n">costos</span><span class="p">,</span> <span class="n">salarios</span><span class="p">,</span> <span class="n">personas</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ingresos</span> <span class="o">=</span> <span class="n">ingresos</span> <span class="c1">#variable única a cada instancia</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">costos</span> <span class="o">=</span> <span class="n">costos</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">salarios</span> <span class="o">=</span> <span class="n">salarios</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">personas</span> <span class="o">=</span> <span class="n">personas</span>
+
+
+<span class="n">emp1</span> <span class="o">=</span> <span class="n">Empresa</span><span class="p">(</span><span class="s2">&quot;100&quot;</span><span class="p">,</span> <span class="s2">&quot;50&quot;</span><span class="p">,</span> <span class="s2">&quot;20&quot;</span><span class="p">,</span> <span class="s2">&quot;10&quot;</span><span class="p">)</span> <span class="c1">#Probar quitando un argumento</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Empresa 1:&quot;</span><span class="p">,</span> <span class="s2">&quot;Ingresos, costos&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">emp1</span><span class="o">.</span><span class="n">ingresos</span><span class="p">,</span> <span class="n">emp1</span><span class="o">.</span><span class="n">costos</span><span class="p">))</span>
+
+<span class="n">emp2</span> <span class="o">=</span> <span class="n">Empresa</span><span class="p">(</span><span class="s2">&quot;1000&quot;</span><span class="p">,</span> <span class="s2">&quot;200&quot;</span><span class="p">,</span> <span class="s2">&quot;500&quot;</span><span class="p">,</span> <span class="s2">&quot;30&quot;</span><span class="p">)</span> <span class="c1">#Probar quitando un argumento</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Empresa 2:&quot;</span><span class="p">,</span> <span class="s2">&quot;Ingresos, costos&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">emp2</span><span class="o">.</span><span class="n">ingresos</span><span class="p">,</span> <span class="n">emp2</span><span class="o">.</span><span class="n">costos</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Empresa 1: Ingresos, costos (&#39;100&#39;, &#39;50&#39;)
+Empresa 2: Ingresos, costos (&#39;1000&#39;, &#39;200&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="llamar-funciones-dentro-de-una-clase">
+<h1>4. Llamar funciones dentro de una clase<a class="headerlink" href="#llamar-funciones-dentro-de-una-clase" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># llamar funciones dentro de la clase</span>
+<span class="k">class</span> <span class="nc">Empresa</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ingresos</span><span class="p">,</span> <span class="n">costos</span><span class="p">,</span> <span class="n">salarios</span><span class="p">,</span> <span class="n">personas</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ingresos</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">ingresos</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">costos</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">costos</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">salarios</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">salarios</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">personas</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">personas</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ingresos</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ingresos</span><span class="p">)</span>
+        <span class="n">costos</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">costos</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La Empresa tiene ingresos y costos por &quot;</span> <span class="o">+</span> <span class="n">ingresos</span> <span class="o">+</span> <span class="s2">&quot; y &quot;</span> <span class="o">+</span> <span class="n">costos</span> <span class="o">+</span>  <span class="s2">&quot; respectivamente.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">utilidades</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="n">ingresos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ingresos</span>
+        <span class="n">costos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">costos</span>
+        <span class="k">return</span> <span class="n">ingresos</span><span class="o">-</span><span class="n">costos</span>
+    
+    <span class="k">def</span> <span class="nf">salario_pp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="n">salarios</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">salarios</span>
+        <span class="n">personas</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">personas</span>
+        <span class="k">return</span> <span class="n">salarios</span><span class="o">/</span><span class="n">personas</span>
+    
+    <span class="k">def</span> <span class="nf">utilidades_pp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">utilidades</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">utilidades</span><span class="p">()</span>
+        <span class="n">personas</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">personas</span>
+        <span class="k">return</span> <span class="n">utilidades</span><span class="o">/</span><span class="n">personas</span>
+
+        
+<span class="n">ingresos</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;¿Cuál es el ingreso de la empresa?&#39;</span><span class="p">)</span>        
+<span class="n">costos</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;¿Cuáles son los costos de la empresa?&#39;</span><span class="p">)</span>          
+<span class="n">salarios</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;¿Cuál es el total de salarios?&#39;</span><span class="p">)</span>
+<span class="n">personas</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;¿Cuántas personas trabajan en la empresa?&#39;</span><span class="p">)</span>
+
+        
+<span class="n">emp1</span> <span class="o">=</span> <span class="n">Empresa</span><span class="p">(</span><span class="n">ingresos</span><span class="p">,</span> <span class="n">costos</span><span class="p">,</span> <span class="n">salarios</span><span class="p">,</span> <span class="n">personas</span><span class="p">)</span> <span class="c1">#Probar quitando un argumento</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mf">52e05</span><span class="n">aea364c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> 
+<span class="g g-Whitespace">     </span><span class="mi">30</span> 
+<span class="ne">---&gt; </span><span class="mi">31</span> <span class="n">ingresos</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;¿Cuál es el ingreso de la empresa?&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="n">costos</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;¿Cuáles son los costos de la empresa?&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="n">salarios</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;¿Cuál es el total de salarios?&#39;</span><span class="p">)</span>
+
+<span class="nn">~/miniconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">843</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">844</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">--&gt; </span><span class="mi">845</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">    </span><span class="mi">846</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">emp1</span><span class="o">.</span><span class="n">myfunc</span><span class="p">()</span>
+<span class="n">emp1</span><span class="o">.</span><span class="n">utilidades</span><span class="p">()</span>
+<span class="n">emp1</span><span class="o">.</span><span class="n">salario_pp</span><span class="p">()</span>
+<span class="n">emp1</span><span class="o">.</span><span class="n">utilidades_pp</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="actualizar-parametros">
+<h1>5. Actualizar parámetros<a class="headerlink" href="#actualizar-parametros" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ej_param1</span><span class="p">:</span>
+ 
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">α</span><span class="p">,</span> <span class="n">β</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">α</span> <span class="o">=</span> <span class="n">α</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">β</span> <span class="o">=</span> <span class="n">β</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">γ</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">α</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">β</span>
+
+    <span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">α</span><span class="p">,</span> <span class="n">β</span><span class="p">,</span> <span class="n">γ</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">α</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">β</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">γ</span>
+        <span class="k">return</span> <span class="n">α</span> <span class="o">*</span> <span class="n">β</span><span class="o">**</span><span class="n">γ</span>
+
+        
+<span class="n">α</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">β</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="n">par</span> <span class="o">=</span> <span class="n">Ej_param1</span><span class="p">(</span><span class="n">α</span><span class="p">,</span> <span class="n">β</span><span class="p">)</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">par</span><span class="o">.</span><span class="n">myfunc</span><span class="p">()</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2574747827902883
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ej_param2</span><span class="p">:</span>
+ 
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">α</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">β</span><span class="o">=</span><span class="mf">0.7</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">α</span> <span class="o">=</span> <span class="n">α</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">β</span> <span class="o">=</span> <span class="n">β</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">γ</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">α</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">β</span>
+
+        
+    <span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">α</span><span class="p">,</span> <span class="n">β</span><span class="p">,</span> <span class="n">γ</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">α</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">β</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">γ</span>
+        <span class="k">return</span> <span class="n">α</span> <span class="o">*</span> <span class="n">β</span><span class="o">**</span><span class="n">γ</span>
+
+<span class="n">par</span> <span class="o">=</span> <span class="n">Ej_param2</span><span class="p">(</span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">)</span> <span class="c1">#probar sin actualizar valores o actualizando valores </span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">par</span><span class="o">.</span><span class="n">myfunc</span><span class="p">()</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2574747827902883
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ej_param3</span><span class="p">:</span>
+ 
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> 
+        <span class="c1">#unspecified number of arguments to a function</span>
+        <span class="c1">#kwargs allows you to pass keyworded variable length of arguments to a function</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">()</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_parameters</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parameters2</span><span class="p">()</span> 
+        
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#Parámetros básicos</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.5</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">β</span> <span class="o">=</span> <span class="mf">0.7</span>
+        
+    <span class="k">def</span> <span class="nf">parameters2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#Parámetros compuestos</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">γ</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">α</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">β</span>
+        
+    <span class="k">def</span> <span class="nf">update_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span> 
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="c1">#syntax: setattr(object, name, value)</span>
+        
+    <span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">α</span><span class="p">,</span> <span class="n">β</span><span class="p">,</span> <span class="n">γ</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">α</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">β</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">γ</span>
+        <span class="k">return</span> <span class="n">α</span> <span class="o">*</span> <span class="n">β</span><span class="o">**</span><span class="n">γ</span>
+
+<span class="n">par</span> <span class="o">=</span> <span class="n">Ej_param3</span><span class="p">(</span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">)</span> <span class="c1">#probar sin actualizar valores o actualizando valores </span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">par</span><span class="o">.</span><span class="n">myfunc</span><span class="p">()</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2574747827902883
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-1">
+<h1>6. Ejercicio 1<a class="headerlink" href="#ejercicio-1" title="Permalink to this headline">¶</a></h1>
+<p>Supongamos que modelo de oferta y demanda:</p>
+<div class="math notranslate nohighlight">
+\[S(q) = q^2\]</div>
+<div class="math notranslate nohighlight">
+\[D(q) = (q-20)^2\]</div>
+<ol class="simple">
+<li><p>Definir una función para la oferta y otra para la de demanda.</p></li>
+<li><p>Graficar las curvas <span class="math notranslate nohighlight">\(S(q)\)</span> y <span class="math notranslate nohighlight">\(D(q)\)</span> para un set de <span class="math notranslate nohighlight">\(q\in (0,16)\)</span>.</p></li>
+<li><p>Obtener el precio y cantidad de equilibrio.</p></li>
+<li><p>Graficar el equilibrio.</p></li>
+<li><p>Agregar todo lo anterior en una clase.</p></li>
+</ol>
+<ol class="simple">
+<li><p>Definir una función para la oferta y otra para la de demanda.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1. Definir una función para la oferta y otra para la de demanda.</span>
+<span class="c1">#Oferta</span>
+<span class="k">def</span> <span class="nf">S</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">q</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">#Demanda</span>
+<span class="k">def</span> <span class="nf">D</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">q</span> <span class="o">-</span> <span class="mi">20</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Graficar las curvas <span class="math notranslate nohighlight">\(S(q)\)</span> y <span class="math notranslate nohighlight">\(D(q)\)</span> para un set de <span class="math notranslate nohighlight">\(q\in (0,16)\)</span>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#2. Graficar las curvas $S(q)$ y $D(q)$ para un set de $q\in (0,16)$. </span>
+<span class="c1">#Librerías</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline 
+    <span class="c1">#Magic function: muestra los gráficos directo después de crearlos</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1">#Crear vector de cantidad</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1">#Graficar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">S</span><span class="p">(</span><span class="n">q</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Oferta&quot;</span><span class="p">)</span> <span class="c1">#Gŕafico oferta</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">D</span><span class="p">(</span><span class="n">q</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Demanda&quot;</span><span class="p">)</span> <span class="c1">#Gráfico demanda</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Oferta y demanda&quot;</span><span class="p">)</span> <span class="c1">#Título</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1">#Leyenda</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Cantidad $q$&quot;</span><span class="p">)</span> <span class="c1">#Label eje x</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Precio&quot;</span><span class="p">)</span> <span class="c1">#Label eje y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Precio&#39;)
+</pre></div>
+</div>
+<img alt="_images/Clase 17_19_1.png" src="_images/Clase 17_19_1.png" />
+</div>
+</div>
+<ol class="simple">
+<li><p>Obtener el precio y cantidad de equilibrio.</p></li>
+</ol>
+<p>El equilibrio se encuentra donde la función de oferta y demanda se intersectan:
+$<span class="math notranslate nohighlight">\(S(q) = D(q)\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#3. Obtener el precio y cantidad de equilibrio. </span>
+<span class="c1">#Librería: Symbolic Computation -&gt; trabajar con problemas matemáticos simbólicamente</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sy</span>
+
+<span class="n">q</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;q:&quot;</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">S</span><span class="p">(</span><span class="n">q</span><span class="p">),</span> <span class="n">D</span><span class="p">(</span><span class="n">q</span><span class="p">))</span>
+<span class="n">eq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>q: q
+</pre></div>
+</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q^{2} = \left(q - 20\right)^{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_sol</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eq</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;q_sol:&quot;</span><span class="p">,</span> <span class="n">q_sol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>q_sol: [10]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_sol</span> <span class="o">=</span> <span class="n">S</span><span class="p">(</span><span class="n">q_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Equilibrio (q,p):&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">q_sol</span><span class="p">,</span> <span class="n">p_sol</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Equilibrio (q,p): ([10], 100)
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Graficar el equilibrio.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#4. Graficar el equilibrio. </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span><span class="c1">#create figure and reset q to be numbers</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">S</span><span class="p">(</span><span class="n">q</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Oferta&quot;</span><span class="p">)</span><span class="c1">#plot supply, demand, and equilibrium points</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">D</span><span class="p">(</span><span class="n">q</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Demanda&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_sol</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">p_sol</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Oferta y demanda&quot;</span><span class="p">)</span><span class="c1">#add titles and legend</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Cantidad $q$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Precio&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span><span class="c1">#add arrow with annotation</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Equilibrio (10, 100)&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-87-06f2ed6b7c24&gt;:14: MatplotlibDeprecationWarning: Adding an axes using the same arguments as a previous axes currently reuses the earlier instance.  In a future version, a new instance will always be created and returned.  Meanwhile, this warning can be suppressed, and the future behavior ensured, by passing a unique label to each axes instance.
+  ax = plt.axes()#add arrow with annotation
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(10, 250, &#39;Equilibrio (10, 100)&#39;)
+</pre></div>
+</div>
+<img alt="_images/Clase 17_25_2.png" src="_images/Clase 17_25_2.png" />
+</div>
+</div>
+<ol class="simple">
+<li><p>Agregar todo lo anterior en una clase.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">S_D</span><span class="p">:</span> 
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">β</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">q</span> <span class="o">=</span> <span class="n">q</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">β</span> <span class="o">=</span> <span class="n">β</span>
+    <span class="c1">#Oferta</span>
+    <span class="k">def</span> <span class="nf">S</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">q</span>
+        <span class="n">β</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">β</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">q</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1">#Demanda</span>
+    <span class="k">def</span> <span class="nf">D</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">q</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">q</span> <span class="o">-</span> <span class="mi">20</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    
+    <span class="k">def</span> <span class="nf">sol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="c1">#Cantidad</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">)</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">S</span><span class="p">()</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">()</span>
+        <span class="c1">#Equilibrio : oferta=demanda</span>
+        <span class="n">eq</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+        
+        <span class="c1">#Solución</span>
+<span class="c1">#         q_sol = sy.solve(eq)</span>
+<span class="c1">#         p_sol = β*q_sol[0]**2</span>
+        
+<span class="c1">#         return q_sol[0], p_sol</span>
+    
+    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="c1">#Llamar del self</span>
+        <span class="n">q</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">q</span>
+        <span class="n">q_sol</span><span class="p">,</span> <span class="n">p_sol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sol</span><span class="p">()</span>
+        
+        
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+        
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">S</span><span class="p">(),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Oferta&quot;</span><span class="p">)</span><span class="c1">#plot supply, demand, and equilibrium points</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">(),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Demanda&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_sol</span><span class="p">,</span> <span class="n">p_sol</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Oferta y demanda&quot;</span><span class="p">)</span><span class="c1">#add titles and legend</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Cantidad $q$&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Precio&quot;</span><span class="p">)</span>
+
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span><span class="c1">#add arrow with annotation</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Equilibrio&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">((</span><span class="n">q_sol</span><span class="p">,</span> <span class="n">p_sol</span><span class="p">)),</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">q_sol</span><span class="p">,</span> <span class="n">p_sol</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">q_sol</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>        
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">sd</span> <span class="o">=</span> <span class="n">S_D</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">β</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sd</span><span class="o">.</span><span class="n">sol</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">SympifyError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">67</span><span class="o">-</span><span class="mi">1</span><span class="n">ac79e6c7830</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">sd</span> <span class="o">=</span> <span class="n">S_D</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">β</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sd</span><span class="o">.</span><span class="n">sol</span><span class="p">()</span>
+
+<span class="nn">&lt;ipython-input-66-73d7d852b654&gt;</span> in <span class="ni">sol</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>         <span class="n">D</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>         <span class="c1">#Equilibrio : oferta=demanda</span>
+<span class="ne">---&gt; </span><span class="mi">22</span>         <span class="n">eq</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> 
+<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="c1">#Solución</span>
+
+<span class="nn">~/miniconda3/lib/python3.9/site-packages/sympy/core/relational.py</span> in <span class="ni">__new__</span><span class="nt">(cls, lhs, rhs, **options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">501</span>             <span class="n">rhs</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span>         <span class="n">evaluate</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;evaluate&#39;</span><span class="p">,</span> <span class="n">global_parameters</span><span class="o">.</span><span class="n">evaluate</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">503</span>         <span class="n">lhs</span> <span class="o">=</span> <span class="n">_sympify</span><span class="p">(</span><span class="n">lhs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>         <span class="n">rhs</span> <span class="o">=</span> <span class="n">_sympify</span><span class="p">(</span><span class="n">rhs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">505</span>         <span class="k">if</span> <span class="n">evaluate</span><span class="p">:</span>
+
+<span class="nn">~/miniconda3/lib/python3.9/site-packages/sympy/core/sympify.py</span> in <span class="ni">_sympify</span><span class="nt">(a)</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span> 
+<span class="g g-Whitespace">    </span><span class="mi">511</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">512</span><span class="s2">     return sympify(a, strict=True)</span>
+<span class="g g-Whitespace">    </span><span class="mi">513</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span><span class="s2"> </span>
+
+<span class="nn">~/miniconda3/lib/python3.9/site-packages/sympy/core/sympify.py</span> in <span class="ni">sympify</span><span class="nt">(a, locals, convert_xor, strict, rational, evaluate)</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">432</span><span class="s2">     if strict:</span>
+<span class="ne">--&gt; </span><span class="mi">433</span><span class="s2">         raise SympifyError(a)</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">435</span><span class="s2">     if iterable(a):</span>
+
+<span class="ne">SympifyError</span>: SympifyError: array([1.00000000e-02, 1.34364996e-02, 1.73796319e-02, 2.18293970e-02,
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.67857948e-02, 3.22488254e-02, 3.82184888e-02, 4.46947849e-02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.16777137e-02, 5.91672754e-02, 6.71634698e-02, 7.56662969e-02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">8</span><span class="s2">.46757568e-02, 9.41918495e-02, 1.04214575e-01, 1.14743933e-01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.25779924e-01, 1.37322548e-01, 1.49371804e-01, 1.61927693e-01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.74990215e-01, 1.88559370e-01, 2.02635158e-01, 2.17217578e-01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.32306631e-01, 2.47902317e-01, 2.64004635e-01, 2.80613587e-01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.97729171e-01, 3.15351387e-01, 3.33480237e-01, 3.52115719e-01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.71257834e-01, 3.90906582e-01, 4.11061963e-01, 4.31723976e-01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.52892622e-01, 4.74567901e-01, 4.96749813e-01, 5.19438357e-01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.42633534e-01, 5.66335344e-01, 5.90543787e-01, 6.15258862e-01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">6</span><span class="s2">.40480571e-01, 6.66208912e-01, 6.92443885e-01, 7.19185492e-01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">7</span><span class="s2">.46433731e-01, 7.74188603e-01, 8.02450108e-01, 8.31218245e-01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">8</span><span class="s2">.60493016e-01, 8.90274419e-01, 9.20562454e-01, 9.51357123e-01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">9</span><span class="s2">.82658424e-01, 1.01446636e+00, 1.04678093e+00, 1.07960212e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.11292996e+00, 1.14676442e+00, 1.18110552e+00, 1.21595325e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.25130761e+00, 1.28716861e+00, 1.32353624e+00, 1.36041050e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.39779139e+00, 1.43567892e+00, 1.47407308e+00, 1.51297387e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.55238130e+00, 1.59229536e+00, 1.63271605e+00, 1.67364337e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.71507733e+00, 1.75701792e+00, 1.79946514e+00, 1.84241900e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.88587948e+00, 1.92984660e+00, 1.97432036e+00, 2.01930074e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.06478776e+00, 2.11078141e+00, 2.15728170e+00, 2.20428861e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.25180216e+00, 2.29982234e+00, 2.34834916e+00, 2.39738261e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.44692269e+00, 2.49696940e+00, 2.54752275e+00, 2.59858273e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.65014934e+00, 2.70222258e+00, 2.75480246e+00, 2.80788897e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.86148211e+00, 2.91558189e+00, 2.97018830e+00, 3.02530134e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.08092101e+00, 3.13704732e+00, 3.19368026e+00, 3.25081983e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.30846603e+00, 3.36661887e+00, 3.42527834e+00, 3.48444444e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.54411718e+00, 3.60429655e+00, 3.66498255e+00, 3.72617518e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.78787445e+00, 3.85008035e+00, 3.91279288e+00, 3.97601205e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.03973785e+00, 4.10397028e+00, 4.16870934e+00, 4.23395504e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.29970737e+00, 4.36596633e+00, 4.43273192e+00, 4.50000415e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.56778301e+00, 4.63606850e+00, 4.70486063e+00, 4.77415938e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.84396478e+00, 4.91427680e+00, 4.98509546e+00, 5.05642075e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.12825267e+00, 5.20059122e+00, 5.27343641e+00, 5.34678823e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.42064668e+00, 5.49501177e+00, 5.56988349e+00, 5.64526184e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.72114682e+00, 5.79753844e+00, 5.87443669e+00, 5.95184157e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">6</span><span class="s2">.02975309e+00, 6.10817123e+00, 6.18709601e+00, 6.26652743e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">6</span><span class="s2">.34646547e+00, 6.42691015e+00, 6.50786147e+00, 6.58931941e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">6</span><span class="s2">.67128399e+00, 6.75375520e+00, 6.83673304e+00, 6.92021751e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">7</span><span class="s2">.00420862e+00, 7.08870636e+00, 7.17371074e+00, 7.25922174e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">7</span><span class="s2">.34523938e+00, 7.43176366e+00, 7.51879456e+00, 7.60633210e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">7</span><span class="s2">.69437627e+00, 7.78292707e+00, 7.87198451e+00, 7.96154858e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">8</span><span class="s2">.05161928e+00, 8.14219661e+00, 8.23328058e+00, 8.32487118e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">8</span><span class="s2">.41696841e+00, 8.50957227e+00, 8.60268277e+00, 8.69629990e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">8</span><span class="s2">.79042367e+00, 8.88505406e+00, 8.98019109e+00, 9.07583475e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">9</span><span class="s2">.17198505e+00, 9.26864198e+00, 9.36580554e+00, 9.46347573e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">9</span><span class="s2">.56165255e+00, 9.66033601e+00, 9.75952610e+00, 9.85922283e+00,</span>
+<span class="g g-Whitespace">       </span><span class="mi">9</span><span class="s2">.95942618e+00, 1.00601362e+01, 1.01613528e+01, 1.02630760e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.03653059e+01, 1.04680425e+01, 1.05712856e+01, 1.06750354e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.07792918e+01, 1.08840549e+01, 1.09893245e+01, 1.10951009e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.12013838e+01, 1.13081734e+01, 1.14154696e+01, 1.15232725e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.16315819e+01, 1.17403981e+01, 1.18497208e+01, 1.19595502e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.20698862e+01, 1.21807288e+01, 1.22920781e+01, 1.24039340e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.25162966e+01, 1.26291657e+01, 1.27425416e+01, 1.28564240e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.29708131e+01, 1.30857088e+01, 1.32011111e+01, 1.33170201e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.34334357e+01, 1.35503579e+01, 1.36677868e+01, 1.37857223e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.39041644e+01, 1.40231132e+01, 1.41425686e+01, 1.42625306e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.43829993e+01, 1.45039746e+01, 1.46254565e+01, 1.47474451e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.48699403e+01, 1.49929421e+01, 1.51164506e+01, 1.52404657e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.53649874e+01, 1.54900158e+01, 1.56155508e+01, 1.57415924e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.58681407e+01, 1.59951956e+01, 1.61227571e+01, 1.62508252e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.63794000e+01, 1.65084815e+01, 1.66380695e+01, 1.67681642e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.68987655e+01, 1.70298735e+01, 1.71614881e+01, 1.72936093e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.74262371e+01, 1.75593716e+01, 1.76930127e+01, 1.78271605e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.79618149e+01, 1.80969759e+01, 1.82326435e+01, 1.83688178e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.85054987e+01, 1.86426863e+01, 1.87803805e+01, 1.89185813e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.90572887e+01, 1.91965028e+01, 1.93362235e+01, 1.94764509e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.96171848e+01, 1.97584255e+01, 1.99001727e+01, 2.00424266e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.01851871e+01, 2.03284542e+01, 2.04722280e+01, 2.06165084e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.07612954e+01, 2.09065891e+01, 2.10523894e+01, 2.11986964e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.13455099e+01, 2.14928301e+01, 2.16406570e+01, 2.17889904e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.19378305e+01, 2.20871773e+01, 2.22370306e+01, 2.23873906e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.25382573e+01, 2.26896305e+01, 2.28415104e+01, 2.29938970e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.31467901e+01, 2.33001899e+01, 2.34540963e+01, 2.36085094e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.37634291e+01, 2.39188554e+01, 2.40747884e+01, 2.42312280e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.43881742e+01, 2.45456271e+01, 2.47035866e+01, 2.48620527e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.50210254e+01, 2.51805048e+01, 2.53404909e+01, 2.55009835e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.56619828e+01, 2.58234887e+01, 2.59855013e+01, 2.61480205e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.63110463e+01, 2.64745787e+01, 2.66386178e+01, 2.68031635e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.69682159e+01, 2.71337749e+01, 2.72998405e+01, 2.74664127e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.76334916e+01, 2.78010771e+01, 2.79691693e+01, 2.81377680e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.83068735e+01, 2.84764855e+01, 2.86466042e+01, 2.88172295e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.89883614e+01, 2.91600000e+01, 2.93321452e+01, 2.95047970e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.96779555e+01, 2.98516206e+01, 3.00257924e+01, 3.02004707e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.03756557e+01, 3.05513474e+01, 3.07275457e+01, 3.09042506e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.10814621e+01, 3.12591803e+01, 3.14374051e+01, 3.16161365e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.17953746e+01, 3.19751193e+01, 3.21553706e+01, 3.23361286e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.25173932e+01, 3.26991644e+01, 3.28814423e+01, 3.30642267e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.32475179e+01, 3.34313156e+01, 3.36156200e+01, 3.38004311e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.39857487e+01, 3.41715730e+01, 3.43579039e+01, 3.45447415e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.47320857e+01, 3.49199365e+01, 3.51082940e+01, 3.52971581e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.54865288e+01, 3.56764061e+01, 3.58667901e+01, 3.60576807e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.62490780e+01, 3.64409819e+01, 3.66333924e+01, 3.68263096e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.70197333e+01, 3.72136638e+01, 3.74081008e+01, 3.76030445e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.77984948e+01, 3.79944517e+01, 3.81909153e+01, 3.83878855e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.85853624e+01, 3.87833459e+01, 3.89818360e+01, 3.91808327e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">3</span><span class="s2">.93803361e+01, 3.95803461e+01, 3.97808628e+01, 3.99818860e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.01834159e+01, 4.03854525e+01, 4.05879957e+01, 4.07910455e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.09946019e+01, 4.11986650e+01, 4.14032347e+01, 4.16083110e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.18138940e+01, 4.20199836e+01, 4.22265798e+01, 4.24336827e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.26412922e+01, 4.28494083e+01, 4.30580311e+01, 4.32671605e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.34767965e+01, 4.36869392e+01, 4.38975885e+01, 4.41087444e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.43204070e+01, 4.45325762e+01, 4.47452520e+01, 4.49584345e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.51721236e+01, 4.53863193e+01, 4.56010217e+01, 4.58162306e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.60319463e+01, 4.62481685e+01, 4.64648974e+01, 4.66821329e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.68998751e+01, 4.71181239e+01, 4.73368793e+01, 4.75561414e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.77759101e+01, 4.79961854e+01, 4.82169673e+01, 4.84382559e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.86600511e+01, 4.88823530e+01, 4.91051615e+01, 4.93284766e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">4</span><span class="s2">.95522983e+01, 4.97766267e+01, 5.00014617e+01, 5.02268034e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.04526517e+01, 5.06790066e+01, 5.09058681e+01, 5.11332363e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.13611111e+01, 5.15894926e+01, 5.18183806e+01, 5.20477753e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.22776767e+01, 5.25080847e+01, 5.27389993e+01, 5.29704205e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.32023484e+01, 5.34347829e+01, 5.36677240e+01, 5.39011718e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.41351262e+01, 5.43695872e+01, 5.46045549e+01, 5.48400292e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.50760102e+01, 5.53124977e+01, 5.55494919e+01, 5.57869928e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.60250002e+01, 5.62635143e+01, 5.65025351e+01, 5.67420624e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.69820964e+01, 5.72226371e+01, 5.74636843e+01, 5.77052382e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.79472987e+01, 5.81898659e+01, 5.84329397e+01, 5.86765201e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.89206072e+01, 5.91652009e+01, 5.94103012e+01, 5.96559082e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">5</span><span class="s2">.99020218e+01, 6.01486420e+01, 6.03957688e+01, 6.06434023e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">6</span><span class="s2">.08915424e+01, 6.11401892e+01, 6.13893426e+01, 6.16390026e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">6</span><span class="s2">.18891693e+01, 6.21398425e+01, 6.23910225e+01, 6.26427090e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">6</span><span class="s2">.28949022e+01, 6.31476020e+01, 6.34008085e+01, 6.36545215e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">6</span><span class="s2">.39087413e+01, 6.41634676e+01, 6.44187006e+01, 6.46744402e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">6</span><span class="s2">.49306865e+01, 6.51874393e+01, 6.54446988e+01, 6.57024650e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">6</span><span class="s2">.59607378e+01, 6.62195172e+01, 6.64788032e+01, 6.67385959e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">6</span><span class="s2">.69988952e+01, 6.72597011e+01, 6.75210137e+01, 6.77828329e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">6</span><span class="s2">.80451588e+01, 6.83079912e+01, 6.85713303e+01, 6.88351761e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">6</span><span class="s2">.90995284e+01, 6.93643875e+01, 6.96297531e+01, 6.98956254e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">7</span><span class="s2">.01620043e+01, 7.04288898e+01, 7.06962820e+01, 7.09641808e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">7</span><span class="s2">.12325862e+01, 7.15014983e+01, 7.17709170e+01, 7.20408423e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">7</span><span class="s2">.23112742e+01, 7.25822128e+01, 7.28536581e+01, 7.31256099e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">7</span><span class="s2">.33980684e+01, 7.36710336e+01, 7.39445053e+01, 7.42184837e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">7</span><span class="s2">.44929687e+01, 7.47679604e+01, 7.50434587e+01, 7.53194636e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">7</span><span class="s2">.55959752e+01, 7.58729934e+01, 7.61505182e+01, 7.64285496e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">7</span><span class="s2">.67070877e+01, 7.69861324e+01, 7.72656838e+01, 7.75457418e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">7</span><span class="s2">.78263064e+01, 7.81073776e+01, 7.83889555e+01, 7.86710400e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">7</span><span class="s2">.89536312e+01, 7.92367290e+01, 7.95203334e+01, 7.98044444e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">8</span><span class="s2">.00890621e+01, 8.03741864e+01, 8.06598174e+01, 8.09459550e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">8</span><span class="s2">.12325992e+01, 8.15197500e+01, 8.18074075e+01, 8.20955716e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">8</span><span class="s2">.23842424e+01, 8.26734197e+01, 8.29631037e+01, 8.32532944e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">8</span><span class="s2">.35439916e+01, 8.38351956e+01, 8.41269061e+01, 8.44191233e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">8</span><span class="s2">.47118471e+01, 8.50050775e+01, 8.52988146e+01, 8.55930583e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">8</span><span class="s2">.58878086e+01, 8.61830656e+01, 8.64788292e+01, 8.67750994e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">8</span><span class="s2">.70718763e+01, 8.73691598e+01, 8.76669499e+01, 8.79652467e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">8</span><span class="s2">.82640501e+01, 8.85633601e+01, 8.88631768e+01, 8.91635001e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">8</span><span class="s2">.94643300e+01, 8.97656666e+01, 9.00675098e+01, 9.03698596e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">9</span><span class="s2">.06727160e+01, 9.09760791e+01, 9.12799489e+01, 9.15843252e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">9</span><span class="s2">.18892082e+01, 9.21945978e+01, 9.25004941e+01, 9.28068970e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">9</span><span class="s2">.31138065e+01, 9.34212227e+01, 9.37291455e+01, 9.40375749e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">9</span><span class="s2">.43465109e+01, 9.46559536e+01, 9.49659029e+01, 9.52763589e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">9</span><span class="s2">.55873215e+01, 9.58987907e+01, 9.62107665e+01, 9.65232490e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">9</span><span class="s2">.68362381e+01, 9.71497339e+01, 9.74637363e+01, 9.77782453e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">9</span><span class="s2">.80932609e+01, 9.84087832e+01, 9.87248121e+01, 9.90413477e+01,</span>
+<span class="g g-Whitespace">       </span><span class="mi">9</span><span class="s2">.93583898e+01, 9.96759386e+01, 9.99939941e+01, 1.00312556e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.00631625e+02, 1.00951200e+02, 1.01271282e+02, 1.01591871e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.01912966e+02, 1.02234568e+02, 1.02556676e+02, 1.02879292e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.03202413e+02, 1.03526042e+02, 1.03850177e+02, 1.04174818e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.04499967e+02, 1.04825622e+02, 1.05151783e+02, 1.05478451e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.05805626e+02, 1.06133308e+02, 1.06461496e+02, 1.06790191e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.07119392e+02, 1.07449100e+02, 1.07779315e+02, 1.08110036e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.08441264e+02, 1.08772998e+02, 1.09105239e+02, 1.09437987e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.09771242e+02, 1.10105003e+02, 1.10439270e+02, 1.10774045e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.11109326e+02, 1.11445113e+02, 1.11781407e+02, 1.12118208e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.12455516e+02, 1.12793330e+02, 1.13131651e+02, 1.13470478e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.13809812e+02, 1.14149653e+02, 1.14490000e+02, 1.14830854e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.15172214e+02, 1.15514082e+02, 1.15856455e+02, 1.16199336e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.16542723e+02, 1.16886617e+02, 1.17231017e+02, 1.17575924e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.17921338e+02, 1.18267258e+02, 1.18613685e+02, 1.18960618e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.19308058e+02, 1.19656005e+02, 1.20004459e+02, 1.20353419e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.20702885e+02, 1.21052859e+02, 1.21403339e+02, 1.21754325e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.22105818e+02, 1.22457818e+02, 1.22810325e+02, 1.23163338e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.23516857e+02, 1.23870884e+02, 1.24225417e+02, 1.24580456e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.24936003e+02, 1.25292056e+02, 1.25648615e+02, 1.26005681e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.26363254e+02, 1.26721334e+02, 1.27079920e+02, 1.27439012e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.27798612e+02, 1.28158718e+02, 1.28519330e+02, 1.28880449e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.29242075e+02, 1.29604208e+02, 1.29966847e+02, 1.30329993e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.30693645e+02, 1.31057804e+02, 1.31422470e+02, 1.31787642e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.32153321e+02, 1.32519507e+02, 1.32886199e+02, 1.33253398e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.33621103e+02, 1.33989315e+02, 1.34358034e+02, 1.34727259e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.35096991e+02, 1.35467230e+02, 1.35837975e+02, 1.36209227e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.36580985e+02, 1.36953251e+02, 1.37326022e+02, 1.37699301e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.38073086e+02, 1.38447377e+02, 1.38822176e+02, 1.39197481e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.39573292e+02, 1.39949611e+02, 1.40326435e+02, 1.40703767e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.41081605e+02, 1.41459950e+02, 1.41838801e+02, 1.42218159e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.42598024e+02, 1.42978395e+02, 1.43359273e+02, 1.43740657e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.44122549e+02, 1.44504946e+02, 1.44887851e+02, 1.45271262e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.45655180e+02, 1.46039604e+02, 1.46424535e+02, 1.46809972e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.47195917e+02, 1.47582368e+02, 1.47969325e+02, 1.48356789e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.48744760e+02, 1.49133237e+02, 1.49522221e+02, 1.49911712e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.50301709e+02, 1.50692213e+02, 1.51083224e+02, 1.51474741e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.51866765e+02, 1.52259295e+02, 1.52652332e+02, 1.53045876e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.53439927e+02, 1.53834483e+02, 1.54229547e+02, 1.54625117e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.55021194e+02, 1.55417778e+02, 1.55814868e+02, 1.56212465e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.56610568e+02, 1.57009178e+02, 1.57408295e+02, 1.57807918e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.58208048e+02, 1.58608685e+02, 1.59009828e+02, 1.59411478e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.59813634e+02, 1.60216297e+02, 1.60619467e+02, 1.61023144e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.61427327e+02, 1.61832016e+02, 1.62237212e+02, 1.62642915e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.63049125e+02, 1.63455841e+02, 1.63863064e+02, 1.64270793e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.64679029e+02, 1.65087772e+02, 1.65497021e+02, 1.65906777e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.66317040e+02, 1.66727809e+02, 1.67139085e+02, 1.67550868e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.67963157e+02, 1.68375953e+02, 1.68789255e+02, 1.69203064e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.69617380e+02, 1.70032202e+02, 1.70447531e+02, 1.70863366e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.71279709e+02, 1.71696557e+02, 1.72113913e+02, 1.72531775e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.72950144e+02, 1.73369019e+02, 1.73788401e+02, 1.74208290e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.74628685e+02, 1.75049587e+02, 1.75470995e+02, 1.75892911e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.76315332e+02, 1.76738261e+02, 1.77161696e+02, 1.77585638e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.78010086e+02, 1.78435041e+02, 1.78860502e+02, 1.79286471e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.79712945e+02, 1.80139927e+02, 1.80567415e+02, 1.80995410e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.81423911e+02, 1.81852919e+02, 1.82282434e+02, 1.82712455e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.83142983e+02, 1.83574018e+02, 1.84005559e+02, 1.84437607e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.84870161e+02, 1.85303222e+02, 1.85736790e+02, 1.86170864e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.86605445e+02, 1.87040533e+02, 1.87476127e+02, 1.87912228e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.88348835e+02, 1.88785950e+02, 1.89223570e+02, 1.89661698e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.90100332e+02, 1.90539472e+02, 1.90979120e+02, 1.91419274e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.91859934e+02, 1.92301101e+02, 1.92742775e+02, 1.93184956e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.93627643e+02, 1.94070837e+02, 1.94514537e+02, 1.94958744e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.95403458e+02, 1.95848678e+02, 1.96294405e+02, 1.96740638e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.97187378e+02, 1.97634625e+02, 1.98082379e+02, 1.98530639e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">1</span><span class="s2">.98979405e+02, 1.99428679e+02, 1.99878459e+02, 2.00328745e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.00779539e+02, 2.01230838e+02, 2.01682645e+02, 2.02134958e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.02587778e+02, 2.03041104e+02, 2.03494937e+02, 2.03949277e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.04404123e+02, 2.04859476e+02, 2.05315336e+02, 2.05771702e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.06228575e+02, 2.06685954e+02, 2.07143840e+02, 2.07602233e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.08061132e+02, 2.08520538e+02, 2.08980451e+02, 2.09440870e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.09901796e+02, 2.10363228e+02, 2.10825168e+02, 2.11287613e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.11750566e+02, 2.12214025e+02, 2.12677991e+02, 2.13142463e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.13607442e+02, 2.14072927e+02, 2.14538920e+02, 2.15005418e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.15472424e+02, 2.15939936e+02, 2.16407955e+02, 2.16876480e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.17345512e+02, 2.17815051e+02, 2.18285096e+02, 2.18755648e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.19226706e+02, 2.19698272e+02, 2.20170343e+02, 2.20642922e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.21116007e+02, 2.21589599e+02, 2.22063697e+02, 2.22538302e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.23013414e+02, 2.23489032e+02, 2.23965157e+02, 2.24441788e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.24918926e+02, 2.25396571e+02, 2.25874722e+02, 2.26353380e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.26832545e+02, 2.27312216e+02, 2.27792394e+02, 2.28273079e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.28754270e+02, 2.29235968e+02, 2.29718172e+02, 2.30200883e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.30684101e+02, 2.31167825e+02, 2.31652056e+02, 2.32136794e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.32622038e+02, 2.33107789e+02, 2.33594047e+02, 2.34080811e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.34568082e+02, 2.35055859e+02, 2.35544143e+02, 2.36032934e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.36522231e+02, 2.37012035e+02, 2.37502346e+02, 2.37993163e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.38484487e+02, 2.38976317e+02, 2.39468654e+02, 2.39961498e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.40454848e+02, 2.40948705e+02, 2.41443069e+02, 2.41937939e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.42433316e+02, 2.42929200e+02, 2.43425590e+02, 2.43922487e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.44419890e+02, 2.44917800e+02, 2.45416217e+02, 2.45915140e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.46414570e+02, 2.46914507e+02, 2.47414950e+02, 2.47915900e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.48417357e+02, 2.48919320e+02, 2.49421789e+02, 2.49924766e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.50428249e+02, 2.50932239e+02, 2.51436735e+02, 2.51941738e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.52447247e+02, 2.52953264e+02, 2.53459786e+02, 2.53966816e+02,</span>
+<span class="g g-Whitespace">       </span><span class="mi">2</span><span class="s2">.54474352e+02, 2.54982395e+02, 2.55490944e+02, 2.56000000e+02])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-2">
+<h1>Ejercicio 2<a class="headerlink" href="#ejercicio-2" title="Permalink to this headline">¶</a></h1>
+<p>Usando el ejemplo de bases relacionales que vimos en la clase 12, crear una <code class="docutils literal notranslate"><span class="pre">clase</span></code> que tenga como características las bases de nombre, edad y almuerzo.</p>
+<ol class="simple">
+<li><p>Crear una función que según un nombre muestre la hora promedio de almuerzo.</p></li>
+<li><p>Función que grafique el promedio de la hora de almuerzo por día.</p></li>
+<li><p>Crear función que devuelva el data frame con las variables id, nombre, edad, día, hora y almuerzo.</p></li>
+<li><p>Función que devuelva el DataFrame corregido, excluyendo los NaN.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;ejemplo_sql.xlsx&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;nombre&#39;</span><span class="p">,</span> <span class="n">thousands</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">edad</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;ejemplo_sql.xlsx&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;edad&#39;</span><span class="p">,</span> <span class="n">thousands</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">almuerzo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;ejemplo_sql.xlsx&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Almuerzo&#39;</span><span class="p">,</span> <span class="n">thousands</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Félix Ordóñez<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

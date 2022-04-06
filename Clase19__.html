@@ -1,0 +1,2112 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 19: Loops, funciones y SQL &#8212; Introducción a python</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_fae.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introducción a python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Python para Ingeniería Comercial
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="About_python.html">
+   Clase 2: About Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clase3_4.html">
+   Clase 3-4: lo básico
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase5_6.html">
+   Clase 5-6: lo básico (continuación)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase5_6.html#actividad">
+   Actividad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase7_8.html">
+   Clase 7-8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase9_10.html">
+   Clase 9-10: Funciones, diccionarios y condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase9_10.html#actividad-1">
+   Actividad 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase11_12.html">
+   Clase 11-12: Introducción a los gráficos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase_13_14_a.html">
+   Clase 13: introducción a los datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase_13_14_b.html">
+   Clase 14: continuación con los datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase15.html">
+   Clase 15: gráficos
+   <em>
+    pro
+   </em>
+   con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Plotly
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase15.html#actividad">
+   Actividad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase17.html">
+   Clase 17: Introducción al análisis de texto (text mining)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase18.html">
+   Clase 18: Introducción al uso de clases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase19.html">
+   Clase 19: Scipy y computación numérica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Clase20.html">
+   Clase 20: Regresiones
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Clase19__.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FClase19__.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Clase19__.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#actividad-1">
+   Actividad 1:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#actividad-2">
+   Actividad 2
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="clase-19-loops-funciones-y-sql">
+<h1>Clase 19: Loops, funciones y SQL<a class="headerlink" href="#clase-19-loops-funciones-y-sql" title="Permalink to this headline">¶</a></h1>
+<p>En esta sesión revisaremos algunos conceptos vistos previamente como loops, funciones, listas, diccionarios, elementos de pandas y gráficos. Vamos a resolver dos aplicaciones en base a estos contenidos.</p>
+<div class="section" id="actividad-1">
+<h2>Actividad 1:<a class="headerlink" href="#actividad-1" title="Permalink to this headline">¶</a></h2>
+<p>Usando los datos de desempleados, ocupados e informales realizar lo siguiente:</p>
+<ol class="simple">
+<li><p>Importar las bases. Revisar si tienen características similares.</p></li>
+<li><p>Juntar las bases usando algún tipo de join. Mostrar qué dan según los diferentes tipos y elegir el adecuado.</p></li>
+<li><p>Mostrar el promedio de desocupados y ocupados por año. Guardar en un nuevo DataFrame.</p></li>
+<li><p>En el DataFrame del punto 2, agregar una columna con la tasa de desempleo (desocupados/(desocupados+ocupados)) y otra columna para la tasa de informalidad (informales/ocupados).</p></li>
+<li><p>Agregar una columna para mostrar la diferencia y otra para la diferencia porcentual de ocupados por periodo.</p></li>
+<li><p>Vamos a crear una función que evalúe si los ocupados están bajo o sobre la media.</p></li>
+<li><p>Usando el DataFrame anterior, crear un nuevo set de datos que tenga sólo la llave, ocupados y ocup_cond cuando es verdadero.</p></li>
+<li><p>Usando for e if mostrar si la tasa de ocupación está bajo o sobre el promedio.</p></li>
+</ol>
+<ol class="simple">
+<li><p>Importar las bases. Revisar si tienen características similares.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df_des</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;/home/felix/Dropbox/Computational_Economics/Intro_python/Data_SQL/Desocupados.ods&#39;</span><span class="p">,</span> <span class="p">)</span>  
+<span class="c1"># df_des.dtypes</span>
+<span class="n">df_ocu</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;/home/felix/Dropbox/Computational_Economics/Intro_python/Data_SQL/Ocupados.ods&#39;</span><span class="p">,</span> <span class="p">)</span>  
+<span class="c1"># df_ocu.dtypes</span>
+<span class="n">df_inf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;/home/felix/Dropbox/Computational_Economics/Intro_python/Data_SQL/Informal.ods&#39;</span><span class="p">,</span> <span class="p">)</span>  
+<span class="n">df_inf</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Año                   int64
+Trimestre            object
+Total_formal        float64
+Total_informal      float64
+Hombres_formal      float64
+Hombres_informal    float64
+Mujeres_formal      float64
+Mujeres_informal    float64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_des</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Año</th>
+      <th>Trimestre</th>
+      <th>Desocupados (Total)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2011</td>
+      <td>Dic - Feb</td>
+      <td>612.826981</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2011</td>
+      <td>Ene - Mar</td>
+      <td>622.445409</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2011</td>
+      <td>Feb - Abr</td>
+      <td>594.917705</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2011</td>
+      <td>Mar - May</td>
+      <td>604.074497</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2011</td>
+      <td>Abr - Jun</td>
+      <td>598.396488</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_ocu</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Año</th>
+      <th>Trimestre</th>
+      <th>Ocupados (Total)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2010</td>
+      <td>Ene - Mar</td>
+      <td>7156.211576</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2010</td>
+      <td>Feb - Abr</td>
+      <td>7198.777387</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2010</td>
+      <td>Mar - May</td>
+      <td>7181.902888</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2010</td>
+      <td>Abr - Jun</td>
+      <td>7221.575499</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2010</td>
+      <td>May -Jul</td>
+      <td>7256.515676</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_inf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Año</th>
+      <th>Trimestre</th>
+      <th>Total_formal</th>
+      <th>Total_informal</th>
+      <th>Hombres_formal</th>
+      <th>Hombres_informal</th>
+      <th>Mujeres_formal</th>
+      <th>Mujeres_informal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2017</td>
+      <td>Jul - Sep</td>
+      <td>6193.891633</td>
+      <td>2419.200879</td>
+      <td>3643.825292</td>
+      <td>1333.469417</td>
+      <td>2550.066341</td>
+      <td>1085.731462</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2017</td>
+      <td>Ago - Oct</td>
+      <td>6168.590625</td>
+      <td>2454.112893</td>
+      <td>3639.764667</td>
+      <td>1354.010989</td>
+      <td>2528.825959</td>
+      <td>1100.101904</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017</td>
+      <td>Sep - Nov</td>
+      <td>6207.712916</td>
+      <td>2504.968544</td>
+      <td>3657.915007</td>
+      <td>1366.333110</td>
+      <td>2549.797909</td>
+      <td>1138.635433</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2017</td>
+      <td>Oct - Dic</td>
+      <td>6239.135838</td>
+      <td>2529.531019</td>
+      <td>3680.942180</td>
+      <td>1376.881958</td>
+      <td>2558.193658</td>
+      <td>1152.649061</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2017</td>
+      <td>Nov - Ene</td>
+      <td>6309.734180</td>
+      <td>2484.188455</td>
+      <td>3727.954628</td>
+      <td>1349.005126</td>
+      <td>2581.779552</td>
+      <td>1135.183329</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ol class="simple">
+<li><p>Juntar las bases usando algún tipo de join. Mostrar qué dan según los diferentes tipos y elegir el adecuado.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="s2">&quot;join_sql.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase19___8_0.png" src="_images/Clase19___8_0.png" />
+</div>
+</div>
+<p>Primero vamos a crear una llave (año-trim), para esto vamos a usar un <code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">join</span></code>. Luego probamos <code class="docutils literal notranslate"><span class="pre">inner</span> <span class="pre">join</span></code> y <code class="docutils literal notranslate"><span class="pre">full</span> <span class="pre">join</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Traemos llave</span>
+<span class="n">trim</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;/home/felix/Dropbox/Computational_Economics/Intro_python/Data_SQL/trimestres.ods&#39;</span><span class="p">,</span> <span class="p">)</span>  
+<span class="n">trim</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Trim</th>
+      <th>mes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Dic - Feb</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ene - Mar</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Feb - Abr</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Mar - May</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Abr - Jun</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Left join: dejamos todo lo de df_des (izquierda) y agregamos el mes</span>
+<span class="n">df_des</span> <span class="o">=</span> <span class="n">df_des</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">trim</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;Trimestre&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;Trim&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+<span class="n">df_des</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Año</th>
+      <th>Trimestre</th>
+      <th>Desocupados (Total)</th>
+      <th>Trim</th>
+      <th>mes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2011</td>
+      <td>Dic - Feb</td>
+      <td>612.826981</td>
+      <td>Dic - Feb</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2011</td>
+      <td>Ene - Mar</td>
+      <td>622.445409</td>
+      <td>Ene - Mar</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2011</td>
+      <td>Feb - Abr</td>
+      <td>594.917705</td>
+      <td>Feb - Abr</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2011</td>
+      <td>Mar - May</td>
+      <td>604.074497</td>
+      <td>Mar - May</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2011</td>
+      <td>Abr - Jun</td>
+      <td>598.396488</td>
+      <td>Abr - Jun</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Crear llave: Desocupados</span>
+<span class="n">df_des</span><span class="p">[</span><span class="s1">&#39;llave&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_des</span><span class="p">[</span><span class="s2">&quot;Año&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">df_des</span><span class="p">[</span><span class="s2">&quot;mes&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="c1">#Limpiar columnas</span>
+<span class="n">df_des</span> <span class="o">=</span> <span class="n">df_des</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Trimestre&#39;</span><span class="p">,</span> <span class="s1">&#39;Trim&#39;</span><span class="p">])</span>
+<span class="n">df_des</span> <span class="o">=</span> <span class="n">df_des</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Desocupados (Total)&quot;</span><span class="p">:</span> <span class="s2">&quot;desoc&quot;</span><span class="p">})</span>
+<span class="n">df_des</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Año</th>
+      <th>desoc</th>
+      <th>mes</th>
+      <th>llave</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2011</td>
+      <td>612.826981</td>
+      <td>1</td>
+      <td>2011-1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2011</td>
+      <td>622.445409</td>
+      <td>2</td>
+      <td>2011-2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2011</td>
+      <td>594.917705</td>
+      <td>3</td>
+      <td>2011-3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2011</td>
+      <td>604.074497</td>
+      <td>4</td>
+      <td>2011-4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2011</td>
+      <td>598.396488</td>
+      <td>5</td>
+      <td>2011-5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Repetimos para las bases de ocupados y para informales</span>
+<span class="sd">&#39;&#39;&#39;Ocupados&#39;&#39;&#39;</span>
+<span class="n">df_ocu</span> <span class="o">=</span> <span class="n">df_ocu</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">trim</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;Trimestre&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;Trim&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+<span class="n">df_ocu</span><span class="p">[</span><span class="s1">&#39;llave&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ocu</span><span class="p">[</span><span class="s2">&quot;Año&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">df_ocu</span><span class="p">[</span><span class="s2">&quot;mes&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df_ocu</span> <span class="o">=</span> <span class="n">df_ocu</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Trimestre&#39;</span><span class="p">,</span> <span class="s1">&#39;Trim&#39;</span><span class="p">])</span>
+<span class="n">df_ocu</span> <span class="o">=</span> <span class="n">df_ocu</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Ocupados (Total)&quot;</span><span class="p">:</span> <span class="s2">&quot;ocupa&quot;</span><span class="p">})</span>
+
+<span class="sd">&#39;&#39;&#39;Informales&#39;&#39;&#39;</span>
+<span class="n">df_inf</span> <span class="o">=</span> <span class="n">df_inf</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">trim</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;Trimestre&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;Trim&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+<span class="n">df_inf</span><span class="p">[</span><span class="s1">&#39;llave&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_inf</span><span class="p">[</span><span class="s2">&quot;Año&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">df_inf</span><span class="p">[</span><span class="s2">&quot;mes&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df_inf</span> <span class="o">=</span> <span class="n">df_inf</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Trimestre&#39;</span><span class="p">,</span> <span class="s1">&#39;Trim&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Chequeamos que está ok</span>
+<span class="n">df_ocu</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Año</th>
+      <th>ocupa</th>
+      <th>mes</th>
+      <th>llave</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2010</td>
+      <td>7156.211576</td>
+      <td>2</td>
+      <td>2010-2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2010</td>
+      <td>7198.777387</td>
+      <td>3</td>
+      <td>2010-3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2010</td>
+      <td>7181.902888</td>
+      <td>4</td>
+      <td>2010-4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2010</td>
+      <td>7221.575499</td>
+      <td>5</td>
+      <td>2010-5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2010</td>
+      <td>7256.515676</td>
+      <td>6</td>
+      <td>2010-6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Caso 1: inner join</span>
+<span class="n">df_inner</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_ocu</span><span class="p">,</span> <span class="n">df_des</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;llave&quot;</span><span class="p">)</span>
+<span class="n">df_inner</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_inner</span><span class="p">,</span> <span class="n">df_inf</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;llave&quot;</span><span class="p">)</span>
+<span class="n">df_inner</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Año_x</th>
+      <th>ocupa</th>
+      <th>mes_x</th>
+      <th>llave</th>
+      <th>Año_y</th>
+      <th>desoc</th>
+      <th>mes_y</th>
+      <th>Año</th>
+      <th>Total_formal</th>
+      <th>Total_informal</th>
+      <th>Hombres_formal</th>
+      <th>Hombres_informal</th>
+      <th>Mujeres_formal</th>
+      <th>Mujeres_informal</th>
+      <th>mes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2017</td>
+      <td>8613.092511</td>
+      <td>8</td>
+      <td>2017-8</td>
+      <td>2017</td>
+      <td>647.828960</td>
+      <td>8</td>
+      <td>2017</td>
+      <td>6193.891633</td>
+      <td>2419.200879</td>
+      <td>3643.825292</td>
+      <td>1333.469417</td>
+      <td>2550.066341</td>
+      <td>1085.731462</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2017</td>
+      <td>8622.703518</td>
+      <td>9</td>
+      <td>2017-9</td>
+      <td>2017</td>
+      <td>647.495338</td>
+      <td>9</td>
+      <td>2017</td>
+      <td>6168.590625</td>
+      <td>2454.112893</td>
+      <td>3639.764667</td>
+      <td>1354.010989</td>
+      <td>2528.825959</td>
+      <td>1100.101904</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017</td>
+      <td>8712.681459</td>
+      <td>10</td>
+      <td>2017-10</td>
+      <td>2017</td>
+      <td>626.061755</td>
+      <td>10</td>
+      <td>2017</td>
+      <td>6207.712916</td>
+      <td>2504.968544</td>
+      <td>3657.915007</td>
+      <td>1366.333110</td>
+      <td>2549.797909</td>
+      <td>1138.635433</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2017</td>
+      <td>8768.666857</td>
+      <td>11</td>
+      <td>2017-11</td>
+      <td>2017</td>
+      <td>610.855783</td>
+      <td>11</td>
+      <td>2017</td>
+      <td>6239.135838</td>
+      <td>2529.531019</td>
+      <td>3680.942180</td>
+      <td>1376.881958</td>
+      <td>2558.193658</td>
+      <td>1152.649061</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2017</td>
+      <td>8793.922635</td>
+      <td>12</td>
+      <td>2017-12</td>
+      <td>2017</td>
+      <td>644.192655</td>
+      <td>12</td>
+      <td>2017</td>
+      <td>6309.734180</td>
+      <td>2484.188455</td>
+      <td>3727.954628</td>
+      <td>1349.005126</td>
+      <td>2581.779552</td>
+      <td>1135.183329</td>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Caso 2: full join</span>
+<span class="n">df_outer</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_ocu</span><span class="p">,</span> <span class="n">df_des</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;llave&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+<span class="n">df_outer</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_outer</span><span class="p">,</span> <span class="n">df_inf</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;llave&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+<span class="n">df_outer</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Año_x</th>
+      <th>ocupa</th>
+      <th>mes_x</th>
+      <th>llave</th>
+      <th>Año_y</th>
+      <th>desoc</th>
+      <th>mes_y</th>
+      <th>Año</th>
+      <th>Total_formal</th>
+      <th>Total_informal</th>
+      <th>Hombres_formal</th>
+      <th>Hombres_informal</th>
+      <th>Mujeres_formal</th>
+      <th>Mujeres_informal</th>
+      <th>mes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2010</td>
+      <td>7156.211576</td>
+      <td>2</td>
+      <td>2010-2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2010</td>
+      <td>7198.777387</td>
+      <td>3</td>
+      <td>2010-3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2010</td>
+      <td>7181.902888</td>
+      <td>4</td>
+      <td>2010-4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2010</td>
+      <td>7221.575499</td>
+      <td>5</td>
+      <td>2010-5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2010</td>
+      <td>7256.515676</td>
+      <td>6</td>
+      <td>2010-6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ol class="simple">
+<li><p>Mostrar el promedio de desocupados y ocupados por año. Guardar en un nuevo DataFrame.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ocu_mean</span> <span class="o">=</span> <span class="n">df_outer</span><span class="p">[[</span><span class="s2">&quot;Año_x&quot;</span><span class="p">,</span> <span class="s2">&quot;ocupa&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Año_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">des_mean</span> <span class="o">=</span> <span class="n">df_outer</span><span class="p">[[</span><span class="s2">&quot;Año_x&quot;</span><span class="p">,</span> <span class="s2">&quot;desoc&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Año_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ocup: &quot;</span><span class="p">,</span> <span class="n">ocu_mean</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;desoc: &quot;</span><span class="p">,</span> <span class="n">des_mean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ocup:               ocupa
+Año_x             
+2010   7345.366064
+2011   7693.298223
+2012   7873.784322
+2013   8037.406140
+2014   8157.456852
+2015   8289.814806
+2016   8398.796391
+2017   8595.946508
+2018   8785.109319
+2019   8969.531814
+2020   7849.759722
+2021   8139.985895
+desoc:              desoc
+Año_x            
+2010          NaN
+2011   607.637134
+2012   554.747836
+2013   524.783979
+2014   559.690265
+2015   563.728855
+2016   601.532554
+2017   644.187385
+2018   697.860885
+2019   700.342872
+2020   941.343624
+2021   934.795659
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>En el DataFrame del punto 2, agregar una columna con la tasa de desempleo (desocupados/(desocupados+ocupados)) y otra columna para la tasa de informalidad (informales/ocupados).</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_outer</span><span class="p">[</span><span class="s2">&quot;tasa_des&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_outer</span><span class="o">.</span><span class="n">desoc</span><span class="o">/</span><span class="p">(</span><span class="n">df_outer</span><span class="o">.</span><span class="n">desoc</span><span class="o">+</span> <span class="n">df_outer</span><span class="o">.</span><span class="n">ocupa</span><span class="p">)</span>
+<span class="n">df_outer</span><span class="p">[</span><span class="s2">&quot;tasa_infor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_outer</span><span class="o">.</span><span class="n">Total_informal</span><span class="o">/</span><span class="p">(</span><span class="n">df_outer</span><span class="o">.</span><span class="n">ocupa</span><span class="p">)</span>
+
+<span class="n">df_outer</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Año_x</th>
+      <th>ocupa</th>
+      <th>mes_x</th>
+      <th>llave</th>
+      <th>Año_y</th>
+      <th>desoc</th>
+      <th>mes_y</th>
+      <th>Año</th>
+      <th>Total_formal</th>
+      <th>Total_informal</th>
+      <th>Hombres_formal</th>
+      <th>Hombres_informal</th>
+      <th>Mujeres_formal</th>
+      <th>Mujeres_informal</th>
+      <th>mes</th>
+      <th>tasa_des</th>
+      <th>tasa_infor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>129</th>
+      <td>2020</td>
+      <td>8026.216601</td>
+      <td>11</td>
+      <td>2020-11</td>
+      <td>2020.0</td>
+      <td>920.263455</td>
+      <td>11.0</td>
+      <td>2020.0</td>
+      <td>5860.907847</td>
+      <td>2165.308754</td>
+      <td>3490.594002</td>
+      <td>1283.150165</td>
+      <td>2370.313844</td>
+      <td>882.158589</td>
+      <td>11.0</td>
+      <td>0.102863</td>
+      <td>0.269780</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>2020</td>
+      <td>8121.419996</td>
+      <td>12</td>
+      <td>2020-12</td>
+      <td>2020.0</td>
+      <td>925.213793</td>
+      <td>12.0</td>
+      <td>2020.0</td>
+      <td>5921.770235</td>
+      <td>2199.649761</td>
+      <td>3526.999418</td>
+      <td>1289.037217</td>
+      <td>2394.770817</td>
+      <td>910.612544</td>
+      <td>12.0</td>
+      <td>0.102272</td>
+      <td>0.270845</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>2021</td>
+      <td>8167.623309</td>
+      <td>1</td>
+      <td>2021-1</td>
+      <td>2021.0</td>
+      <td>938.324316</td>
+      <td>1.0</td>
+      <td>2021.0</td>
+      <td>6006.452229</td>
+      <td>2161.171081</td>
+      <td>3586.064414</td>
+      <td>1247.821793</td>
+      <td>2420.387815</td>
+      <td>913.349288</td>
+      <td>1.0</td>
+      <td>0.103045</td>
+      <td>0.264602</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>2021</td>
+      <td>8148.205569</td>
+      <td>2</td>
+      <td>2021-2</td>
+      <td>2021.0</td>
+      <td>941.088174</td>
+      <td>2.0</td>
+      <td>2021.0</td>
+      <td>5973.674107</td>
+      <td>2174.531461</td>
+      <td>3567.113613</td>
+      <td>1258.942188</td>
+      <td>2406.560494</td>
+      <td>915.589274</td>
+      <td>2.0</td>
+      <td>0.103538</td>
+      <td>0.266872</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>2021</td>
+      <td>8104.128807</td>
+      <td>3</td>
+      <td>2021-3</td>
+      <td>2021.0</td>
+      <td>924.974488</td>
+      <td>3.0</td>
+      <td>2021.0</td>
+      <td>5980.572116</td>
+      <td>2123.556691</td>
+      <td>3565.133756</td>
+      <td>1237.772701</td>
+      <td>2415.438361</td>
+      <td>885.783989</td>
+      <td>3.0</td>
+      <td>0.102444</td>
+      <td>0.262034</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ol class="simple">
+<li><p>Agregar una columna para mostrar la diferencia y otra para la diferencia porcentual de ocupados por periodo.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_outer</span><span class="p">[</span><span class="s2">&quot;dif_oc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_outer</span><span class="o">.</span><span class="n">ocupa</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="n">df_outer</span><span class="p">[</span><span class="s2">&quot;dif_oc_per&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_outer</span><span class="o">.</span><span class="n">ocupa</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+<span class="n">df_outer</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Año_x</th>
+      <th>ocupa</th>
+      <th>mes_x</th>
+      <th>llave</th>
+      <th>Año_y</th>
+      <th>desoc</th>
+      <th>mes_y</th>
+      <th>Año</th>
+      <th>Total_formal</th>
+      <th>Total_informal</th>
+      <th>Hombres_formal</th>
+      <th>Hombres_informal</th>
+      <th>Mujeres_formal</th>
+      <th>Mujeres_informal</th>
+      <th>mes</th>
+      <th>tasa_des</th>
+      <th>tasa_infor</th>
+      <th>dif_oc</th>
+      <th>dif_oc_per</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>129</th>
+      <td>2020</td>
+      <td>8026.216601</td>
+      <td>11</td>
+      <td>2020-11</td>
+      <td>2020.0</td>
+      <td>920.263455</td>
+      <td>11.0</td>
+      <td>2020.0</td>
+      <td>5860.907847</td>
+      <td>2165.308754</td>
+      <td>3490.594002</td>
+      <td>1283.150165</td>
+      <td>2370.313844</td>
+      <td>882.158589</td>
+      <td>11.0</td>
+      <td>0.102863</td>
+      <td>0.269780</td>
+      <td>109.492980</td>
+      <td>0.013831</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>2020</td>
+      <td>8121.419996</td>
+      <td>12</td>
+      <td>2020-12</td>
+      <td>2020.0</td>
+      <td>925.213793</td>
+      <td>12.0</td>
+      <td>2020.0</td>
+      <td>5921.770235</td>
+      <td>2199.649761</td>
+      <td>3526.999418</td>
+      <td>1289.037217</td>
+      <td>2394.770817</td>
+      <td>910.612544</td>
+      <td>12.0</td>
+      <td>0.102272</td>
+      <td>0.270845</td>
+      <td>95.203395</td>
+      <td>0.011862</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>2021</td>
+      <td>8167.623309</td>
+      <td>1</td>
+      <td>2021-1</td>
+      <td>2021.0</td>
+      <td>938.324316</td>
+      <td>1.0</td>
+      <td>2021.0</td>
+      <td>6006.452229</td>
+      <td>2161.171081</td>
+      <td>3586.064414</td>
+      <td>1247.821793</td>
+      <td>2420.387815</td>
+      <td>913.349288</td>
+      <td>1.0</td>
+      <td>0.103045</td>
+      <td>0.264602</td>
+      <td>46.203314</td>
+      <td>0.005689</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>2021</td>
+      <td>8148.205569</td>
+      <td>2</td>
+      <td>2021-2</td>
+      <td>2021.0</td>
+      <td>941.088174</td>
+      <td>2.0</td>
+      <td>2021.0</td>
+      <td>5973.674107</td>
+      <td>2174.531461</td>
+      <td>3567.113613</td>
+      <td>1258.942188</td>
+      <td>2406.560494</td>
+      <td>915.589274</td>
+      <td>2.0</td>
+      <td>0.103538</td>
+      <td>0.266872</td>
+      <td>-19.417741</td>
+      <td>-0.002377</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>2021</td>
+      <td>8104.128807</td>
+      <td>3</td>
+      <td>2021-3</td>
+      <td>2021.0</td>
+      <td>924.974488</td>
+      <td>3.0</td>
+      <td>2021.0</td>
+      <td>5980.572116</td>
+      <td>2123.556691</td>
+      <td>3565.133756</td>
+      <td>1237.772701</td>
+      <td>2415.438361</td>
+      <td>885.783989</td>
+      <td>3.0</td>
+      <td>0.102444</td>
+      <td>0.262034</td>
+      <td>-44.076762</td>
+      <td>-0.005409</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ol class="simple">
+<li><p>Vamos a crear una función que evalúe si los ocupados están bajo o sobre la media.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bajo_sobre_media</span><span class="p">(</span><span class="n">df_input</span><span class="p">):</span> 
+    <span class="n">df_input</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_input</span><span class="p">[</span><span class="s1">&#39;ocupa&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">df_input</span><span class="p">[</span><span class="s1">&#39;ocupa&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="s1">&#39;ocup_cond&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">df_input</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_input</span><span class="p">[</span><span class="s1">&#39;ocupa&#39;</span><span class="p">]</span> <span class="o">&lt;</span>  <span class="n">df_input</span><span class="p">[</span><span class="s1">&#39;ocupa&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="s1">&#39;ocup_cond&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">df_input</span>
+
+<span class="n">df_outer</span> <span class="o">=</span> <span class="n">bajo_sobre_media</span><span class="p">(</span><span class="n">df_outer</span><span class="p">)</span>
+<span class="n">df_outer</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Año_x</th>
+      <th>ocupa</th>
+      <th>mes_x</th>
+      <th>llave</th>
+      <th>Año_y</th>
+      <th>desoc</th>
+      <th>mes_y</th>
+      <th>Año</th>
+      <th>Total_formal</th>
+      <th>Total_informal</th>
+      <th>Hombres_formal</th>
+      <th>Hombres_informal</th>
+      <th>Mujeres_formal</th>
+      <th>Mujeres_informal</th>
+      <th>mes</th>
+      <th>tasa_des</th>
+      <th>tasa_infor</th>
+      <th>dif_oc</th>
+      <th>dif_oc_per</th>
+      <th>ocup_cond</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2010</td>
+      <td>7156.211576</td>
+      <td>2</td>
+      <td>2010-2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2010</td>
+      <td>7198.777387</td>
+      <td>3</td>
+      <td>2010-3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>42.565811</td>
+      <td>0.005948</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2010</td>
+      <td>7181.902888</td>
+      <td>4</td>
+      <td>2010-4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-16.874500</td>
+      <td>-0.002344</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2010</td>
+      <td>7221.575499</td>
+      <td>5</td>
+      <td>2010-5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>39.672612</td>
+      <td>0.005524</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2010</td>
+      <td>7256.515676</td>
+      <td>6</td>
+      <td>2010-6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>34.940177</td>
+      <td>0.004838</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>2020</td>
+      <td>8026.216601</td>
+      <td>11</td>
+      <td>2020-11</td>
+      <td>2020.0</td>
+      <td>920.263455</td>
+      <td>11.0</td>
+      <td>2020.0</td>
+      <td>5860.907847</td>
+      <td>2165.308754</td>
+      <td>3490.594002</td>
+      <td>1283.150165</td>
+      <td>2370.313844</td>
+      <td>882.158589</td>
+      <td>11.0</td>
+      <td>0.102863</td>
+      <td>0.269780</td>
+      <td>109.492980</td>
+      <td>0.013831</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>2020</td>
+      <td>8121.419996</td>
+      <td>12</td>
+      <td>2020-12</td>
+      <td>2020.0</td>
+      <td>925.213793</td>
+      <td>12.0</td>
+      <td>2020.0</td>
+      <td>5921.770235</td>
+      <td>2199.649761</td>
+      <td>3526.999418</td>
+      <td>1289.037217</td>
+      <td>2394.770817</td>
+      <td>910.612544</td>
+      <td>12.0</td>
+      <td>0.102272</td>
+      <td>0.270845</td>
+      <td>95.203395</td>
+      <td>0.011862</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>2021</td>
+      <td>8167.623309</td>
+      <td>1</td>
+      <td>2021-1</td>
+      <td>2021.0</td>
+      <td>938.324316</td>
+      <td>1.0</td>
+      <td>2021.0</td>
+      <td>6006.452229</td>
+      <td>2161.171081</td>
+      <td>3586.064414</td>
+      <td>1247.821793</td>
+      <td>2420.387815</td>
+      <td>913.349288</td>
+      <td>1.0</td>
+      <td>0.103045</td>
+      <td>0.264602</td>
+      <td>46.203314</td>
+      <td>0.005689</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>2021</td>
+      <td>8148.205569</td>
+      <td>2</td>
+      <td>2021-2</td>
+      <td>2021.0</td>
+      <td>941.088174</td>
+      <td>2.0</td>
+      <td>2021.0</td>
+      <td>5973.674107</td>
+      <td>2174.531461</td>
+      <td>3567.113613</td>
+      <td>1258.942188</td>
+      <td>2406.560494</td>
+      <td>915.589274</td>
+      <td>2.0</td>
+      <td>0.103538</td>
+      <td>0.266872</td>
+      <td>-19.417741</td>
+      <td>-0.002377</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>2021</td>
+      <td>8104.128807</td>
+      <td>3</td>
+      <td>2021-3</td>
+      <td>2021.0</td>
+      <td>924.974488</td>
+      <td>3.0</td>
+      <td>2021.0</td>
+      <td>5980.572116</td>
+      <td>2123.556691</td>
+      <td>3565.133756</td>
+      <td>1237.772701</td>
+      <td>2415.438361</td>
+      <td>885.783989</td>
+      <td>3.0</td>
+      <td>0.102444</td>
+      <td>0.262034</td>
+      <td>-44.076762</td>
+      <td>-0.005409</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>134 rows × 20 columns</p>
+</div></div></div>
+</div>
+<ol class="simple">
+<li><p>Usando el DataFrame anterior, crear un nuevo set de datos que tenga sólo la llave, ocupados y ocup_cond cuando es verdadero.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Seleccionar un subconjunto de los datos</span>
+<span class="n">df_outer</span><span class="p">[[</span><span class="s2">&quot;llave&quot;</span><span class="p">,</span> <span class="s2">&quot;ocupa&quot;</span><span class="p">,</span> <span class="s2">&quot;ocup_cond&quot;</span><span class="p">]][</span><span class="n">df_outer</span><span class="o">.</span><span class="n">ocup_cond</span><span class="o">==</span><span class="kc">True</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>llave</th>
+      <th>ocupa</th>
+      <th>ocup_cond</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>47</th>
+      <td>2014-1</td>
+      <td>8202.889793</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>2014-10</td>
+      <td>8207.691840</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>2014-11</td>
+      <td>8249.620400</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>2014-12</td>
+      <td>8259.157930</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>2015-1</td>
+      <td>8263.091077</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>2019-11</td>
+      <td>9087.132384</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>2019-12</td>
+      <td>9118.181107</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>2020-1</td>
+      <td>9063.373737</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>2020-2</td>
+      <td>8942.424520</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>2020-3</td>
+      <td>8235.930792</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>67 rows × 3 columns</p>
+</div></div></div>
+</div>
+<ol class="simple">
+<li><p>Usando if y for, mostrar si la tasa de desocupación está bajo o sobre el promedio.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tasa_des_eval</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_outer</span><span class="o">.</span><span class="n">tasa_des</span><span class="p">)):</span> 
+    <span class="n">condicion</span> <span class="o">=</span> <span class="n">df_outer</span><span class="o">.</span><span class="n">tasa_des</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df_outer</span><span class="o">.</span><span class="n">tasa_des</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">condicion</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span> 
+        <span class="n">tasa_des_eval</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">df_outer</span><span class="o">.</span><span class="n">llave</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">df_outer</span><span class="o">.</span><span class="n">tasa_des</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+
+<span class="c1"># tasa_des_eval        </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tasa_des_eval</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_outer</span><span class="o">.</span><span class="n">tasa_des</span><span class="p">)):</span> 
+    <span class="n">condicion</span> <span class="o">=</span> <span class="n">df_outer</span><span class="o">.</span><span class="n">tasa_des</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df_outer</span><span class="o">.</span><span class="n">tasa_des</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">condicion</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span> 
+        <span class="n">tasa_des_eval</span><span class="p">[</span><span class="n">df_outer</span><span class="o">.</span><span class="n">llave</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df_outer</span><span class="o">.</span><span class="n">tasa_des</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        
+<span class="c1"># tasa_des_eval</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="actividad-2">
+<h2>Actividad 2<a class="headerlink" href="#actividad-2" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Juntar las bases.</p></li>
+<li><p>En un DataFrame mostrar los años y tasa promedio de desocupación, (desocupados/(ocupados+desocupados), la informalidad (formales/ocupados), e informalidad por sexo (ejm: informales_muj/(informales_muj+formales_muj) ).</p>
+<p><em>Ayuda: la lógica a pensar es seleccionar las variables que quiero, agruparlas y sacar el promedio.</em></p>
+</li>
+<li><p>Graficar en el eje x año-trimestre (puede ser año-mes) y las series de ocupados, y desocupados. Pueden ocupar matplotlib o plotly.</p></li>
+<li><p>Al gráfico anterior agrege una línea roja punteada para el promedio de la serie de ocupados y desocupados. (su gráfico va a tener dos líneas punteadas, una para cada serie).</p>
+<p><em>Ayuda: Dibujen el gráfico en el papel y vean qué necesitan. Con eso en mente, piensen qué datos necesitan, ¿qué tengo que agrupar?</em></p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Ejemplo de +- como se ve un gráfico con el promedio de toda la serie. Uds van a tener que tener dos promedios</span>
+<span class="n">Image</span><span class="p">(</span><span class="s2">&quot;ejm_plot_mean.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase19___31_0.png" src="_images/Clase19___31_0.png" />
+</div>
+</div>
+<ol>
+<li><p>Muestre un gráfico de los informales hombres y mujeres, muestre el promedio anual en líneas punteadas rojas (una línea para el promedio anual de hombres y otra para el de mujeres).</p>
+<p><em>Ayuda: Dibujen el gráfico en el papel y vean qué necesitan. Con eso en mente, piensen qué datos necesitan, ¿qué tengo que agrupar?</em></p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Ejemplo de +- como se ve un gráfico con el promedio de un subconjunto de los datos. Uds van a tener que tener dos promedios</span>
+<span class="n">Image</span><span class="p">(</span><span class="s2">&quot;ejm_plot_mean2.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase19___33_0.png" src="_images/Clase19___33_0.png" />
+</div>
+</div>
+<ol>
+<li><p>Utilizando las ecuaciones de oferta y demanda:
+$<span class="math notranslate nohighlight">\(S(q) = q^2 + \beta*10\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(D(q) = (q-20)^2\)</span><span class="math notranslate nohighlight">\(
+El objetivo es crear un gráfico que muestre la oferta para 10 valores de \)</span>\beta \in [1,10]<span class="math notranslate nohighlight">\(. 
+La semana pasada vimos que podemos solucionar este equilibrio con `eq = sy.Eq(S(q), D(q))` y `q_sol = sy.solve(eq)`. Ahora, la ides es usar un `for` para iterar sobre 10 valores de \)</span>\beta$ y graficar las ofertas y los puntos de equilibrio (cantidad, precio).</p>
+<p><em>Ayuda: entender los input en la función de oferta es clave, ¿sobre qué vamos a iterar?</em></p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;oferta_demanda.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Clase19___35_0.png" src="_images/Clase19___35_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Félix Ordóñez<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,38 @@
+Traceback (most recent call last):
+  File "/home/felix/miniconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/felix/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/felix/miniconda3/lib/python3.9/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/felix/miniconda3/lib/python3.9/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/felix/miniconda3/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/home/felix/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/home/felix/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/home/felix/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+#Ejemplo declarar clase: (este ejemplo no va a correr porque no he creado la clase)
+#1. Matriz de otra dimensión diferente a la de la función __init__()
+matriz_nueva = np.ones((2,2))
+#2. Creamos el objeto en función de la clase y la nueva matriz
+obj1 = clase(A = matriz_nueva)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-2-057b9f231075>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;31m#Ejemplo declarar clase: (este ejemplo no va a correr porque no he creado la clase)[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      2[0m [0;31m#1. Matriz de otra dimensión diferente a la de la función __init__()[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 3[0;31m [0mmatriz_nueva[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mones[0m[0;34m([0m[0;34m([0m[0;36m2[0m[0;34m,[0m[0;36m2[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      4[0m [0;31m#2. Creamos el objeto en función de la clase y la nueva matriz[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0mobj1[0m [0;34m=[0m [0mclase[0m[0;34m([0m[0mA[0m [0;34m=[0m [0mmatriz_nueva[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNameError[0m: name 'np' is not defined
+NameError: name 'np' is not defined
+
