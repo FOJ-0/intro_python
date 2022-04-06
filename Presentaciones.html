@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python para Ingeniería Comercial &#8212; Introducción a python</title>
+    <title>Trabajo en grupo &#8212; Introducción a python</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,7 +54,6 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Clase 2: About Python" href="About_python.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -85,8 +84,8 @@
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
    Python para Ingeniería Comercial
   </a>
  </li>
@@ -221,7 +220,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/Presentaciones.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -241,7 +240,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPresentaciones.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -262,7 +261,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/intro.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Presentaciones.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -286,8 +285,28 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#programa">
-   Programa
+  <a class="reference internal nav-link" href="#descripcion">
+   Descripción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grupos">
+   Grupos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#primer-informe-26-04">
+   Primer informe (26/04):
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#segundo-informe-24-05">
+   Segundo informe (24/05):
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#presentaciones-ultima-semana-de-clases">
+   Presentaciones (última semana de clases):
   </a>
  </li>
 </ul>
@@ -302,23 +321,9 @@
         
               <div>
                 
-  <div class="section" id="python-para-ingenieria-comercial">
-<h1>Python para Ingeniería Comercial<a class="headerlink" href="#python-para-ingenieria-comercial" title="Permalink to this headline">¶</a></h1>
-<p><strong>Profesor:</strong> Félix Ordóñez</p>
-<p><strong>Mail:</strong> <a class="reference external" href="mailto:felix&#46;ordonez&#37;&#52;&#48;usach&#46;cl">felix<span>&#46;</span>ordonez<span>&#64;</span>usach<span>&#46;</span>cl</a></p>
-<p><strong>Horario:</strong> Martes bloque 2 y 3.</p>
-<div class="section" id="programa">
-<h2>Programa<a class="headerlink" href="#programa" title="Permalink to this headline">¶</a></h2>
-<p><strong>Objetivo</strong></p>
-<p>Este curso tiene por objetivo introducir un marco conceptual y práctico de programación en <code class="docutils literal notranslate"><span class="pre">Python</span></code>, junto con aplicaciones en economía y ciencia de datos. Este lenguaje fue desarrollado en 1989 en base a una programación multipropósito, de fácil legibilidad de código, gratuito y de código abierto. A partir de la última década, especialmente desde que se popularizó la librería <em>pandas</em>, el uso de este lenguaje incrementó ampliamente, donde se ha transversalizado en diferentes disciplinas como Data Science, Economía, Astronomía o Inteligencia Artificial, en contraposición de otros lenguajes enfocados sólo en cómputo numérico o estadístico.</p>
-<p>Como <code class="docutils literal notranslate"><span class="pre">Python</span></code> es de código abierto, el desarrollo de nuevo contenido es constante y a gran velocidad, por ejemplo esto ha generado mecanismos para interactuar con otros lenguajes como R, SQL, C++ o Dynare++, se han creado librerías como <em>Numba</em> que permite mejorar sustancialmente el rendimiento de funciones y loops, o librerías dedicadas al Machine Learning como <em>Keras</em>, algo que sin duda ha impulsado su masificación en el mundo académico, el sector público y privado.</p>
-<p>A lo largo del semestre se abordarán métodos básicos de programación, la utilización de librerías científicas, visualización y análisis de datos, junto con aplicaciones estadísticas y económicas. Al final del curso se espera que los estudiantes obtengan un nivel intermedio-avanzado en el manejo de <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p>
-<p><strong>Requerimientos</strong></p>
-<p>No es necesario tener conocimientos previos de programación.</p>
-<p><strong>Evaluaciones</strong></p>
+  <div class="section" id="trabajo-en-grupo">
+<h1>Trabajo en grupo<a class="headerlink" href="#trabajo-en-grupo" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Actividades cortas: 30%</p></li>
-<li><p>Actividades intermedias: 30%</p></li>
 <li><p>Trabajo en grupo: 40%</p>
 <ul>
 <li><p>Informe 1: 10%</p></li>
@@ -327,71 +332,37 @@
 </ul>
 </li>
 </ul>
-<p><strong>Contenidos</strong></p>
-<ol class="simple">
-<li><p>Introducción a Python:</p></li>
-</ol>
+<div class="section" id="descripcion">
+<h2>Descripción<a class="headerlink" href="#descripcion" title="Permalink to this headline">¶</a></h2>
+<p>El objetivo es realizar una aplicación de los contenidos del curso, en particular del manejo de bases de datos, estadísticas y visualizaciones.</p>
+</div>
+<div class="section" id="grupos">
+<h2>Grupos<a class="headerlink" href="#grupos" title="Permalink to this headline">¶</a></h2>
+<p>Grupos de 3-4 personas. Ingresar en el siguiente formulario.
+<a class="reference external" href="https://forms.gle/X3s3gUGRA2aZtHFb9">https://forms.gle/X3s3gUGRA2aZtHFb9</a></p>
+</div>
+<div class="section" id="primer-informe-26-04">
+<h2>Primer informe (26/04):<a class="headerlink" href="#primer-informe-26-04" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Introducción a un lenguaje de propósito general.</p></li>
-<li><p>Configuración de Anaconda y Jupyterlab.</p></li>
+<li><p>Integrantes</p></li>
+<li><p>Base de datos que van a ocupar</p></li>
+<li><p>Idea de cuatro gráficas que quieren mostrar. Un párrafo por cada idea.</p></li>
 </ul>
-<ol class="simple">
-<li><p>Utilizando Python</p></li>
-</ol>
+</div>
+<div class="section" id="segundo-informe-24-05">
+<h2>Segundo informe (24/05):<a class="headerlink" href="#segundo-informe-24-05" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Aprendiendo lo básico: instalación de librerías, diferentes types y formatos, como utilizar listas, diccionarios y loops.</p></li>
-<li><p>Funciones: son un bloque de código que puede (o no) recibir un input y mediante una sentencia reaiza una tarea y/o puede devolver un valor. Acá se aprenderá cómo se utilizan, argumentos de entrada y de salida, funciones anidadas, entre otros.</p></li>
-<li><p>Clases y objetos: La programación orientada a objetos permite administrar el código mediante métodos y estructuras lógicas. En python se utilizan <em>clases</em> para estructurar el código creando un nuevo tipo de objeto. Analizaremos para qué sirven las <em>clases</em> y cómo se utilizan.</p></li>
-<li><p>Utilización de datos con <em>pandas</em>: esta librería permite analizar bases de datos estructuradas. Se trabajará con bases relacionales como SQL, series de tiempo y matrices.</p></li>
-<li><p>Introducción al manejo de texto: Una gran virtud de python es la facilidad con que se puede manejar archivos de texto. Para esto, se aprenderá cómo manejar bases de texto, depuración de datos, stopwords, y creación de word clouds.</p></li>
-<li><p>Visualización de datos: manejo de <em>Matplotlib</em> y <em>Plotly</em> para crear diferentes tipos de gráficos, tablas y paneles dinámicos.</p></li>
-<li><p>Optimización de código: uso de <em>numba</em>.</p></li>
+<li><p>Descripción de la base de datos y justificación de por qué la ocuparon.</p></li>
+<li><p>Estadísticas de la base de datos relevantes: cantidad de observaciones, promedios, frecuencias, desviaciones estándar, según corresponda.</p></li>
+<li><p>Cuatro gráficas según los datos. Estas deben utilizar diferentes tipos de visualizaciones: scatter, bar, heatmap, line, pie, sun…</p></li>
+<li><p>Cada gráfica debe tener título, nombres de eje y toda la información autocontenida para que sea entendible.</p></li>
 </ul>
-<p><strong>Aplicaciones</strong></p>
+</div>
+<div class="section" id="presentaciones-ultima-semana-de-clases">
+<h2>Presentaciones (última semana de clases):<a class="headerlink" href="#presentaciones-ultima-semana-de-clases" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Oferta y demanda: solución de sistema de ecuaciones lineales.</p></li>
-<li><p>OLS: realización de una regresión lineal para una ecuación de Mincer mediante datos de empleo chilenos.</p></li>
-<li><p>Webscraping.</p></li>
-<li><p>Modelo AR(1): programación de un modelo autoregresivo, gráficos de autocorrelación, persistencia del modelo.</p></li>
-<li><p>Modelo de crecimiento de Solow: simulación del modelo de crecimiento, gráficos de resultados y análisis de diferentes paramterizaciones.</p></li>
-<li><p>Colusión: programación de un modelo de cournot, funciones de demanda, costos y benficios, solución del equilibrio y gráficos.</p></li>
-<li><p>Modelo de Markov-Switching: introducción al modelo de Hamilton (1989) y aplicación para el PIB de Chile.</p></li>
-<li><p>Overlapping Generations Model (OLG): solución del estado estacionario de un modelo OLG, gráficos de capital y trabajo según generaciones.</p></li>
-<li><p>Dynare++ y modelos DSGE: instalación de Dynare++ y utilización mediante jupyter, solución de modelos nuevo keynesianos.</p></li>
+<li><p>Presentar y justificar sus gráficas</p></li>
 </ul>
-<p><strong>Referencias</strong></p>
-<ul class="simple">
-<li><p>Aprende a instalar <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> en Windows, Mac o Linux. Acá puedes revisar la documentación de <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/">Conda</a> en Windows, Mac o Linux.</p></li>
-<li><p><a class="reference external" href="https://pypi.org/">Índice</a> de paquetes e instalación.</p></li>
-<li><p>Para introducirte en <a class="reference external" href="https://jupyter.org/">Jupyter</a>.</p></li>
-<li><p>Acá puedes encontrar un completo <a class="reference external" href="https://docs.python.org/3/tutorial/">tutorial de Python</a>.</p></li>
-<li><p>Revisa las principales librerías que se usarán en el curso: <a class="reference external" href="https://numpy.org/">NumPy</a>, <a class="reference external" href="https://pandas.pydata.org/">Pandas</a>, <a class="reference external" href="https://numba.pydata.org/">Numba</a>, <a class="reference external" href="https://matplotlib.org/">Matplotlib</a>, <a class="reference external" href="https://plotly.com/python/">Plotly</a> y <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/">SciPy</a>.</p></li>
-<li><p>Para una amplia programación en economía y finanzas usando Python está <a class="reference external" href="https://python.quantecon.org/">QuantEcon</a>.</p></li>
-<li><p>Proyectos de Python en <a class="reference external" href="https://github.com/trending?l=python">GitHub</a>.</p></li>
-<li><p><a class="reference external" href="https://www.welcometothejungle.com/en/articles/btc-python-popular">Historia</a> de Python y su desarrollo.</p></li>
-<li><p><a class="reference external" href="https://stackoverflow.com/questions/tagged/python">Stackoverflow</a> tiene un gran foro de consultas y respuestas en materia de programación.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">asdasd</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">4</span><span class="n">d01f3610a36</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">asdasd</span>
-
-<span class="ne">NameError</span>: name &#39;asdasd&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="toctree-wrapper compound">
-</div>
 </div>
 </div>
 
@@ -420,7 +391,6 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="About_python.html" title="next page">Clase 2: About Python</a>
 
         </div>
         
