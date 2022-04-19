@@ -111,13 +111,18 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Clase5_6.html#actividad">
-   Actividad
+  <a class="reference internal" href="Clase5_6.html#actividad-corta-1">
+   Actividad corta 1
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Clase 7-8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#actividad-en-clases-sin-nota">
+   Actividad en clases (sin nota)
   </a>
  </li>
  <li class="toctree-l1">
@@ -288,34 +293,46 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contenidos-de-la-clase">
-   Contenidos de la clase:
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Clase 7-8
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contenidos-de-la-clase">
+     Contenidos de la clase:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loops">
+     1. Loops
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#input-output">
+     2. Input/Output
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#if-else">
+     3. If/else
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#crear-funciones">
+     4. Crear funciones
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diccionarios">
+     5. Diccionarios
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loops">
-   1. Loops
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#input-output">
-   2. Input/Output
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#if-else">
-   3. If/else
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#crear-funciones">
-   4. Crear funciones
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#diccionarios">
-   5. Diccionarios
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#actividad-en-clases-sin-nota">
+   Actividad en clases (sin nota)
   </a>
  </li>
 </ul>
@@ -1047,6 +1064,67 @@ B: [0, 1, 2, 3, 8, &#39;1&#39;, 36, 49, 64, 81, 100]
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="actividad-en-clases-sin-nota">
+<h1>Actividad en clases (sin nota)<a class="headerlink" href="#actividad-en-clases-sin-nota" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>¿Cómo usamos linspace() y arange()? Muestre un ejemplo de cómo se utiliza y las diferencias.</p></li>
+<li><p>¿Cuáles son los símbolos para evaluar igualdad, desigualdad, mayor igual, y menor que?</p></li>
+<li><p>El siguiente tiene por objetivo tomar información del <code class="docutils literal notranslate"><span class="pre">array</span></code> A y colocoarla en la <code class="docutils literal notranslate"><span class="pre">lista</span></code> B. El código tiene 5 errores, encuéntrelos y de una breve explicación del problema. El código tiene cuatro condicionales que hacen lo siguiente:</p>
+<ul class="simple">
+<li><p>Si <strong>i</strong> es mayor o igual que 0 y menor o igual que 3, anexa i a la lista B.</p></li>
+<li><p>Si i es mayor que 3 y menor que 5, anexa <span class="math notranslate nohighlight">\(i*2\)</span> a la lista B.</p></li>
+<li><p>Si i es igual a 5, pide un valor (como float), anexarlo a la lista B.</p></li>
+<li><p>Para todo lo demás, agrega a la lista B el valor <span class="math notranslate nohighlight">\(i^2\)</span>.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descomente el código con ctr+/</span>
+<span class="c1"># A = np.arange(0, 11, 1)</span>
+<span class="c1"># B = []</span>
+
+<span class="c1"># for i in range(len(A)): </span>
+<span class="c1">#     #Creamos la primera condición</span>
+<span class="c1">#     if i&gt;0 and i&lt;= 3: </span>
+<span class="c1">#         B.append(i)</span>
+<span class="c1">#     #Segunda condición</span>
+<span class="c1">#     elif i &gt; 3 and i&lt;5: </span>
+<span class="c1">#         B.append(A[i]*2)</span>
+<span class="c1">#     #Tercera condición    </span>
+<span class="c1">#     elif i==5:</span>
+<span class="c1">#         B.append((input(&quot;Agregar un valor&quot;)))</span>
+<span class="c1">#     #Para todo el resto</span>
+<span class="c1">#     elseif: </span>
+<span class="c1">#         B.append(i**2)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Van a crear una función llamada <code class="docutils literal notranslate"><span class="pre">miprimerafuncion</span></code> y realizarán los siguiente:</p>
+<ul class="simple">
+<li><p>En una línea explique la sintaxis de una función.</p></li>
+<li><p>La función debe calcular <span class="math notranslate nohighlight">\(y = x+x^2\)</span>. Escriba la función sin un input y que el retorno sea <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+<li><p>Escriba la función anterior pero con un input igual a <span class="math notranslate nohighlight">\(x\)</span>. ¿Qué cambia con el caso anterior?</p></li>
+<li><p>¿Qué debería pasar con la función si ahora queremos calcular <span class="math notranslate nohighlight">\(y=x+x*z+x^2\)</span>?</p></li>
+<li><p>¿Qué ocurre si colocamos directamente en el retorno <span class="math notranslate nohighlight">\(x + x^2\)</span> versus definir primero <span class="math notranslate nohighlight">\(y=x+x^2\)</span> y retornar <span class="math notranslate nohighlight">\(y\)</span>?</p></li>
+<li><p>Colocar un condicional dentro de la función que evalúe:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(x&gt;0 \Rightarrow y=x+x^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x&lt;0 \Rightarrow y=\text{abs}(x)+x^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x=0 \Rightarrow y=0\)</span></p></li>
+</ul>
+</li>
+<li><p>¿Por qué colocamos el condicional dentro de la función y no fuera de la función? Muestre un ejemplo.</p></li>
+</ul>
+</li>
+<li><p>Con un diccionario podemos guardar información bajo el formato <strong>llave-valor</strong>. ¿Qué significa eso?</p></li>
+<li><p>¿Podemos crear un <code class="docutils literal notranslate"><span class="pre">diccionario</span></code> con dos <strong>llaves</strong> que tengan el mismo nombre? mostrar un ejemplo.</p></li>
+<li><p>¿Podemos crear un <code class="docutils literal notranslate"><span class="pre">diccionario</span></code> con dos <strong>valores</strong> que sean iguales? mostrar un ejemplo.</p></li>
+<li><p>¿Podemos usar un <code class="docutils literal notranslate"><span class="pre">loop</span></code> para poblar un <code class="docutils literal notranslate"><span class="pre">diccionario</span></code>? muestre un ejemplo.</p></li>
+</ol>
 </div>
 
     <script type="text/x-thebe-config">
